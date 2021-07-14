@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <!-- Title Page -->
+    <title>Youtube Clone</title>
+    <link rel="icon" href="../static/image/Youtube Icon.png" type="icon">
+
+    <!-- Tool Library -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet">
+    <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
+    <script src="../static/js/all.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <!-- Header  -->
+    <header>
+        <!-- Left part header  -->
+        <section class="left-part-header">
+            <section>
+                <!-- Task bar button  -->
+                <button class="task-bars-button">
+                    <span class="icon task-bars">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+
+                <!-- Home button  -->
+                <a href="https:www.youtube.com">
+                    <button class="home-button">
+                        <img src="../static/image/Youtube Logo.png" height="92px" width="92px" />
+                    </button>
+                </a>
+                <span class="VN">VN</span>
+            </section>
+        </section>
+
+        <!-- Mid part header  -->
+        <section>
+            <section class="field field-searching-bar has-addons">
+                <div class="control control-searching-bar has-icons-right">
+                    <!-- Searching bar  -->
+                    <input class="input" type="text" placeholder="Tìm kiếm">
+
+                    <!-- Computer keyboard button -->
+                    <span class="icon is-right">
+                        <button class="keyboard-button">
+                            <i class="fas fa-keyboard"></i>
+                        </button>
+                    </span>
+                </div>
+
+                <!-- Search button  -->
+                <div class="control">
+                    <a class="button button-search is-small">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+
+                <!-- Microphone button  -->
+                <div class="microphone-search-button">
+                    <button class="button-microphone">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+            </section>
+        </section>
+
+        <!-- Right part header  -->
+        <section class="right-part-header">
+            <section class="right-part">
+                <!-- Add video button  -->
+                <button class="add-video-button">
+                    <span class="icon add-video">
+                        <i class="fas fa-video"></i>
+                    </span>
+                </button>
+
+                <!-- Youtube applications option -->
+                <button class="app-option-button">
+                    <span class="icon app-option">
+                        <i class="fas fa-th"></i>
+                    </span>
+                </button>
+
+                <!-- Notification  -->
+                <button class="notifications-button">
+                    <span class="icon notifications">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                </button>
+
+                <!-- User account -->
+                <button class="account-button">
+                    <span class="icon account">
+                        <i class="fas fa-user-circle"></i>
+                    </span>
+                </button>
+            </section>
+        </section>
+    </header>
+
+    <!-- Body -->
+    <section class="columns is-gapless">
+        <!-- Menu of task bar -->
+        <aside class="column is-2 menu-task-bar">
+            <!-- Default function top -->
+            <section class="default-top-buttons">
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span class="text menu-text">Trang chủ</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-compass"></i>
+                        </span>
+                        <span class="text menu-text">Khám phá</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <span class="text menu-text">Kênh đăng ký</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Client function mid  -->
+            <section>
+                <!-- Library, history, watchlater,...  -->
+                <section class="menu-part-buttons">
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-photo-video"></i>
+                            </span>
+                            <span class="text menu-text">Thư viện</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-history"></i>
+                            </span>
+                            <span class="text menu-text">Video đã xem</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fab fa-youtube-square"></i>
+                            </span>
+                            <span class="text menu-text">Video của bạn</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                            <span class="text menu-text">Xem sau</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                            <span class="text menu-text">Thêm</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Your registered channel  -->
+                <section class="menu-part-buttons">
+                    <div class="menu-part-text">
+                        KÊNH ĐĂNG KÝ
+                    </div>
+
+                    <div>
+                        <a class="button chanel-menu-button">
+                            <span class="icon chanel-menu-icon">
+                                <img class="channel-menu-img" src="../static/image/Sơn Tùng M-TP Official.jpg"/>
+                            </span>
+                            <div class="text chanel-menu-text">Sơn Tùng M-TP Official</div>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button chanel-menu-button">
+                            <span class="icon chanel-menu-icon">
+                                <img class="channel-menu-img" src="../static/image/SOOBIN Official.jpg"/>
+                            </span>
+                            <div class="text chanel-menu-text">SOOBIN Official</div>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button chanel-menu-button">
+                            <span class="icon chanel-menu-icon">
+                                <img class="channel-menu-img" src="../static/image/Kay Tran Official.jpg"/>
+                            </span>
+                            <div class="text chanel-menu-text">Kay Tran Official</div>
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <a class="button chanel-menu-button">
+                            <span class="icon chanel-menu-icon">
+                                <img class="channel-menu-img" src="../static/image/Binz Da Poet.jpg"/>
+                            </span>
+                            <div class="text chanel-menu-text">Binz Da Poet</div>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                            <span class="text menu-text">Hiển thị thêm</span>
+                        </a>
+                    </div>
+
+                </section>
+
+                <!-- Other services of Youtube  -->
+                <section class="menu-part-buttons">
+                    <div class="menu-part-text">
+                        DỊCH VỤ KHÁC CỦA YOUTUBE
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </span>
+                            <span class="text menu-text">Trò chơi</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </span>
+                            <span class="text menu-text">Sự kiện trực tiếp</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-trophy"></i>
+                            </span>
+                            <span class="text menu-text">Thể thao</span>
+                        </a>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Default function bot -->
+            <section class="menu-part-buttons">
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-cog"></i>
+                        </span>
+                        <span class="text menu-text">Cài đặt</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-flag"></i>
+                        </span>
+                        <span class="text menu-text">Lịch sử báo cáo</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </span>
+                        <span class="text menu-text">Trợ giúp</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="button menu-button">
+                        <span class="icon menu-icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </span>
+                        <span class="text menu-text">Gửi phản hồi</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="menu-part-buttons">
+                <div class="more-about-page">
+                    <span><a href="">Giới thiệu &nbsp;</a></span>
+                    <span><a href="">Báo chí &nbsp;</a></span>
+                    <span><a href="">Bản quyền &nbsp;</a></span>
+                    <span><a href="">Liên hệ với chúng tôi &nbsp;</a></span>
+                    <span><a href="">Người sáng tạo &nbsp;</a></span>
+                    <span><a href="">Quảng cáo &nbsp;</a></span>
+                    <span><a href="">Nhà phát triển &nbsp;</a></span>
+                </div>
+
+                <div class="more-about-page">
+                    <span><a href="">Điều khoản &nbsp;</a></span>
+                    <span><a href="">Quyền riêng tư &nbsp;</a></span>
+                    <span><a href="">Chỉnh sửa và an toàn &nbsp;</a></span>
+                    <span><a href="">Cách Youtube hoạt động &nbsp;</a></span>
+                    <span><a href="">Thử các tính năng mới &nbsp;</a></span>
+                </div>
+
+                <div class="more-about-page">
+                    © 2021 Google LLC
+                </div>
+            </section>
+        </aside>
+
+        <!-- Content -->
+        <section>
+            <nav>
+
+            </nav>
+
+            <section>
+
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>
