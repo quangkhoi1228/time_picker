@@ -7,3 +7,13 @@ $(document).ready(function(){
         $(".modal").removeClass("is-active");
     });
 });
+
+function openDropdown() {
+    var openBox = document.getElementById("dropdown-menu");
+
+    if (openBox.style.display == "none") {
+        openBox.style.display = "block";
+      } else {
+        openBox.style.display = "none";
+      }
+}

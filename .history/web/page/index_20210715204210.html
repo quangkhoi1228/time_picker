@@ -39,12 +39,23 @@
                     </div>
 
                     <div>
-                        <a class="button menu-button">
-                            <span class="icon menu-icon">
-                                <i class="fas fa-chevron-down"></i>
-                            </span>
-                            <span class="text menu-text">More</span>
-                        </a>
+                        <div class="dropdown">
+                            <div class="dropdown-trigger">
+                                <a class="button menu-button" id="launchDropdown" onclick="openDropdown()">
+                                    <span class="icon menu-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                    <span class="text menu-text">More</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item">
+                                        Nothing is here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section>
