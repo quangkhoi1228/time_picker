@@ -165,3 +165,51 @@ header span {
   border-radius: 0%;
   background: #9ccca6;
 }
+
+.icon-result {
+  font-size: 11px;
+  height: 28px;
+  width: 22px;
+  border: none;
+  border-radius: 0%;
+  background: #9ccca6;
+}
+
+input[class="result"] {
+  height: 28px;
+  width: 172px;
+  border: none;
+  border-radius: 0%;
+  background: #9ccca6;
+  padding-left: 14px;
+  font-size: 14px;
+}
+
+.clock-image {
+  height: 310px;
+  width: 260px;
+}
+
+.time-picker-block-buttons {
+  display: flex;
+}
+
+.time-picker-buttons {
+  border:none;
+  padding: 0;
+  height: 50px;
+  width: 130px;
+  background: #039b69;
+}
+
+button[class="time-picker-buttons"]:focus,
+button[class="time-picker-buttons"]:hover {
+    background-color: #4bb893;
+    transition: all 0.3s;
+}
+
+button[class="time-picker-buttons"]:focus,
+button[class="time-picker-buttons"]:after {
+    background-color: #78ddbc;
+    transition: all 0.3s;
+}

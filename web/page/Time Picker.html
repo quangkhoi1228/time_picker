@@ -11,8 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet">
     <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="../static/js/all.min.js"></script>
-    <script scr="../static/js/script.js"></script>
+    <script src="../static/js/script.js"></script>
 </head>
 
 <body>
@@ -90,17 +91,49 @@
 
                 <div class="field field-time-picker has-addons">
                     <div class="control">
-                      <input class="input" type="text" placeholder="Choose time">
+                      <input class="input" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉">
                     </div>
 
                     <div class="control">
-                      <a class="button button-time-picker">
+                      <a class="button button-time-picker" id="launchModal">
                         <i class="fas fa-clock"></i>
                       </a>
                     </div>
+
+                    <div class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-content clock-image">
+                            <div>
+                                <p class="image">
+                                    <img src="../static/image/Clock.png">
+                                </p>
+                                <div class="time-picker-block-buttons">
+                                    <button class="time-picker-buttons">
+                                        Clear
+                                    </button>
+                                    <button class="time-picker-buttons">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="modal-close is-large" aria-label="close"></button>
+                    </div>
+                      
                   </div>
 
                 <h4>Your chosen date and time:</h4>
+                
+                  </div>
+
+                <div class="field field-time-picker">
+                    <p class="control has-icons-right">
+                        <input class="result" type="email" placeholder="Your date and time" disabled>
+                        <span class="icon icon-result is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                </div>
             </section>
         </div>
     </section>
