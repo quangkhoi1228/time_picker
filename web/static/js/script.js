@@ -36,3 +36,8 @@ function switchTime() {
         switchMinute.style.display = "block";
     }
 }
+
+function savingHour() {
+    return document.getElementById("save-hour").innerText;
+    document.getElementById("output-hour").innerText;
+}

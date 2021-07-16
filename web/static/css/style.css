@@ -273,6 +273,12 @@ input[class="result"] {
   left: 1rem;
 }
 
+.time-showing-mode:focus,
+.time-showing-mode:hover {
+  background: #4e4e4e;
+  transition: all 1s;
+}
+
 .time-showing-detail {
   font-size: 1.5rem;
   color: #ffffff;

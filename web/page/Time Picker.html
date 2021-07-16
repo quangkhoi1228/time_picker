@@ -135,11 +135,11 @@
                                 <div class="parent-container time-showing-box"> 
                                      <div class="child-container time-showing">
                                         <button class="time-showing-detail-button">
-                                            <input class="time-showing-detail" type="text" placeholder="12" disabled>
+                                            <input class="time-showing-detail" type="text" id="output-hour" placeholder="00" disabled>
                                         </button>
                                         <span>:</span>
                                         <button class="time-showing-detail-button">
-                                            <input class="time-showing-detail" type="text" placeholder="00" disabled>
+                                            <input class="time-showing-detail" type="text" id="ouput-minute" placeholder="00" disabled>
                                         </button>
                                         <button class="time-showing-mode" onclick="switchTime()">
                                             Unit
@@ -148,37 +148,37 @@
                                 </div>
                                 <div class="parent-container clock-showing-box">
                                     <div class="child-container clock-showing" id="minute">
-                                        <span id="in-minute">In minute</span>
+                                        <span id="in-minute">In-minute</span>
                                         <div class="center-dot">•</div>
-                                        <button class="oclock-1">5</button>
-                                        <button class="oclock-2">10</button>
-                                        <button class="oclock-3">15</button>
-                                        <button class="oclock-4">20</button>
-                                        <button class="oclock-5">25</button>
-                                        <button class="oclock-6">30</button>
-                                        <button class="oclock-7">35</button>
-                                        <button class="oclock-8">40</button>
-                                        <button class="oclock-9">45</button>
-                                        <button class="oclock-10">50</button>
-                                        <button class="oclock-11">55</button>
-                                        <button class="oclock-12">60</button>
+                                        <button class="oclock-1" onclick="savingMinute()" id="save-minute">5</button>
+                                        <button class="oclock-2" onclick="savingMinute()" id="save-minute">10</button>
+                                        <button class="oclock-3" onclick="savingMinute()" id="save-minute">15</button>
+                                        <button class="oclock-4" onclick="savingMinute()" id="save-minute">20</button>
+                                        <button class="oclock-5" onclick="savingMinute()" id="save-minute">25</button>
+                                        <button class="oclock-6" onclick="savingMinute()" id="save-minute">30</button>
+                                        <button class="oclock-7" onclick="savingMinute()" id="save-minute">35</button>
+                                        <button class="oclock-8" onclick="savingMinute()" id="save-minute">40</button>
+                                        <button class="oclock-9" onclick="savingMinute()" id="save-minute">45</button>
+                                        <button class="oclock-10" onclick="savingMinute()" id="save-minute">50</button>
+                                        <button class="oclock-11" onclick="savingMinute()" id="save-minute">55</button>
+                                        <button class="oclock-12" onclick="savingMinute()" id="save-minute">60</button>
                                     </div>
 
                                     <div class="child-container clock-showing" id="hour">
-                                        <span id="in-hour">In hour</span>
+                                        <span id="in-hour">In-hour</span>
                                         <div class="center-dot">•</div>
-                                        <button class="oclock-1">1</button>
-                                        <button class="oclock-2">2</button>
-                                        <button class="oclock-3">3</button>
-                                        <button class="oclock-4">4</button>
-                                        <button class="oclock-5">5</button>
-                                        <button class="oclock-6">6</button>
-                                        <button class="oclock-7">7</button>
-                                        <button class="oclock-8">8</button>
-                                        <button class="oclock-9">9</button>
-                                        <button class="oclock-10">10</button>
-                                        <button class="oclock-11">11</button>
-                                        <button class="oclock-12">12</button>
+                                        <button class="oclock-1" onclick="savingHour()" id="save-hour">1</button>
+                                        <button class="oclock-2" onclick="savingHour()" id="save-hour">2</button>
+                                        <button class="oclock-3" onclick="savingHour()" id="save-hour">3</button>
+                                        <button class="oclock-4" onclick="savingHour()" id="save-hour">4</button>
+                                        <button class="oclock-5" onclick="savingHour()" id="save-hour">5</button>
+                                        <button class="oclock-6" onclick="savingHour()" id="save-hour">6</button>
+                                        <button class="oclock-7" onclick="savingHour()" id="save-hour">7</button>
+                                        <button class="oclock-8" onclick="savingHour()" id="save-hour">8</button>
+                                        <button class="oclock-9" onclick="savingHour()" id="save-hour">9</button>
+                                        <button class="oclock-10" onclick="savingHour()" id="save-hour">10</button>
+                                        <button class="oclock-11" onclick="savingHour()" id="save-hour">11</button>
+                                        <button class="oclock-12" onclick="savingHour()" id="save-hour">12</button>
                                     </div>
                                 </div>
                                 <div class="time-picker-block-buttons">
