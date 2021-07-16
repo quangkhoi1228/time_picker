@@ -38,6 +38,31 @@ function switchTime() {
 }
 
 function savingHour() {
-    return document.getElementById("save-hour").innerText;
-    document.getElementById("output-hour").innerText;
+    const numbersHour = document.getElementById("save-hour")
+    const outputHour = document.getElementById("output-hour")
+
+    for (let number of numbersHour) {
+        number.addEventListner("click", function() {
+            outputHour.innerHTML = this.value
+        });
+    }
+}
+
+function savingMinute() {
+    const numbersMinute = document.getElementById("save-minute")
+    const outputMinute = document.getElementById("output-minute")
+
+    for (let number of numbersMinute) {
+        number.addEventListner("click", function() {
+            outputMinute.innerHTML = this.value
+        });
+    }
+}
+
+function clear(){
+    const outputHour = document.getElementById("output-hour")
+    const outputMinute = document.getElementById("output-minute")
+
+    outputHour.innerHTML = "";
+    outputMinute.innerHTML = "";
 }
