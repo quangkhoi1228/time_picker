@@ -89,6 +89,18 @@ header span {
   transition: all 1s;
 }
 
+.dropdown-menu {
+  padding: 0;
+}
+
+.dropdown-content {
+  background: #a2a3a7;
+}
+
+.dropdown-item {
+  transition: 1s;;
+}
+
 .menu-me-button{
   height: 50px;
   width: 200px;
@@ -121,6 +133,28 @@ header span {
 .menu-me-button:after {
   color: #ffffff;
   background: #4e4e4e;
+  transition: all 1s;
+}
+
+.menu-me-web-button{
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.menu-me-web-button:focus,
+.menu-me-web-button:hover {
+  color: #ffffff;
+  background: transparent;
+  transition: all 1s;
+}
+
+.menu-me-web-button:focus,
+.menu-me-web-button:after {
+  color: #ffffff;
+  background: transparent;
   transition: all 1s;
 }
 
@@ -188,20 +222,94 @@ input[class="result"] {
   font-size: 14px;
 }
 
-.clock-image {
-  height: 310px;
-  width: 260px;
+
+/* About clock */
+.box-modal {
+  width: 20rem;
+  margin: auto;
+}
+
+.time-showing-box {
+  height: 5rem;
+  background: #303030;
+  position: relative;
+}
+
+.time-showing {
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time-showing-detail-button {
+  text-align: center;
+  background: transparent;
+  border: none;
+}
+
+.time-showing-detail:focus,
+.time-showing-detail:hover {
+  background: #a2a3a7;
+  transition: all 1s;
+}
+
+.time-showing-detail:focus,
+.time-showing-detail:after {
+  background: #d0d1d3;
+  transition: all 1s;
+}
+
+.time-showing-mode {
+  width: 3rem;
+  height: 3rem;
+  color: #ffffff;
+  text-align: center;
+  background: transparent;
+  border-radius: 50%;
+
+  position: relative;
+  left: 1rem;
+}
+
+.time-showing-detail {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  background: transparent;
+}
+
+.clock-showing-box {
+  height: 20rem;
+  background: #bfc0c4;
+  position: relative;
+}
+
+.clock-showing {
+  height: 19rem;
+  width: 19rem;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .time-picker-block-buttons {
   display: flex;
+  justify-content: space-between;
 }
 
 .time-picker-buttons {
+  height: 3rem;
+  width: 50%;
   border:none;
   padding: 0;
-  height: 50px;
-  width: 130px;
   background: #828387;
 }
 
@@ -217,185 +325,244 @@ button[class="time-picker-buttons"]:after {
   transition: all 1s;
 }
 
-.dropdown-menu {
-  padding: 0;
-}
-
-.dropdown-content {
-  background: #a2a3a7;
-}
-
-.dropdown-item {
-  transition: 1s;;
-}
-
-.menu-me-web-button{
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  padding: 0;
-  justify-content: flex-start;
-}
-
-.menu-me-web-button:focus,
-.menu-me-web-button:hover {
-  color: #ffffff;
-  background: transparent;
-  transition: all 1s;
-}
-
-.menu-me-web-button:focus,
-.menu-me-web-button:after {
-  color: #ffffff;
-  background: transparent;
-  transition: all 1s;
-}
-
-.time-picker-clock {
-  height: 260px;
-  width: 260px;
-  background: #bfc0c4;
-}
-
-/* About clock */
-.center-dot{
-  color: #000000;
-  background: transparent;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-
-  position: relative;
-  bottom: 190px;
-  left: 115px;
-}
-
-.dial {
-  background: #ffffff;
-  border-radius: 50%;
-  height: 240px;
-  width: 240px;
-  position: relative;
-  top: 10px;
-  left: 10px;
+.center-dot {
+  color: #0000008f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-1 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 18%;
+  left: 68%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-2 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 32%;
+  left: 82%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-3 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-4 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 68%;
+  left: 82%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-5 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 82%;
+  left: 68%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-6 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-7 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 82%;
+  left: 32%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-8 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 68%;
+  left: 18%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-9 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-10 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 32%;
+  left: 18%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-11 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 18%;
+  left: 32%;
+  transform: translate(-50%, -50%);
 }
 
 .oclock-12 {
   color: #000000;
   background: transparent;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
-  position: relative;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock-showing button:focus,
+.clock-showing button:hover {
+  background: #6690d4;
+  transition: all 0.8s;
+}
+
+.clock-showing button:focus,
+.clock-showing button:after {
+  background: #4285f4;
+  transition: all 0.8s;
+}
+
+span[id="in-hour"] {
+  display: block;
+
+  position: absolute;
+  top: 99%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+span[id="in-minute"] {
+  display: none;
+
+  position: absolute;
+  top: 99%;
+  left: 13%;
+  transform: translate(-50%, -50%);
 }

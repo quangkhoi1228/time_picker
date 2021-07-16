@@ -43,9 +43,7 @@
                     <div>
                         <div class="dropdown">
                             <div class="dropdown-trigger">
-                                <a class="button menu-button"
-                                    id="launchDropdown"
-                                    onclick="openDropdown()">
+                                <a class="button menu-button" id="launchDropdown" onclick="openDropdown()">
                                     <span class="icon menu-icon">
                                         <i class="fas fa-chevron-down"></i>
                                     </span>
@@ -83,26 +81,21 @@
                                         me</span>
                                 </a>
                             </div>
-                            <div class="dropdown-menu" id="dropdown-menu"
-                                role="menu">
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                 <div class="dropdown-content">
-                                    <a href="https://www.facebook.com/qhoangf/"
-                                        class="button menu-me-web-button">
+                                    <a href="https://www.facebook.com/qhoangf/" class="button menu-me-web-button">
                                         <span class="icon menu-me-icon">
                                             <i class="fab fa-facebook"></i>
                                         </span>
-                                        <span
-                                            class="text menu-me-text">Facebook</span>
+                                        <span class="text menu-me-text">Facebook</span>
                                     </a>
 
                                     <div>
-                                        <a href="https://www.instagram.com/qhoangf.msc/"
-                                            class="button menu-me-web-button">
+                                        <a href="https://www.instagram.com/qhoangf.msc/" class="button menu-me-web-button">
                                             <span class="icon menu-me-icon">
                                                 <i class="fab fa-instagram"></i>
                                             </span>
-                                            <span
-                                                class="text menu-me-text">Instagram</span>
+                                            <span class="text menu-me-text">Instagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -126,8 +119,7 @@
 
                 <div class="field field-time-picker has-addons">
                     <div class="control">
-                        <input class="input" type="text"
-                            placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉">
+                        <input class="input" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉">
                     </div>
 
                     <div class="control">
@@ -135,93 +127,75 @@
                             <i class="fas fa-clock"></i>
                         </a>
                     </div>
-                    <div class="modal is-active">
-                        <div class="modal-background"></div>
-                        <div class="modal-content">
-                            <div class="parent-container" style="
-                                            height: 10rem;
-                                            width: 10rem;
-                                            background: white;
-                                            margin: auto;
-                                            position: relative;
-                                        ">
-                                <div class="child-container" style="
-                                            position: absolute;
-                                            top: 50%;
-                                            left: 50%;
-                                            transform: translate(-50%, -50%);
-                                            height: 9rem;
-                                            width: 9rem;
-                                            background: wheat;
-                                            border-radius: 50%;
-                                        ">
-                                    <div class="center-dot" style="
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-">•</div>
-                                </div>
-                            </div>
-                            <div class="time-picker-block-buttons" style="
-    width: 10rem;
-    margin: auto;
-">
-                                <button class="time-picker-buttons">
-                                    Clear
-                                </button>
-                                <button class="time-picker-buttons">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="modal">
                         <div class="modal-background"></div>
-                        <div class="modal-content clock-image">
-                            <div>
-                                <div class="time-picker-clock">
-                                    <!-- Dial / Clock face -->
-                                    <div class="dial"> </div>
-
-                                    <!-- Numbers  -->
-                                    <button class="oclock-1">1</button>
-                                    <button class="oclock-2">2</button>
-                                    <button class="oclock-3">3</button>
-                                    <button class="oclock-4">4</button>
-                                    <button class="oclock-5">5</button>
-                                    <button class="oclock-6">6</button>
-                                    <button class="oclock-7">7</button>
-                                    <button class="oclock-8">8</button>
-                                    <button class="oclock-9">9</button>
-                                    <button class="oclock-10">10</button>
-                                    <button class="oclock-11">11</button>
-                                    <button class="oclock-12">12</button>
-                                    <div class="center-dot">•</div>
+                        <div class="modal-content">
+                            <div class="box-modal">
+                                <div class="parent-container time-showing-box"> 
+                                     <div class="child-container time-showing">
+                                        <button class="time-showing-detail-button">
+                                            <input class="time-showing-detail" type="text" placeholder="12" disabled>
+                                        </button>
+                                        <span>:</span>
+                                        <button class="time-showing-detail-button">
+                                            <input class="time-showing-detail" type="text" placeholder="00" disabled>
+                                        </button>
+                                        <button class="time-showing-mode" onclick="switchTime()">
+                                            Unit
+                                        </button>
+                                     </div>
                                 </div>
+                                <div class="parent-container clock-showing-box">
+                                    <div class="child-container clock-showing" id="minute">
+                                        <span id="in-minute">In minute</span>
+                                        <div class="center-dot">•</div>
+                                        <button class="oclock-1">5</button>
+                                        <button class="oclock-2">10</button>
+                                        <button class="oclock-3">15</button>
+                                        <button class="oclock-4">20</button>
+                                        <button class="oclock-5">25</button>
+                                        <button class="oclock-6">30</button>
+                                        <button class="oclock-7">35</button>
+                                        <button class="oclock-8">40</button>
+                                        <button class="oclock-9">45</button>
+                                        <button class="oclock-10">50</button>
+                                        <button class="oclock-11">55</button>
+                                        <button class="oclock-12">60</button>
+                                    </div>
 
+                                    <div class="child-container clock-showing" id="hour">
+                                        <span id="in-hour">In hour</span>
+                                        <div class="center-dot">•</div>
+                                        <button class="oclock-1">1</button>
+                                        <button class="oclock-2">2</button>
+                                        <button class="oclock-3">3</button>
+                                        <button class="oclock-4">4</button>
+                                        <button class="oclock-5">5</button>
+                                        <button class="oclock-6">6</button>
+                                        <button class="oclock-7">7</button>
+                                        <button class="oclock-8">8</button>
+                                        <button class="oclock-9">9</button>
+                                        <button class="oclock-10">10</button>
+                                        <button class="oclock-11">11</button>
+                                        <button class="oclock-12">12</button>
+                                    </div>
+                                </div>
                                 <div class="time-picker-block-buttons">
-                                    <button class="time-picker-buttons">
-                                        Clear
-                                    </button>
-                                    <button class="time-picker-buttons">
-                                        Save
-                                    </button>
+                                    <button class="time-picker-buttons"> Clear </button>
+                                    <button class="time-picker-buttons"> Save </button>
                                 </div>
                             </div>
                         </div>
-                        <button class="modal-close is-large"
-                            aria-label="close"></button>
+                        <button class="modal-close is-large" aria-label="close"></button>
                     </div>
-
                 </div>
 
                 <h4>Your chosen date and time:</h4>
 
                 <div class="field field-time-picker">
                     <p class="control has-icons-right">
-                        <input class="result" type="email"
-                            placeholder="Your date and time" disabled>
+                        <input class="result" type="text" placeholder="Your date and time" disabled>
                         <span class="icon icon-result is-small is-right">
                             <i class="fas fa-check"></i>
                         </span>
