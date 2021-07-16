@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
     <!-- Title Page -->
     <title>Time Picker</title>
@@ -68,30 +67,35 @@
                 </section>
                 <section>
                     <div>
-                        <a class="button menu-me-button">
-                            <span class="icon menu-me-icon">
-                                <i class="fas fa-user-circle"></i>
-                            </span>
-                            <span class="text menu-me-text">About me</span>
-                        </a>
-                    </div>
+                        <div class="dropdown about-me is-hoverable is-up">
+                            <div class="dropdown-trigger">
+                                <a class="button menu-me-button">
+                                    <span class="icon menu-me-icon">
+                                        <i class="fas fa-user-circle"></i>
+                                    </span>
+                                    <span class="text menu-me-text">About me</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="https://www.facebook.com/qhoangf/" class="button menu-me-web-button">
+                                        <span class="icon menu-me-icon">
+                                            <i class="fab fa-facebook"></i>
+                                        </span>
+                                        <span class="text menu-me-text">Facebook</span>
+                                    </a>
 
-                    <div>
-                        <a href="https://www.facebook.com/qhoangf/" class="button menu-me-button">
-                            <span class="icon menu-me-icon">
-                                <i class="fab fa-facebook"></i>
-                            </span>
-                            <span class="text menu-me-text">Facebook</span>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="https://www.instagram.com/qhoangf.msc/" class="button menu-me-button">
-                            <span class="icon menu-me-icon">
-                                <i class="fab fa-instagram"></i>
-                            </span>
-                            <span class="text menu-me-text">Instagram</span>
-                        </a>
+                                    <div>
+                                        <a href="https://www.instagram.com/qhoangf.msc/" class="button menu-me-web-button">
+                                            <span class="icon menu-me-icon">
+                                                <i class="fab fa-instagram"></i>
+                                            </span>
+                                            <span class="text menu-me-text">Instagram</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </aside>
@@ -119,13 +123,30 @@
                       </a>
                     </div>
 
-                    <div class="modal">
+                    <div class="modal is-active">
                         <div class="modal-background"></div>
                         <div class="modal-content clock-image">
                             <div>
-                                <p class="image">
-                                    <img src="../static/image/Clock.png">
-                                </p>
+                                <div class="time-picker-clock">
+                                    <!-- Dial / Clock face -->
+                                    <div class="dial"> </div>
+
+                                    <!-- Numbers  -->
+                                    <button class="oclock-1">1</button>
+                                    <button class="oclock-2">2</button>
+                                    <button class="oclock-3">3</button>
+                                    <button class="oclock-4">4</button>
+                                    <button class="oclock-5">5</button>
+                                    <button class="oclock-6">6</button>
+                                    <button class="oclock-7">7</button>
+                                    <button class="oclock-8">8</button>
+                                    <button class="oclock-9">9</button>
+                                    <button class="oclock-10">10</button>
+                                    <button class="oclock-11">11</button>
+                                    <button class="oclock-12">12</button>
+                                    <div class="center-dot">•</div>
+                                </div>
+
                                 <div class="time-picker-block-buttons">
                                     <button class="time-picker-buttons">
                                         Clear

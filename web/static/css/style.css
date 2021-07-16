@@ -18,7 +18,7 @@ header {
 header img {
   position: relative;
   top: 7px;
-  right: 90px;
+  right: 80px;
 }
 
 header span {
@@ -41,7 +41,7 @@ header span {
 }
 
 .tool-buttons{
-  height: calc(100vh - 133px - 160px);
+  height: calc(100vh - 133px - 75px);
 }
 
 .tool-text {
@@ -61,6 +61,7 @@ header span {
   background: inherit;
   border: none;
   padding: 0;
+  margin-bottom: 3px;
   justify-content: flex-start;
 }
 
@@ -89,7 +90,8 @@ header span {
 }
 
 .menu-me-button{
-  width: 180px;
+  height: 50px;
+  width: 200px;
   color: #000000;
   border-radius: 0;
   background: #4e4e4e;
@@ -124,6 +126,7 @@ header span {
 
 .right-body {
   font-size: 24px;
+  color:#8f8f8f;
   padding: 70px 50px 70px 50px;
   height: calc(100vh - 133px);
   width: calc(100vw - 205px);
@@ -144,7 +147,7 @@ header span {
   height: 30px;
   width: 200px;
 
-  font-size: 18px;
+  font-size: 20px;
   border: 1px solid #bfc0c4;
   margin: 10px 0px 50px 30px;
 }
@@ -214,10 +217,6 @@ button[class="time-picker-buttons"]:after {
   transition: all 1s;
 }
 
-.dropdown .is-hoverable {
-  transition: all 1s;
-}
-
 .dropdown-menu {
   padding: 0;
 }
@@ -228,4 +227,175 @@ button[class="time-picker-buttons"]:after {
 
 .dropdown-item {
   transition: 1s;;
+}
+
+.menu-me-web-button{
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.menu-me-web-button:focus,
+.menu-me-web-button:hover {
+  color: #ffffff;
+  background: transparent;
+  transition: all 1s;
+}
+
+.menu-me-web-button:focus,
+.menu-me-web-button:after {
+  color: #ffffff;
+  background: transparent;
+  transition: all 1s;
+}
+
+.time-picker-clock {
+  height: 260px;
+  width: 260px;
+  background: #bfc0c4;
+}
+
+/* About clock */
+.center-dot{
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+  bottom: 190px;
+  left: 115px;
+}
+
+.dial {
+  background: #ffffff;
+  border-radius: 50%;
+  height: 240px;
+  width: 240px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.oclock-1 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-2 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-3 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-4 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-5 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-6 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-7 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-8 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-9 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-10 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-11 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
+}
+
+.oclock-12 {
+  color: #000000;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+
+  position: relative;
 }
