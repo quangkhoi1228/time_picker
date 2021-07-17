@@ -186,7 +186,7 @@ header span {
   margin: 10px 0px 50px 30px;
 }
 
-.field-time-picker .control input[class="input"] {
+.choose-time {
   height: 28px;
   width: 167px;
   border: none;
@@ -203,13 +203,18 @@ header span {
   background: #a2a3a7;
 }
 
-.icon-result {
+.time-result {
   font-size: 11px;
-  height: 28px;
-  width: 22px;
-  border: none;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #bfc0c4;
   border-radius: 0%;
   background: #a2a3a7;
+  color: #000000;
+  display: flex;
+  font-size: 18px;
+  margin: 10px 0px 12px 30px;
+  padding: 0px 5px 0px 5px;
 }
 
 input[class="result"] {
@@ -237,16 +242,11 @@ input[class="result"] {
 
 .time-showing {
   background: transparent;
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.time-showing-detail-button {
-  text-align: center;
-  background: transparent;
-  border: none;
 }
 
 .time-showing-detail:focus,
@@ -270,7 +270,28 @@ input[class="result"] {
   border-radius: 50%;
 
   position: relative;
+  right: 3rem;
+}
+
+.time-showing-session {
+  width: 3rem;
+  height: 2rem;
+  color: #ffffff;
+  text-align: center;
+  background: transparent;
+  border: 1px outset #959595;
+
+  position: relative;
+  top: 0.6rem;
   left: 1rem;
+}
+
+.sessionAM {
+  display: block;
+}
+
+.sessionPM {
+  display: none;
 }
 
 .time-showing-mode:focus,
@@ -279,14 +300,36 @@ input[class="result"] {
   transition: all 1s;
 }
 
+.time-oclock {
+  display: flex;
+
+  position: relative;
+  top: 0.5rem;
+}
+
 .time-showing-detail {
   font-size: 1.5rem;
   color: #ffffff;
   text-align: center;
   height: 2rem;
   width: 2rem;
+  background: transparent;
+}
+
+.hourMode {
   border: none;
   background: transparent;
+
+  position: relative;
+  bottom: 0.3rem;
+}
+
+.minuteMode {
+  border: none;
+  background: transparent;
+
+  position: relative;
+  bottom: 0.3rem;
 }
 
 .clock-showing-box {

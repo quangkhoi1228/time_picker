@@ -119,7 +119,7 @@
 
                 <div class="field field-time-picker has-addons">
                     <div class="control">
-                        <input class="input" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉">
+                        <input class="result choose-time" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉" disabled>
                     </div>
 
                     <div class="control">
@@ -134,15 +134,25 @@
                             <div class="box-modal">
                                 <div class="parent-container time-showing-box"> 
                                      <div class="child-container time-showing">
-                                        <button class="time-showing-detail-button">
-                                            <input class="time-showing-detail" id="output-hour" placeholder="00" disabled>
-                                        </button>
-                                        <span>:</span>
-                                        <button class="time-showing-detail-button">
-                                            <input class="time-showing-detail" id="ouput-minute" placeholder="00" disabled>
-                                        </button>
                                         <button class="time-showing-mode" onclick="switchTime()">
                                             Unit
+                                        </button>
+
+                                        <div class="time-oclock">
+                                            <button class="hourMode" onclick="switchHour()">
+                                                <div class="time-showing-detail" id="outputHour">00</div>
+                                            </button>
+
+                                            <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                                            <button class="minuteMode" onclick="switchMinute()">
+
+                                                <div class="time-showing-detail" id="outputMinute">00</div>
+                                            </button>
+                                        </div>
+
+                                        <button class="time-showing-session" onclick="switchSession()">
+                                            <div class="sessionAM" id="outputSessionAM">AM</div>
+                                            <div class="sessionPM" id="outputSessionPM">PM</div>
                                         </button>
                                      </div>
                                 </div>
@@ -150,39 +160,39 @@
                                     <div class="child-container clock-showing" id="minute">
                                         <span id="in-minute">In-minute</span>
                                         <div class="center-dot">•</div>
-                                        <button class="oclock-1" onclick="savingMinute()" id="save-minute" value="5">5</button>
-                                        <button class="oclock-2" onclick="savingMinute()" id="save-minute" value="10">10</button>
-                                        <button class="oclock-3" onclick="savingMinute()" id="save-minute" value="15">15</button>
-                                        <button class="oclock-4" onclick="savingMinute()" id="save-minute" value="20">20</button>
-                                        <button class="oclock-5" onclick="savingMinute()" id="save-minute" value="25">25</button>
-                                        <button class="oclock-6" onclick="savingMinute()" id="save-minute" value="30">30</button>
-                                        <button class="oclock-7" onclick="savingMinute()" id="save-minute" value="35">35</button>
-                                        <button class="oclock-8" onclick="savingMinute()" id="save-minute" value="40">40</button>
-                                        <button class="oclock-9" onclick="savingMinute()" id="save-minute" value="45">45</button>
-                                        <button class="oclock-10" onclick="savingMinute()" id="save-minute" value="50">50</button>
-                                        <button class="oclock-11" onclick="savingMinute()" id="save-minute" value="55">55</button>
-                                        <button class="oclock-12" onclick="savingMinute()" id="save-minute" value="60">60</button>
+                                        <button class="oclock-1" id="saveMinute05" value="05">5</button>
+                                        <button class="oclock-2" id="saveMinute10" value="10">10</button>
+                                        <button class="oclock-3" id="saveMinute15" value="15">15</button>
+                                        <button class="oclock-4" id="saveMinute20" value="20">20</button>
+                                        <button class="oclock-5" id="saveMinute25" value="25">25</button>
+                                        <button class="oclock-6" id="saveMinute30" value="30">30</button>
+                                        <button class="oclock-7" id="saveMinute35" value="35">35</button>
+                                        <button class="oclock-8" id="saveMinute40" value="40">40</button>
+                                        <button class="oclock-9" id="saveMinute45" value="45">45</button>
+                                        <button class="oclock-10" id="saveMinute50" value="50">50</button>
+                                        <button class="oclock-11" id="saveMinute55" value="55">55</button>
+                                        <button class="oclock-12" id="saveMinute60" value="00">0</button>
                                     </div>
 
                                     <div class="child-container clock-showing" id="hour">
                                         <span id="in-hour">In-hour</span>
                                         <div class="center-dot">•</div>
-                                        <button class="oclock-1" onclick="savingHour()" id="save-hour" value="1">1</button>
-                                        <button class="oclock-2" onclick="savingHour()" id="save-hour" value="2">2</button>
-                                        <button class="oclock-3" onclick="savingHour()" id="save-hour" value="3">3</button>
-                                        <button class="oclock-4" onclick="savingHour()" id="save-hour" value="4">4</button>
-                                        <button class="oclock-5" onclick="savingHour()" id="save-hour" value="5">5</button>
-                                        <button class="oclock-6" onclick="savingHour()" id="save-hour" value="6">6</button>
-                                        <button class="oclock-7" onclick="savingHour()" id="save-hour" value="7">7</button>
-                                        <button class="oclock-8" onclick="savingHour()" id="save-hour" value="8">8</button>
-                                        <button class="oclock-9" onclick="savingHour()" id="save-hour" value="9">9</button>
-                                        <button class="oclock-10" onclick="savingHour()" id="save-hour" value="10">10</button>
-                                        <button class="oclock-11" onclick="savingHour()" id="save-hour" value="11">11</button>
-                                        <button class="oclock-12" onclick="savingHour()" id="save-hour" value="12">12</button>
+                                        <button class="oclock-1" id="saveHour01" value="01">1</button>
+                                        <button class="oclock-2" id="saveHour02" value="02">2</button>
+                                        <button class="oclock-3" id="saveHour03" value="03">3</button>
+                                        <button class="oclock-4" id="saveHour04" value="04">4</button>
+                                        <button class="oclock-5" id="saveHour05" value="05">5</button>
+                                        <button class="oclock-6" id="saveHour06" value="06">6</button>
+                                        <button class="oclock-7" id="saveHour07" value="07">7</button>
+                                        <button class="oclock-8" id="saveHour08" value="08">8</button>
+                                        <button class="oclock-9" id="saveHour09" value="09">9</button>
+                                        <button class="oclock-10" id="saveHour10" value="10">10</button>
+                                        <button class="oclock-11" id="saveHour11" value="11">11</button>
+                                        <button class="oclock-12" id="saveHour12" value="12">12</button>
                                     </div>
                                 </div>
                                 <div class="time-picker-block-buttons">
-                                    <button class="time-picker-buttons" onclick="clear()"> Clear </button>
+                                    <button class="time-picker-buttons" id="clearTime" value="00"> Clear </button>
                                     <button class="time-picker-buttons"> Save </button>
                                 </div>
                             </div>
@@ -193,14 +203,14 @@
 
                 <h4>Your chosen date and time:</h4>
 
-                <div class="field field-time-picker">
-                    <p class="control has-icons-right">
-                        <input class="result" type="text" placeholder="Your date and time" disabled>
-                        <span class="icon icon-result is-small is-right">
-                            <i class="fas fa-check"></i>
-                        </span>
-                    </p>
+                <div class="time-result">
+                    <div class="time-result-hour">--</div>
+                    &nbsp;:&nbsp;
+                    <div class="time-result-minute">--</div>
+                    &nbsp;&nbsp;
+                    <div class="time-result-session">--</div>
                 </div>
+
             </section>
         </div>
     </section>
