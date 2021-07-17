@@ -45,10 +45,6 @@ function switchMinute() {
     switchMinute.style.display = "block";
 }
 
-function switchMinute() {
-    
-}
-
 function switchTime() {
     var switchHour = document.getElementById("hour");
     var switchMinute = document.getElementById("minute");
