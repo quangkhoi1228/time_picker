@@ -75,57 +75,77 @@ $(document).ready(function(){
 
     // Clear time 
     document.getElementById("clearTime").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = clearTime.value
-        document.getElementById("outputMinute").innerHTML = clearTime.value
+        document.getElementById("outputHour").innerHTML = clearTime.value;
+        document.getElementById("outputMinute").innerHTML = clearTime.value;
+    });
+
+    // Save time 
+    document.getElementById("saveTime").addEventListener("click", function() {
+        var hour = document.getElementById("outputHour");
+        var minute = document.getElementById("outputMinute");
+        var outputSessionAM = document.getElementById("outputSessionAM");
+        var outputSessionPM = document.getElementById("outputSessionPM");
+
+        // Close modal 
+        $(".modal").removeClass("is-active");
+
+        // Output time outside 
+        if (outputSessionAM.style.display == "none") {
+            document.getElementById("resultSession").innerHTML = outputSessionPM.innerText;
+        } else {
+            document.getElementById("resultSession").innerHTML = outputSessionAM.innerText;
+        }
+        document.getElementById("resultHour").innerHTML = hour.innerText;
+        document.getElementById("resultMinute").innerHTML = minute.innerText;
     });
 
     // Saving hour and output hour 
     document.getElementById("saveHour01").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour01.value
+        document.getElementById("outputHour").innerHTML = saveHour01.value;
     });
 
     document.getElementById("saveHour02").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour02.value
+        document.getElementById("outputHour").innerHTML = saveHour02.value;
     });
 
     document.getElementById("saveHour03").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour03.value
+        document.getElementById("outputHour").innerHTML = saveHour03.value;
     });
 
     document.getElementById("saveHour04").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour04.value
+        document.getElementById("outputHour").innerHTML = saveHour04.value;
     });
 
     document.getElementById("saveHour05").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour05.value
+        document.getElementById("outputHour").innerHTML = saveHour05.value;
     });
     
     document.getElementById("saveHour06").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour06.value
+        document.getElementById("outputHour").innerHTML = saveHour06.value;
     });
 
     document.getElementById("saveHour07").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour07.value
+        document.getElementById("outputHour").innerHTML = saveHour07.value;
     });
 
     document.getElementById("saveHour08").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour08.value
+        document.getElementById("outputHour").innerHTML = saveHour08.value;
     });
 
     document.getElementById("saveHour09").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour09.value
+        document.getElementById("outputHour").innerHTML = saveHour09.value;
     });
 
     document.getElementById("saveHour10").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour10.value
+        document.getElementById("outputHour").innerHTML = saveHour10.value;
     });
 
     document.getElementById("saveHour11").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour11.value
+        document.getElementById("outputHour").innerHTML = saveHour11.value;
     });
 
     document.getElementById("saveHour12").addEventListener("click", function() {
-        document.getElementById("outputHour").innerHTML = saveHour12.value
+        document.getElementById("outputHour").innerHTML = saveHour12.value;
     });
 
     // Saving minute and output minute 
