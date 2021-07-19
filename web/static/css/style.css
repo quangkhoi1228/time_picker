@@ -2,6 +2,7 @@ body {
   background: #7d7e82;
   height: calc(100vh + 5px);
 }
+
 header {
   height: 133px;
   width: 100vw;
@@ -249,6 +250,22 @@ input[class="result"] {
   transform: translate(-50%, -50%);
 }
 
+.time-oclock {
+  display: flex;
+
+  position: relative;
+  top: 0.5rem;
+}
+
+.time-showing-detail {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  height: 2rem;
+  width: 2rem;
+  background: transparent;
+}
+
 .time-showing-detail:focus,
 .time-showing-detail:hover {
   background: #a2a3a7;
@@ -298,22 +315,6 @@ input[class="result"] {
 .time-showing-mode:hover {
   background: #4e4e4e;
   transition: all 1s;
-}
-
-.time-oclock {
-  display: flex;
-
-  position: relative;
-  top: 0.5rem;
-}
-
-.time-showing-detail {
-  font-size: 1.5rem;
-  color: #ffffff;
-  text-align: center;
-  height: 2rem;
-  width: 2rem;
-  background: transparent;
 }
 
 .hourMode {
@@ -372,6 +373,35 @@ button[class="time-picker-buttons"]:focus,
 button[class="time-picker-buttons"]:after {
   background-color: #d0d1d3;
   transition: all 1s;
+}
+
+.clock-showing button:focus,
+.clock-showing button:hover {
+  background: #6690d4;
+  transition: all 0.4s;
+}
+
+.clock-showing button:focus,
+.clock-showing button:after {
+  background: #4285f4;
+}
+
+span[id="in-hour"] {
+  display: block;
+
+  position: absolute;
+  top: 99%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+span[id="in-minute"] {
+  display: none;
+
+  position: absolute;
+  top: 99%;
+  left: 13%;
+  transform: translate(-50%, -50%);
 }
 
 .center-dot {
@@ -586,32 +616,846 @@ button[class="time-picker-buttons"]:after {
   transform: translate(-50%, -50%);
 }
 
-.clock-showing button:focus,
-.clock-showing button:hover {
-  background: #6690d4;
-  transition: all 0.8s;
-}
-
-.clock-showing button:focus,
-.clock-showing button:after {
-  background: #4285f4;
-  transition: all 0.8s;
-}
-
-span[id="in-hour"] {
-  display: block;
+.minute-step1 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
   position: absolute;
-  top: 99%;
-  left: 10%;
+  top: 11.6%;
+  left: 53.6%;
   transform: translate(-50%, -50%);
 }
 
-span[id="in-minute"] {
-  display: none;
+.minute-step2 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
 
   position: absolute;
-  top: 99%;
-  left: 13%;
+  top: 13.2%;
+  left: 57.2%;
   transform: translate(-50%, -50%);
+}
+
+.minute-step3 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 14.8%;
+  left: 60.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step4 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 16.4%;
+  left: 64.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step6 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 20.8%;
+  left: 70.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step7 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 23.6%;
+  left: 73.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step8 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 26.4%;
+  left: 76.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step9 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 29.2%;
+  left: 79.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step11 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 35.6%;
+  left: 83.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step12 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 39.2%;
+  left: 85.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step13 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 42.8%;
+  left: 86.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step14 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 46.4%;
+  left: 88.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step16 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 53.6%;
+  left: 88.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step17 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 57.2%;
+  left: 86.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step18 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 60.8%;
+  left: 85.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step19 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 64.4%;
+  left: 83.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step21 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 70.8%;
+  left: 79.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step22 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 73.6%;
+  left: 76.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step23 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 76.4%;
+  left: 73.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step24 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 79.2%;
+  left: 70.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step26 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 83.6%;
+  left: 64.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step27 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 85.2%;
+  left: 60.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step28 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 86.8%;
+  left: 57.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step29 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 88.4%;
+  left: 53.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step31 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 88.4%;
+  left: 46.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step32 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 86.8%;
+  left: 42.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step33 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 85.2%;
+  left: 39.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step34 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 83.6%;
+  left: 35.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step36 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 79.2%;
+  left: 29.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step37 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 76.4%;
+  left: 26.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step38 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 73.6%;
+  left: 23.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step39 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 70.8%;
+  left: 20.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step41 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 64.4%;
+  left: 16.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step42 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 60.8%;
+  left: 14.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step43 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 57.2%;
+  left: 13.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step44 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 53.6%;
+  left: 11.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step46 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 46.4%;
+  left: 11.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step47 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 42.8%;
+  left: 13.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step48 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 39.2%;
+  left: 14.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step49 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 35.6%;
+  left: 16.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step51 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 29.2%;
+  left: 20.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step52 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 26.4%;
+  left: 23.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step53 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 23.6%;
+  left: 26.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step54 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 20.8%;
+  left: 29.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step56 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 16.4%;
+  left: 35.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step57 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 14.8%;
+  left: 39.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step58 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 13.2%;
+  left: 42.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step59 {
+  color: #000000;
+  background: transparent;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+
+  position: absolute;
+  top: 11.6%;
+  left: 46.4%;
+  transform: translate(-50%, -50%);
+}
+
+.handle {
+  width: 0.25rem;
+  height: 6rem;
+  background: #000000;
+}
+
+.blank {
+  width: 0.25rem;
+  height: 6rem;
+  background: transparent;
+}
+
+.hour-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 10rem;
 }

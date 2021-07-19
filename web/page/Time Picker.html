@@ -144,6 +144,7 @@
                                             </button>
 
                                             <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                                            
                                             <button class="minuteMode" onclick="switchMinute()">
                                                 <div class="time-showing-detail" id="outputMinute">00</div>
                                             </button>
@@ -158,7 +159,12 @@
                                 <div class="parent-container clock-showing-box">
                                     <div class="child-container clock-showing" id="minute">
                                         <span id="in-minute">In-minute</span>
+                                        <div class="minute-handle" id="minuteHandle">
+                                            <div class="handle"></div>
+                                            <div class="blank"></div>
+                                        </div>
                                         <div class="center-dot">•</div>
+                                        <!-- Big steps  -->
                                         <button class="oclock-1" id="saveMinute05" value="05">5</button>
                                         <button class="oclock-2" id="saveMinute10" value="10">10</button>
                                         <button class="oclock-3" id="saveMinute15" value="15">15</button>
@@ -171,10 +177,69 @@
                                         <button class="oclock-10" id="saveMinute50" value="50">50</button>
                                         <button class="oclock-11" id="saveMinute55" value="55">55</button>
                                         <button class="oclock-12" id="saveMinute60" value="00">0</button>
+
+                                        <!-- Small steps -->
+                                        <button class="minute-step1" id="saveMinute01" value="01"></button>
+                                        <button class="minute-step2" id="saveMinute02" value="02"></button>
+                                        <button class="minute-step3" id="saveMinute03" value="03"></button>
+                                        <button class="minute-step4" id="saveMinute04" value="04"></button>
+                                        <button class="minute-step6" id="saveMinute06" value="06"></button>
+                                        <button class="minute-step7" id="saveMinute07" value="07"></button>
+                                        <button class="minute-step8" id="saveMinute08" value="08"></button>
+                                        <button class="minute-step9" id="saveMinute09" value="09"></button>
+
+                                        <button class="minute-step11" id="saveMinute11" value="11"></button>
+                                        <button class="minute-step12" id="saveMinute12" value="12"></button>
+                                        <button class="minute-step13" id="saveMinute13" value="13"></button>
+                                        <button class="minute-step14" id="saveMinute14" value="14"></button>
+                                        <button class="minute-step16" id="saveMinute16" value="16"></button>
+                                        <button class="minute-step17" id="saveMinute17" value="17"></button>
+                                        <button class="minute-step18" id="saveMinute18" value="18"></button>
+                                        <button class="minute-step19" id="saveMinute19" value="19"></button>
+
+                                        <button class="minute-step21" id="saveMinute21" value="21"></button>
+                                        <button class="minute-step22" id="saveMinute22" value="22"></button>
+                                        <button class="minute-step23" id="saveMinute23" value="23"></button>
+                                        <button class="minute-step24" id="saveMinute24" value="24"></button>
+                                        <button class="minute-step26" id="saveMinute26" value="26"></button>
+                                        <button class="minute-step27" id="saveMinute27" value="27"></button>
+                                        <button class="minute-step28" id="saveMinute28" value="28"></button>
+                                        <button class="minute-step29" id="saveMinute29" value="29"></button>
+
+                                        <button class="minute-step31" id="saveMinute31" value="31"></button>
+                                        <button class="minute-step32" id="saveMinute32" value="32"></button>
+                                        <button class="minute-step33" id="saveMinute33" value="33"></button>
+                                        <button class="minute-step34" id="saveMinute34" value="34"></button>
+                                        <button class="minute-step36" id="saveMinute36" value="36"></button>
+                                        <button class="minute-step37" id="saveMinute37" value="37"></button>
+                                        <button class="minute-step38" id="saveMinute38" value="38"></button>
+                                        <button class="minute-step39" id="saveMinute39" value="39"></button>
+
+                                        <button class="minute-step41" id="saveMinute41" value="41"></button>
+                                        <button class="minute-step42" id="saveMinute42" value="42"></button>
+                                        <button class="minute-step43" id="saveMinute43" value="43"></button>
+                                        <button class="minute-step44" id="saveMinute44" value="44"></button>
+                                        <button class="minute-step46" id="saveMinute46" value="46"></button>
+                                        <button class="minute-step47" id="saveMinute47" value="47"></button>
+                                        <button class="minute-step48" id="saveMinute48" value="48"></button>
+                                        <button class="minute-step49" id="saveMinute49" value="49"></button>
+
+                                        <button class="minute-step51" id="saveMinute51" value="51"></button>
+                                        <button class="minute-step52" id="saveMinute52" value="52"></button>
+                                        <button class="minute-step53" id="saveMinute53" value="53"></button>
+                                        <button class="minute-step54" id="saveMinute54" value="54"></button>
+                                        <button class="minute-step56" id="saveMinute56" value="56"></button>
+                                        <button class="minute-step57" id="saveMinute57" value="57"></button>
+                                        <button class="minute-step58" id="saveMinute58" value="58"></button>
+                                        <button class="minute-step59" id="saveMinute59" value="59"></button>
                                     </div>
 
                                     <div class="child-container clock-showing" id="hour">
                                         <span id="in-hour">In-hour</span>
+                                        <div class="hour-handle" id="hourHandle">
+                                            <div class="handle"></div>
+                                            <div class="blank"></div>
+                                        </div>
                                         <div class="center-dot">•</div>
                                         <button class="oclock-1" id="saveHour01" value="01">1</button>
                                         <button class="oclock-2" id="saveHour02" value="02">2</button>
@@ -200,7 +265,7 @@
                     </div>
                 </div>
 
-                <h4>Your chosen date and time:</h4>
+                <h4>Your chosen time:</h4>
 
                 <div class="time-result">
                     <div class="time-result-hour" id="resultHour">--</div>
