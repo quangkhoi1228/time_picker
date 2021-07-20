@@ -8,9 +8,10 @@ header {
   width: 100vw;
   margin: 0;
   padding: 20px 130px 20px 130px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   font-size: 50px;
-  background: linear-gradient(#383838,#555658);
+  background: linear-gradient(#383838, #555658);
   display: flex;
   justify-content: flex-start;
   margin-bottom: 5px;
@@ -35,13 +36,13 @@ header span {
 }
 
 .aside-bar {
-  width:225px !important;
+  width: 225px !important;
   height: calc(100vh - 133px);
   background: #4e4e4e;
   margin-right: 5px;
 }
 
-.tool-buttons{
+.tool-buttons {
   height: calc(100vh - 133px - 75px);
 }
 
@@ -55,7 +56,7 @@ header span {
   font-size: 14px;
 }
 
-.menu-button{
+.menu-button {
   width: 200px;
   color: #000000;
   border-radius: 0;
@@ -72,7 +73,7 @@ header span {
 }
 
 .menu-text {
-  color:#000000;
+  color: #000000;
   font-size: 14px;
 }
 
@@ -99,10 +100,10 @@ header span {
 }
 
 .dropdown-item {
-  transition: 1s;;
+  transition: 1s;
 }
 
-.menu-me-button{
+.menu-me-button {
   height: 50px;
   width: 200px;
   color: #000000;
@@ -119,7 +120,7 @@ header span {
 }
 
 .menu-me-text {
-  color:#000000;
+  color: #000000;
   font-size: 14px;
 }
 
@@ -137,7 +138,7 @@ header span {
   transition: all 1s;
 }
 
-.menu-me-web-button{
+.menu-me-web-button {
   border-radius: 0;
   background: transparent;
   border: none;
@@ -161,7 +162,7 @@ header span {
 
 .right-body {
   font-size: 24px;
-  color:#8f8f8f;
+  color: #8f8f8f;
   padding: 70px 50px 70px 50px;
   height: calc(100vh - 133px);
   width: calc(100vw - 205px);
@@ -171,7 +172,7 @@ header span {
 .items-right-body {
   height: 30px;
   width: 200px;
-  
+
   font-size: 18px;
   background: #a2a3a7;
   border: 1px solid #bfc0c4;
@@ -227,7 +228,6 @@ input[class="result"] {
   padding-left: 14px;
   font-size: 14px;
 }
-
 
 /* About clock */
 .modal-content {
@@ -359,7 +359,7 @@ input[class="result"] {
 .time-picker-buttons {
   height: 3rem;
   width: 50%;
-  border:none;
+  border: none;
   padding: 0;
   background: #828387;
 }
@@ -415,11 +415,22 @@ span[id="in-minute"] {
 }
 
 .center-dot {
+  /* color: #0000008f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
   color: #0000008f;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  justify-content: center;
+  background: #4285f4;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
 }
 
 .oclock-1 {
@@ -1486,7 +1497,7 @@ span[id="in-minute"] {
 }
 
 #hour .highlight p {
-  background-color:#4285f4;
+  background-color: #4285f4;
   color: #ffffff;
   height: 40px;
   width: 40px;
@@ -1499,7 +1510,7 @@ span[id="in-minute"] {
 }
 
 .big-steps .highlight p {
-  background-color:#4285f4;
+  background-color: #4285f4;
   color: #ffffff;
   height: 40px;
   width: 40px;
@@ -1512,7 +1523,7 @@ span[id="in-minute"] {
 }
 
 .small-steps .highlight p {
-  background-color:#4285f4;
+  background-color: #4285f4;
   height: 0.9375rem;
   width: 0.9375rem;
   padding: 0;
