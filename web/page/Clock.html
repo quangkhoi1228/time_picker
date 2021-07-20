@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title Page -->
+    <title>Time Picker</title>
+    <link rel="icon" href="../static/image/Clock Icon.png" type="icon">
+
+    <!-- Tool Library -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+        rel="stylesheet">
+    <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styleOfClock.css">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../static/js/all.min.js"></script>
+    <script src="../static/js/scriptOfClock.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../static/image/Clock Logo.png" height="65" width="65">
+            <span>TIME PICKER</span>
+        </div>
+    </header>
+
+    <section class="columns is-gapless">
+        <div class="body-part">
+            <aside class="column is-2 aside-bar">
+                <section class="tool-buttons">
+                    <div class="tool-text"> ABOUT PAGE </div>
+                    <div>
+                        <a href="../page/Time Picker.html"
+                            class="button menu-button">
+                            <span class="icon menu-icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <span class="text menu-text">Home Page</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <div class="dropdown">
+                            <div class="dropdown-trigger">
+                                <a class="button menu-button" id="launchDropdown" onclick="openDropdown()">
+                                    <span class="icon menu-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                    <span class="text menu-text">More</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu"
+                                role="menu">
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item">
+                                        Nothing is here !!
+                                    </a>
+
+                                    <a class="dropdown-item">
+                                        Nothing is here !?
+                                    </a>
+
+                                    <a class="dropdown-item">
+                                        Nothing is here ?!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <div class="dropdown about-me is-hoverable is-up">
+                            <div class="dropdown-trigger">
+                                <a class="button menu-me-button">
+                                    <span class="icon menu-me-icon">
+                                        <i class="fas fa-user-circle"></i>
+                                    </span>
+                                    <span class="text menu-me-text">About
+                                        me</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="https://www.facebook.com/qhoangf/" class="button menu-me-web-button">
+                                        <span class="icon menu-me-icon">
+                                            <i class="fab fa-facebook"></i>
+                                        </span>
+                                        <span class="text menu-me-text">Facebook</span>
+                                    </a>
+
+                                    <div>
+                                        <a href="https://www.instagram.com/qhoangf.msc/" class="button menu-me-web-button">
+                                            <span class="icon menu-me-icon">
+                                                <i class="fab fa-instagram"></i>
+                                            </span>
+                                            <span class="text menu-me-text">Instagram</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="right-body">
+                <h3>Using Time Picker mode below:</h3>
+
+                <div class="field field-time-picker has-addons">
+                    <div class="control">
+                        <input class="result choose-time" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉" disabled>
+                    </div>
+
+                    <div class="control">
+                        <a class="button button-time-picker" id="launchModal">
+                            <i class="fas fa-clock"></i>
+                        </a>
+                    </div>
+
+                    <div class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                            <div class="box-modal">
+                                <div class="parent-container time-showing-box"> 
+                                     <div class="child-container time-showing">
+                                        <button class="tooltip time-showing-mode" onclick="switchTime()">
+                                            Unit
+                                            <span class="tooltiptext">Change time unit</span>
+                                        </button>
+
+                                        <div class="time-oclock">
+                                            <button class="hourMode" onclick="switchHour()">
+                                                <div class="time-showing-detail" id="outputHour">00</div>
+                                            </button>
+
+                                            <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                                            
+                                            <button class="minuteMode" onclick="switchMinute()">
+                                                <div class="time-showing-detail" id="outputMinute">00</div>
+                                            </button>
+                                        </div>
+
+                                        <button class="time-showing-session" onclick="switchSession()">
+                                            <div class="sessionAM" id="outputSessionAM">AM</div>
+                                            <div class="sessionPM" id="outputSessionPM">PM</div>
+                                        </button>
+                                     </div>
+                                </div>
+                                <div class="parent-container clock-showing-box">
+                                    <div class="child-container clock-showing" id="minute">
+                                        <span id="in-minute">In-minute</span>
+                                        <div class="minute-handle" id="minuteHandle">
+                                            <div class="handle"></div>
+                                            <div class="blank"></div>
+                                        </div>
+                                        <div class="center-dot">•</div>
+                                        <!-- Big steps  -->
+                                        <button class="oclock-1" id="saveMinute05" data-color="#4285f4" value="05">5</button>
+                                        <button class="oclock-2" id="saveMinute10" value="10">10</button>
+                                        <button class="oclock-3" id="saveMinute15" value="15">15</button>
+                                        <button class="oclock-4" id="saveMinute20" value="20">20</button>
+                                        <button class="oclock-5" id="saveMinute25" value="25">25</button>
+                                        <button class="oclock-6" id="saveMinute30" value="30">30</button>
+                                        <button class="oclock-7" id="saveMinute35" value="35">35</button>
+                                        <button class="oclock-8" id="saveMinute40" value="40">40</button>
+                                        <button class="oclock-9" id="saveMinute45" value="45">45</button>
+                                        <button class="oclock-10" id="saveMinute50" value="50">50</button>
+                                        <button class="oclock-11" id="saveMinute55" value="55">55</button>
+                                        <button class="oclock-12" id="saveMinute60" value="00">0</button>
+
+                                        <!-- Small steps -->
+                                        <button class="minute-step1" id="saveMinute01" value="01"></button>
+                                        <button class="minute-step2" id="saveMinute02" value="02"></button>
+                                        <button class="minute-step3" id="saveMinute03" value="03"></button>
+                                        <button class="minute-step4" id="saveMinute04" value="04"></button>
+                                        <button class="minute-step6" id="saveMinute06" value="06"></button>
+                                        <button class="minute-step7" id="saveMinute07" value="07"></button>
+                                        <button class="minute-step8" id="saveMinute08" value="08"></button>
+                                        <button class="minute-step9" id="saveMinute09" value="09"></button>
+
+                                        <button class="minute-step11" id="saveMinute11" value="11"></button>
+                                        <button class="minute-step12" id="saveMinute12" value="12"></button>
+                                        <button class="minute-step13" id="saveMinute13" value="13"></button>
+                                        <button class="minute-step14" id="saveMinute14" value="14"></button>
+                                        <button class="minute-step16" id="saveMinute16" value="16"></button>
+                                        <button class="minute-step17" id="saveMinute17" value="17"></button>
+                                        <button class="minute-step18" id="saveMinute18" value="18"></button>
+                                        <button class="minute-step19" id="saveMinute19" value="19"></button>
+
+                                        <button class="minute-step21" id="saveMinute21" value="21"></button>
+                                        <button class="minute-step22" id="saveMinute22" value="22"></button>
+                                        <button class="minute-step23" id="saveMinute23" value="23"></button>
+                                        <button class="minute-step24" id="saveMinute24" value="24"></button>
+                                        <button class="minute-step26" id="saveMinute26" value="26"></button>
+                                        <button class="minute-step27" id="saveMinute27" value="27"></button>
+                                        <button class="minute-step28" id="saveMinute28" value="28"></button>
+                                        <button class="minute-step29" id="saveMinute29" value="29"></button>
+
+                                        <button class="minute-step31" id="saveMinute31" value="31"></button>
+                                        <button class="minute-step32" id="saveMinute32" value="32"></button>
+                                        <button class="minute-step33" id="saveMinute33" value="33"></button>
+                                        <button class="minute-step34" id="saveMinute34" value="34"></button>
+                                        <button class="minute-step36" id="saveMinute36" value="36"></button>
+                                        <button class="minute-step37" id="saveMinute37" value="37"></button>
+                                        <button class="minute-step38" id="saveMinute38" value="38"></button>
+                                        <button class="minute-step39" id="saveMinute39" value="39"></button>
+
+                                        <button class="minute-step41" id="saveMinute41" value="41"></button>
+                                        <button class="minute-step42" id="saveMinute42" value="42"></button>
+                                        <button class="minute-step43" id="saveMinute43" value="43"></button>
+                                        <button class="minute-step44" id="saveMinute44" value="44"></button>
+                                        <button class="minute-step46" id="saveMinute46" value="46"></button>
+                                        <button class="minute-step47" id="saveMinute47" value="47"></button>
+                                        <button class="minute-step48" id="saveMinute48" value="48"></button>
+                                        <button class="minute-step49" id="saveMinute49" value="49"></button>
+
+                                        <button class="minute-step51" id="saveMinute51" value="51"></button>
+                                        <button class="minute-step52" id="saveMinute52" value="52"></button>
+                                        <button class="minute-step53" id="saveMinute53" value="53"></button>
+                                        <button class="minute-step54" id="saveMinute54" value="54"></button>
+                                        <button class="minute-step56" id="saveMinute56" value="56"></button>
+                                        <button class="minute-step57" id="saveMinute57" value="57"></button>
+                                        <button class="minute-step58" id="saveMinute58" value="58"></button>
+                                        <button class="minute-step59" id="saveMinute59" value="59"></button>
+                                    </div>
+
+                                    <div class="child-container clock-showing" id="hour">
+                                        <span id="in-hour">In-hour</span>
+                                        <div class="hour-handle" id="hourHandle">
+                                            <div class="handle"></div>
+                                            <div class="blank"></div>
+                                        </div>
+                                        <div class="center-dot">•</div>
+                                        <button class="oclock-1" id="saveHour01" data-color="blue" value="01">
+                                            <div><p>1</p></div>
+                                        </button>
+                                        <button class="oclock-2" id="saveHour02" data-color="#4285f4" value="02">2</button>
+                                        <button class="oclock-3" id="saveHour03" value="03">3</button>
+                                        <button class="oclock-4" id="saveHour04" value="04">4</button>
+                                        <button class="oclock-5" id="saveHour05" value="05">5</button>
+                                        <button class="oclock-6" id="saveHour06" value="06">6</button>
+                                        <button class="oclock-7" id="saveHour07" value="07">7</button>
+                                        <button class="oclock-8" id="saveHour08" value="08">8</button>
+                                        <button class="oclock-9" id="saveHour09" value="09">9</button>
+                                        <button class="oclock-10" id="saveHour10" value="10">10</button>
+                                        <button class="oclock-11" id="saveHour11" data-color="blue" value="11">
+                                            <div id="blue11"><p>11</p></div>
+                                        </button>
+                                        <button class="oclock-12" id="saveHour12" data-color="blue" value="12">
+                                            <div id="blue12"><p>12</p></div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="time-picker-block-buttons">
+                                    <button class="time-picker-buttons" id="clearTime" value="00"> Clear </button>
+                                    <button class="time-picker-buttons" id="saveTime"> Save </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="modal-close is-large" aria-label="close"></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</body>
+
+</html>
