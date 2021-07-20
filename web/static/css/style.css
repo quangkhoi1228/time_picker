@@ -1443,13 +1443,13 @@ span[id="in-minute"] {
 }
 
 .handle {
-  width: 0.25rem;
+  width: 0.1rem;
   height: 7rem;
   background: #4285f4;
 }
 
 .blank {
-  width: 0.25rem;
+  width: 0.1rem;
   height: 7rem;
   background: transparent;
 }
@@ -1479,7 +1479,6 @@ span[id="in-minute"] {
 
   position: absolute;
   z-index: 1;
-  top: 60%;
 }
 
 .tooltip:hover .tooltiptext {

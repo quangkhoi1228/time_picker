@@ -386,7 +386,7 @@ $(document).ready(function(){
     // Saving minute (small-steps) and output minute 
     document.getElementById("saveMinute01").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(6deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(5.5deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute01.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -396,7 +396,7 @@ $(document).ready(function(){
  
     document.getElementById("saveMinute02").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(12deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(11.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute02.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -406,7 +406,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute03").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(18deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(17.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute03.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -416,7 +416,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute04").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(24deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(23.5deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute04.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -426,7 +426,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute06").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(36deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(35.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute06.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -436,7 +436,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute07").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(42deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(42.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute07.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -446,7 +446,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute08").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(48deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(48.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute08.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -456,7 +456,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute09").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(54deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(55deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute09.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -466,7 +466,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute11").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(66deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(66.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute11.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -476,7 +476,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute12").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(72deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(73deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute12.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -486,7 +486,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute13").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(78deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(79.1deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute13.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -496,7 +496,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute14").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(84deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(85.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute14.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -506,7 +506,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute16").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(96deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(95.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute16.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -516,7 +516,7 @@ $(document).ready(function(){
  
     document.getElementById("saveMinute17").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(102deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(101.1deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute17.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -526,7 +526,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute18").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(108deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(107.1deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute18.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -536,7 +536,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute19").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(114deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(113.3deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute19.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -546,7 +546,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute21").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(126deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(125.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute21.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -576,7 +576,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute24").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(144deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(145deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute24.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -586,7 +586,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute26").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(156deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(156.9deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute26.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -596,7 +596,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute27").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(162deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(163deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute27.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -606,7 +606,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute28").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(168deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(169deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute28.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -616,7 +616,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute29").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(174deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(174.7deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute29.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -626,7 +626,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute31").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(186deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(185deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute31.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -636,7 +636,7 @@ $(document).ready(function(){
  
     document.getElementById("saveMinute32").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(192deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(190.7deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute32.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -646,7 +646,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute33").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(198deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(196.7deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute33.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -656,7 +656,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute34").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(204deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(202.7deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute34.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -666,7 +666,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute36").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(216deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(214.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute36.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -676,7 +676,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute37").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(222deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(221.4deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute37.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -686,7 +686,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute38").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(228deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(227.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute38.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -696,7 +696,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute39").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(234deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(234.4deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute39.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -706,7 +706,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute41").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(246deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(246.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute41.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -716,7 +716,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute42").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(252deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(252.8deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute42.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -726,7 +726,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute43").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(258deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(259deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute43.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -736,7 +736,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute44").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(264deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(264.7deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute44.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -746,7 +746,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute46").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(276deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(275.4deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute46.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -756,7 +756,7 @@ $(document).ready(function(){
  
     document.getElementById("saveMinute47").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(282deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(281.1deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute47.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -766,7 +766,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute48").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(288deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(287.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute48.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -776,7 +776,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute49").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(294deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(293.4deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute49.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -786,7 +786,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute51").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(306deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(305.2deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute51.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -796,7 +796,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute52").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(312deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(311.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute52.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -816,7 +816,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute54").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(324deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(324.6deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute54.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -826,7 +826,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute56").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(336deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(336.8deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute56.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -836,7 +836,7 @@ $(document).ready(function(){
     
     document.getElementById("saveMinute57").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(342deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(343deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute57.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -846,7 +846,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute58").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(348deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(349.1deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute58.value;
 
         $('.small-steps > button > div').removeClass('highlight');
@@ -856,7 +856,7 @@ $(document).ready(function(){
 
     document.getElementById("saveMinute59").addEventListener("click", function() {
         var minuteHandle = document.getElementById("minuteHandle");
-        minuteHandle.style.transform = "translate(-50%, -50%) rotate(354deg)";
+        minuteHandle.style.transform = "translate(-50%, -50%) rotate(354.8deg)";
         document.getElementById("outputMinute").innerHTML = saveMinute59.value;
 
         $('.small-steps > button > div').removeClass('highlight');
