@@ -21,7 +21,7 @@
     <header>
         <div>
             <img src="../static/image/Clock Logo.png" height="65" width="65">
-            <span>TIME PICKER</span>
+            <span class="page-title">TIME PICKER</span>
         </div>
     </header>
 
@@ -79,8 +79,7 @@
                                     <span class="icon menu-me-icon">
                                         <i class="fas fa-user-circle"></i>
                                     </span>
-                                    <span class="text menu-me-text">About
-                                        me</span>
+                                    <span class="text menu-me-text">About me</span>
                                 </a>
                             </div>
                             <div class="dropdown-menu" id="dropdown-menu"
@@ -127,8 +126,7 @@
                 <div class="field field-time-picker has-addons">
                     <div class="control">
                         <input class="result choose-time" type="text"
-                            placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉"
-                            disabled>
+                            placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉" disabled>
                     </div>
 
                     <div class="control">
@@ -177,7 +175,7 @@
 
                             <div class="parent-container clock-showing-box">
                                 <div class="child-container clock-showing"
-                                    id="minute">
+                                    id="minute" onmousedown="mouseDown()" onmouseup="mouseUp()">
                                     <span id="in-minute">In-minute</span>
                                     <div class="minute-handle"
                                         id="minuteHandle">
@@ -186,7 +184,6 @@
                                     </div>
                                     <div class="center-dot"></div>
 
-                                    <!-- <div class="center-dot">•</div> -->
                                     <!-- Big steps  -->
                                     <div class="big-steps">
                                         <button class="oclock-1"
@@ -622,13 +619,13 @@
                                 </div>
 
                                 <div class="child-container clock-showing"
-                                    id="hour">
+                                    id="hour" onmousedown="mouseDown()" onmouseup="mouseUp()">
                                     <span id="in-hour">In-hour</span>
                                     <div class="hour-handle" id="hourHandle">
                                         <div class="handle"></div>
                                         <div class="blank"></div>
                                     </div>
-                                    <!-- <div class="center-dot">•</div> -->
+
                                     <div class="center-dot"></div>
                                     <button class="oclock-1" id="saveHour01"
                                         data-color="blue" value="01">

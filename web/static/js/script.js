@@ -864,3 +864,19 @@ $(document).ready(function(){
         $('#' + $(this).data('color') +"Minute59").addClass("highlight");
     });
 });
+
+function mouseDown() {
+    if (document.getElementById("hour").style.display=="block") {
+        document.getElementById("hour").style.cursor = "move";
+    } else {
+        document.getElementById("minute").style.cursor = "move";
+    }
+}
+  
+function mouseUp() {
+    if (document.getElementById("hour").style.display=="block") {
+        document.getElementById("hour").style.cursor = "default";
+    } else {
+        document.getElementById("minute").style.cursor = "default";
+    }
+}
