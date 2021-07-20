@@ -230,14 +230,15 @@ input[class="result"] {
 
 
 /* About clock */
-.box-modal {
+.modal-content {
   width: 20rem;
-  margin: auto;
 }
 
 .time-showing-box {
   height: 5rem;
   background: #303030;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
   position: relative;
 }
 
@@ -361,6 +362,14 @@ input[class="result"] {
   border:none;
   padding: 0;
   background: #828387;
+}
+
+button[id="clearTime"] {
+  border-bottom-left-radius: 1.5rem;
+}
+
+button[id="saveTime"] {
+  border-bottom-right-radius: 1.5rem;
 }
 
 button[class="time-picker-buttons"]:focus,

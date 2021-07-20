@@ -91,10 +91,23 @@ $(document).ready(function(){
         $(".modal").removeClass("is-active");
     });
 
+    $(".modal-background").click(function() {
+        $(".modal").removeClass("is-active");
+    });
+
     // Clear time 
     document.getElementById("clearTime").addEventListener("click", function() {
         var hourHandle = document.getElementById("hourHandle");
         var minuteHandle = document.getElementById("minuteHandle");
+        var switchHour = document.getElementById("hour");
+        var switchMinute = document.getElementById("minute");
+        var switchHourText = document.getElementById("in-hour");
+        var switchMinuteText = document.getElementById("in-minute");
+    
+        switchHourText.style.display = "block";
+        switchMinuteText.style.display = "none";
+        switchHour.style.display = "block";
+        switchMinute.style.display = "none";
         hourHandle.style.transform = "translate(-50%, -50%) rotate(360deg)";
         minuteHandle.style.transform = "translate(-50%, -50%) rotate(360deg)";
 

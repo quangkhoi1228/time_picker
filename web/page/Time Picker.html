@@ -131,283 +131,282 @@
                     <div class="modal">
                         <div class="modal-background"></div>
                         <div class="modal-content">
-                            <div class="box-modal">
-                                <div class="parent-container time-showing-box"> 
-                                     <div class="child-container time-showing">
-                                        <button class="tooltip time-showing-mode" onclick="switchTime()">
-                                            Unit
-                                            <span class="tooltiptext">Change time unit</span>
+                            <div class="parent-container time-showing-box"> 
+                                 <div class="child-container time-showing">
+                                    <button class="tooltip time-showing-mode" onclick="switchTime()">
+                                        Unit
+                                        <span class="tooltiptext">Change time unit</span>
+                                    </button>
+
+                                    <div class="time-oclock">
+                                        <button class="hourMode" onclick="switchHour()">
+                                            <div class="time-showing-detail" id="outputHour">00</div>
                                         </button>
 
-                                        <div class="time-oclock">
-                                            <button class="hourMode" onclick="switchHour()">
-                                                <div class="time-showing-detail" id="outputHour">00</div>
-                                            </button>
-
-                                            <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
-                                            
-                                            <button class="minuteMode" onclick="switchMinute()">
-                                                <div class="time-showing-detail" id="outputMinute">00</div>
-                                            </button>
-                                        </div>
-
-                                        <button class="time-showing-session" onclick="switchSession()">
-                                            <div class="sessionAM" id="outputSessionAM">AM</div>
-                                            <div class="sessionPM" id="outputSessionPM">PM</div>
+                                        <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                                        
+                                        <button class="minuteMode" onclick="switchMinute()">
+                                            <div class="time-showing-detail" id="outputMinute">00</div>
                                         </button>
-                                     </div>
-                                </div>
-                                <div class="parent-container clock-showing-box">
-                                    <div class="child-container clock-showing" id="minute">
-                                        <span id="in-minute">In-minute</span>
-                                        <div class="minute-handle" id="minuteHandle">
-                                            <div class="handle"></div>
-                                            <div class="blank"></div>
-                                        </div>
-                                        <div class="center-dot">•</div>
-                                        <!-- Big steps  -->
-                                        <div class="big-steps">
-                                            <button class="oclock-1" id="saveMinute05" data-color="blue" value="05">
-                                                <div id="blueMinute05"><p>5</p></div>
-                                            </button>
-                                            <button class="oclock-2" id="saveMinute10" data-color="blue" value="10">
-                                                <div id="blueMinute10"><p>10</p></div>
-                                            </button>
-                                            <button class="oclock-3" id="saveMinute15" data-color="blue" value="15">
-                                                <div id="blueMinute15"><p>15</p></div>
-                                            </button>
-                                            <button class="oclock-4" id="saveMinute20" data-color="blue" value="20">
-                                                <div id="blueMinute20"><p>20</p></div>
-                                            </button>
-                                            <button class="oclock-5" id="saveMinute25" data-color="blue" value="25">
-                                                <div id="blueMinute25"><p>25</p></div>
-                                            </button>
-                                            <button class="oclock-6" id="saveMinute30" data-color="blue" value="30">
-                                                <div id="blueMinute30"><p>30</p></div>
-                                            </button>
-                                            <button class="oclock-7" id="saveMinute35" data-color="blue" value="35">
-                                                <div id="blueMinute35"><p>35</p></div>
-                                            </button>
-                                            <button class="oclock-8" id="saveMinute40" data-color="blue" value="40">
-                                                <div id="blueMinute40"><p>40</p></div>
-                                            </button>
-                                            <button class="oclock-9" id="saveMinute45" data-color="blue" value="45">
-                                                <div id="blueMinute45"><p>45</p></div>
-                                            </button>
-                                            <button class="oclock-10" id="saveMinute50" data-color="blue" value="50">
-                                                <div id="blueMinute50"><p>50</p></div>
-                                            </button>
-                                            <button class="oclock-11" id="saveMinute55" data-color="blue" value="55">
-                                                <div id="blueMinute55"><p>55</p></div>
-                                            </button>
-                                            <button class="oclock-12" id="saveMinute60" data-color="blue" value="00">
-                                                <div id="blueMinute60"><p>0</p></div>
-                                            </button>
-                                        </div>
-
-                                        <!-- Small steps -->
-                                        <div class="small-steps">
-                                            <button class="minute-step1" id="saveMinute01" data-color="blue" value="01">
-                                                <div id="blueMinute01"><p></p></div>
-                                            </button>
-                                            <button class="minute-step2" id="saveMinute02" data-color="blue" value="02">
-                                                <div id="blueMinute02"><p></p></div>
-                                            </button>
-                                            <button class="minute-step3" id="saveMinute03" data-color="blue" value="03">
-                                                <div id="blueMinute03"><p></p></div>
-                                            </button>
-                                            <button class="minute-step4" id="saveMinute04" data-color="blue" value="04">
-                                                <div id="blueMinute04"><p></p></div>
-                                            </button>
-                                            <button class="minute-step6" id="saveMinute06" data-color="blue" value="06">
-                                                <div id="blueMinute06"><p></p></div>
-                                            </button>
-                                            <button class="minute-step7" id="saveMinute07" data-color="blue" value="07">
-                                                <div id="blueMinute07"><p></p></div>
-                                            </button>
-                                            <button class="minute-step8" id="saveMinute08" data-color="blue" value="08">
-                                                <div id="blueMinute08"><p></p></div>
-                                            </button>
-                                            <button class="minute-step9" id="saveMinute09" data-color="blue" value="09">
-                                                <div id="blueMinute09"><p></p></div>
-                                            </button>
-
-                                            <button class="minute-step11" id="saveMinute11" data-color="blue" value="11">
-                                                <div id="blueMinute11"><p></p></div>
-                                            </button>
-                                            <button class="minute-step12" id="saveMinute12" data-color="blue" value="12">
-                                                <div id="blueMinute12"><p></p></div>
-                                            </button>
-                                            <button class="minute-step13" id="saveMinute13" data-color="blue" value="13">
-                                                <div id="blueMinute13"><p></p></div>
-                                            </button>
-                                            <button class="minute-step14" id="saveMinute14" data-color="blue" value="14">
-                                                <div id="blueMinute14"><p></p></div>
-                                            </button>
-                                            <button class="minute-step16" id="saveMinute16" data-color="blue" value="16">
-                                                <div id="blueMinute16"><p></p></div>
-                                            </button>
-                                            <button class="minute-step17" id="saveMinute17" data-color="blue" value="17">
-                                                <div id="blueMinute17"><p></p></div>
-                                            </button>
-                                            <button class="minute-step18" id="saveMinute18" data-color="blue" value="18">
-                                                <div id="blueMinute18"><p></p></div>
-                                            </button>
-                                            <button class="minute-step19" id="saveMinute19" data-color="blue" value="19">
-                                                <div id="blueMinute19"><p></p></div>
-                                            </button>
-
-                                            <button class="minute-step21" id="saveMinute21" data-color="blue" value="21">
-                                                <div id="blueMinute21"><p></p></div>
-                                            </button>
-                                            <button class="minute-step22" id="saveMinute22" data-color="blue" value="22">
-                                                <div id="blueMinute22"><p></p></div>
-                                            </button>
-                                            <button class="minute-step23" id="saveMinute23" data-color="blue" value="23">
-                                                <div id="blueMinute23"><p></p></div>
-                                            </button>
-                                            <button class="minute-step24" id="saveMinute24" data-color="blue" value="24">
-                                                <div id="blueMinute24"><p></p></div>
-                                            </button>
-                                            <button class="minute-step26" id="saveMinute26" data-color="blue" value="26">
-                                                <div id="blueMinute26"><p></p></div>
-                                            </button>
-                                            <button class="minute-step27" id="saveMinute27" data-color="blue" value="27">
-                                                <div id="blueMinute27"><p></p></div>
-                                            </button>
-                                            <button class="minute-step28" id="saveMinute28" data-color="blue" value="28">
-                                                <div id="blueMinute28"><p></p></div>
-                                            </button>
-                                            <button class="minute-step29" id="saveMinute29" data-color="blue" value="29">
-                                                <div id="blueMinute29"><p></p></div>
-                                            </button>
-
-                                            <button class="minute-step31" id="saveMinute31" data-color="blue" value="31">
-                                                <div id="blueMinute31"><p></p></div>
-                                            </button>
-                                            <button class="minute-step32" id="saveMinute32" data-color="blue" value="32">
-                                                <div id="blueMinute32"><p></p></div>
-                                            </button>
-                                            <button class="minute-step33" id="saveMinute33" data-color="blue" value="33">
-                                                <div id="blueMinute33"><p></p></div>
-                                            </button>
-                                            <button class="minute-step34" id="saveMinute34" data-color="blue" value="34">
-                                                <div id="blueMinute34"><p></p></div>
-                                            </button>
-                                            <button class="minute-step36" id="saveMinute36" data-color="blue" value="36">
-                                                <div id="blueMinute36"><p></p></div>
-                                            </button>
-                                            <button class="minute-step37" id="saveMinute37" data-color="blue" value="37">
-                                                <div id="blueMinute37"><p></p></div>
-                                            </button>
-                                            <button class="minute-step38" id="saveMinute38" data-color="blue" value="38">
-                                                <div id="blueMinute38"><p></p></div>
-                                            </button>
-                                            <button class="minute-step39" id="saveMinute39" data-color="blue" value="39">
-                                                <div id="blueMinute39"><p></p></div>
-                                            </button>
-
-                                            <button class="minute-step41" id="saveMinute41" data-color="blue" value="41">
-                                                <div id="blueMinute41"><p></p></div>
-                                            </button>
-                                            <button class="minute-step42" id="saveMinute42" data-color="blue" value="42">
-                                                <div id="blueMinute42"><p></p></div>
-                                            </button>
-                                            <button class="minute-step43" id="saveMinute43" data-color="blue" value="43">
-                                                <div id="blueMinute43"><p></p></div>
-                                            </button>
-                                            <button class="minute-step44" id="saveMinute44" data-color="blue" value="44">
-                                                <div id="blueMinute44"><p></p></div>
-                                            </button>
-                                            <button class="minute-step46" id="saveMinute46" data-color="blue" value="46">
-                                                <div id="blueMinute46"><p></p></div>
-                                            </button>
-                                            <button class="minute-step47" id="saveMinute47" data-color="blue" value="47">
-                                                <div id="blueMinute47"><p></p></div>
-                                            </button>
-                                            <button class="minute-step48" id="saveMinute48" data-color="blue" value="48">
-                                                <div id="blueMinute48"><p></p></div>
-                                            </button>
-                                            <button class="minute-step49" id="saveMinute49" data-color="blue" value="49">
-                                                <div id="blueMinute49"><p></p></div>
-                                            </button>
-
-                                            <button class="minute-step51" id="saveMinute51" data-color="blue" value="51">
-                                                <div id="blueMinute51"><p></p></div>
-                                            </button>
-                                            <button class="minute-step52" id="saveMinute52" data-color="blue" value="52">
-                                                <div id="blueMinute52"><p></p></div>
-                                            </button>
-                                            <button class="minute-step53" id="saveMinute53" data-color="blue" value="53">
-                                                <div id="blueMinute53"><p></p></div>
-                                            </button>
-                                            <button class="minute-step54" id="saveMinute54" data-color="blue" value="54">
-                                                <div id="blueMinute54"><p></p></div>
-                                            </button>
-                                            <button class="minute-step56" id="saveMinute56" data-color="blue" value="56">
-                                                <div id="blueMinute56"><p></p></div>
-                                            </button>
-                                            <button class="minute-step57" id="saveMinute57" data-color="blue" value="57">
-                                                <div id="blueMinute57"><p></p></div>
-                                            </button>
-                                            <button class="minute-step58" id="saveMinute58" data-color="blue" value="58">
-                                                <div id="blueMinute58"><p></p></div>
-                                            </button>
-                                            <button class="minute-step59" id="saveMinute59" data-color="blue" value="59">
-                                                <div id="blueMinute59"><p></p></div>
-                                            </button>
-                                        </div>
                                     </div>
 
-                                    <div class="child-container clock-showing" id="hour">
-                                        <span id="in-hour">In-hour</span>
-                                        <div class="hour-handle" id="hourHandle">
-                                            <div class="handle"></div>
-                                            <div class="blank"></div>
-                                        </div>
-                                        <div class="center-dot">•</div>
-                                        <button class="oclock-1" id="saveHour01" data-color="blue" value="01">
-                                            <div id="blueHour01"><p>1</p></div>
+                                    <button class="time-showing-session" onclick="switchSession()">
+                                        <div class="sessionAM" id="outputSessionAM">AM</div>
+                                        <div class="sessionPM" id="outputSessionPM">PM</div>
+                                    </button>
+                                 </div>
+                            </div>
+                            
+                            <div class="parent-container clock-showing-box">
+                                <div class="child-container clock-showing" id="minute">
+                                    <span id="in-minute">In-minute</span>
+                                    <div class="minute-handle" id="minuteHandle">
+                                        <div class="handle"></div>
+                                        <div class="blank"></div>
+                                    </div>
+                                    <div class="center-dot">•</div>
+                                    <!-- Big steps  -->
+                                    <div class="big-steps">
+                                        <button class="oclock-1" id="saveMinute05" data-color="blue" value="05">
+                                            <div id="blueMinute05"><p>5</p></div>
                                         </button>
-                                        <button class="oclock-2" id="saveHour02" data-color="blue" value="02">
-                                            <div id="blueHour02"><p>2</p></div>
+                                        <button class="oclock-2" id="saveMinute10" data-color="blue" value="10">
+                                            <div id="blueMinute10"><p>10</p></div>
                                         </button>
-                                        <button class="oclock-3" id="saveHour03" data-color="blue" value="03">
-                                            <div id="blueHour03"><p>3</p></div>
+                                        <button class="oclock-3" id="saveMinute15" data-color="blue" value="15">
+                                            <div id="blueMinute15"><p>15</p></div>
                                         </button>
-                                        <button class="oclock-4" id="saveHour04" data-color="blue" value="04">
-                                            <div id="blueHour04"><p>4</p></div>
+                                        <button class="oclock-4" id="saveMinute20" data-color="blue" value="20">
+                                            <div id="blueMinute20"><p>20</p></div>
                                         </button>
-                                        <button class="oclock-5" id="saveHour05" data-color="blue" value="05">
-                                            <div id="blueHour05"><p>5</p></div>
+                                        <button class="oclock-5" id="saveMinute25" data-color="blue" value="25">
+                                            <div id="blueMinute25"><p>25</p></div>
                                         </button>
-                                        <button class="oclock-6" id="saveHour06" data-color="blue" value="06">
-                                            <div id="blueHour06"><p>6</p></div>
+                                        <button class="oclock-6" id="saveMinute30" data-color="blue" value="30">
+                                        <div id="blueMinute30"><p>30</p></div>
                                         </button>
-                                        <button class="oclock-7" id="saveHour07" data-color="blue" value="07">
-                                            <div id="blueHour07"><p>7</p></div>
+                                        <button class="oclock-7" id="saveMinute35" data-color="blue" value="35">
+                                            <div id="blueMinute35"><p>35</p></div>
                                         </button>
-                                        <button class="oclock-8" id="saveHour08" data-color="blue" value="08">
-                                            <div id="blueHour08"><p>8</p></div>
+                                        <button class="oclock-8" id="saveMinute40" data-color="blue" value="40">
+                                            <div id="blueMinute40"><p>40</p></div>
                                         </button>
-                                        <button class="oclock-9" id="saveHour09" data-color="blue" value="09">
-                                            <div id="blueHour09"><p>9</p></div>
+                                        <button class="oclock-9" id="saveMinute45" data-color="blue" value="45">
+                                            <div id="blueMinute45"><p>45</p></div>
                                         </button>
-                                        <button class="oclock-10" id="saveHour10" data-color="blue" value="10">
-                                            <div id="blueHour10"><p>10</p></div>
+                                        <button class="oclock-10" id="saveMinute50" data-color="blue" value="50">
+                                            <div id="blueMinute50"><p>50</p></div>
                                         </button>
-                                        <button class="oclock-11" id="saveHour11" data-color="blue" value="11">
-                                            <div id="blueHour11"><p>11</p></div>
+                                        <button class="oclock-11" id="saveMinute55" data-color="blue" value="55">
+                                            <div id="blueMinute55"><p>55</p></div>
                                         </button>
-                                        <button class="oclock-12" id="saveHour12" data-color="blue" value="12">
-                                            <div id="blueHour12"><p>12</p></div>
+                                        <button class="oclock-12" id="saveMinute60" data-color="blue" value="00">
+                                            <div id="blueMinute60"><p>0</p></div>
+                                        </button>
+                                    </div>
+
+                                    <!-- Small steps -->
+                                    <div class="small-steps">
+                                        <button class="minute-step1" id="saveMinute01" data-color="blue" value="01">
+                                            <div id="blueMinute01"><p></p></div>
+                                        </button>
+                                        <button class="minute-step2" id="saveMinute02" data-color="blue" value="02">
+                                            <div id="blueMinute02"><p></p></div>
+                                        </button>
+                                        <button class="minute-step3" id="saveMinute03" data-color="blue" value="03">
+                                            <div id="blueMinute03"><p></p></div>
+                                        </button>
+                                        <button class="minute-step4" id="saveMinute04" data-color="blue" value="04">
+                                            <div id="blueMinute04"><p></p></div>
+                                        </button>
+                                        <button class="minute-step6" id="saveMinute06" data-color="blue" value="06">
+                                            <div id="blueMinute06"><p></p></div>
+                                        </button>
+                                        <button class="minute-step7" id="saveMinute07" data-color="blue" value="07">
+                                            <div id="blueMinute07"><p></p></div>
+                                        </button>
+                                        <button class="minute-step8" id="saveMinute08" data-color="blue" value="08">
+                                            <div id="blueMinute08"><p></p></div>
+                                        </button>
+                                        <button class="minute-step9" id="saveMinute09" data-color="blue" value="09">
+                                            <div id="blueMinute09"><p></p></div>
+                                        </button>
+
+                                        <button class="minute-step11" id="saveMinute11" data-color="blue" value="11">
+                                            <div id="blueMinute11"><p></p></div>
+                                        </button>
+                                        <button class="minute-step12" id="saveMinute12" data-color="blue" value="12">
+                                            <div id="blueMinute12"><p></p></div>
+                                        </button>
+                                        <button class="minute-step13" id="saveMinute13" data-color="blue" value="13">
+                                            <div id="blueMinute13"><p></p></div>
+                                        </button>
+                                        <button class="minute-step14" id="saveMinute14" data-color="blue" value="14">
+                                            <div id="blueMinute14"><p></p></div>
+                                        </button>
+                                        <button class="minute-step16" id="saveMinute16" data-color="blue" value="16">
+                                            <div id="blueMinute16"><p></p></div>
+                                        </button>
+                                        <button class="minute-step17" id="saveMinute17" data-color="blue" value="17">
+                                            <div id="blueMinute17"><p></p></div>
+                                        </button>
+                                        <button class="minute-step18" id="saveMinute18" data-color="blue" value="18">
+                                            <div id="blueMinute18"><p></p></div>
+                                        </button>
+                                        <button class="minute-step19" id="saveMinute19" data-color="blue" value="19">
+                                            <div id="blueMinute19"><p></p></div>
+                                        </button>
+
+                                        <button class="minute-step21" id="saveMinute21" data-color="blue" value="21">
+                                            <div id="blueMinute21"><p></p></div>
+                                        </button>
+                                        <button class="minute-step22" id="saveMinute22" data-color="blue" value="22">
+                                            <div id="blueMinute22"><p></p></div>
+                                        </button>
+                                        <button class="minute-step23" id="saveMinute23" data-color="blue" value="23">
+                                            <div id="blueMinute23"><p></p></div>
+                                        </button>
+                                        <button class="minute-step24" id="saveMinute24" data-color="blue" value="24">
+                                            <div id="blueMinute24"><p></p></div>
+                                        </button>
+                                        <button class="minute-step26" id="saveMinute26" data-color="blue" value="26">
+                                            <div id="blueMinute26"><p></p></div>
+                                        </button>
+                                        <button class="minute-step27" id="saveMinute27" data-color="blue" value="27">
+                                            <div id="blueMinute27"><p></p></div>
+                                        </button>
+                                        <button class="minute-step28" id="saveMinute28" data-color="blue" value="28">
+                                            <div id="blueMinute28"><p></p></div>
+                                        </button>
+                                        <button class="minute-step29" id="saveMinute29" data-color="blue" value="29">
+                                            <div id="blueMinute29"><p></p></div>
+                                        </button>
+
+                                        <button class="minute-step31" id="saveMinute31" data-color="blue" value="31">
+                                            <div id="blueMinute31"><p></p></div>
+                                        </button>
+                                        <button class="minute-step32" id="saveMinute32" data-color="blue" value="32">
+                                            <div id="blueMinute32"><p></p></div>
+                                        </button>
+                                        <button class="minute-step33" id="saveMinute33" data-color="blue" value="33">
+                                            <div id="blueMinute33"><p></p></div>
+                                        </button>
+                                        <button class="minute-step34" id="saveMinute34" data-color="blue" value="34">
+                                            <div id="blueMinute34"><p></p></div>
+                                        </button>
+                                        <button class="minute-step36" id="saveMinute36" data-color="blue" value="36">
+                                            <div id="blueMinute36"><p></p></div>
+                                        </button>
+                                        <button class="minute-step37" id="saveMinute37" data-color="blue" value="37">
+                                            <div id="blueMinute37"><p></p></div>
+                                        </button>
+                                        <button class="minute-step38" id="saveMinute38" data-color="blue" value="38">
+                                            <div id="blueMinute38"><p></p></div>
+                                        </button>
+                                        <button class="minute-step39" id="saveMinute39" data-color="blue" value="39">
+                                            <div id="blueMinute39"><p></p></div>
+                                        </button>
+
+                                        <button class="minute-step41" id="saveMinute41" data-color="blue" value="41">
+                                            <div id="blueMinute41"><p></p></div>
+                                        </button>
+                                        <button class="minute-step42" id="saveMinute42" data-color="blue" value="42">
+                                            <div id="blueMinute42"><p></p></div>
+                                        </button>
+                                        <button class="minute-step43" id="saveMinute43" data-color="blue" value="43">
+                                            <div id="blueMinute43"><p></p></div>
+                                        </button>
+                                        <button class="minute-step44" id="saveMinute44" data-color="blue" value="44">
+                                            <div id="blueMinute44"><p></p></div>
+                                        </button>
+                                        <button class="minute-step46" id="saveMinute46" data-color="blue" value="46">
+                                            <div id="blueMinute46"><p></p></div>
+                                        </button>
+                                        <button class="minute-step47" id="saveMinute47" data-color="blue" value="47">
+                                            <div id="blueMinute47"><p></p></div>
+                                        </button>
+                                        <button class="minute-step48" id="saveMinute48" data-color="blue" value="48">
+                                            <div id="blueMinute48"><p></p></div>
+                                        </button>
+                                        <button class="minute-step49" id="saveMinute49" data-color="blue" value="49">
+                                            <div id="blueMinute49"><p></p></div>
+                                        </button>
+
+                                        <button class="minute-step51" id="saveMinute51" data-color="blue" value="51">
+                                            <div id="blueMinute51"><p></p></div>
+                                        </button>
+                                        <button class="minute-step52" id="saveMinute52" data-color="blue" value="52">
+                                            <div id="blueMinute52"><p></p></div>
+                                        </button>
+                                        <button class="minute-step53" id="saveMinute53" data-color="blue" value="53">
+                                            <div id="blueMinute53"><p></p></div>
+                                        </button>
+                                        <button class="minute-step54" id="saveMinute54" data-color="blue" value="54">
+                                            <div id="blueMinute54"><p></p></div>
+                                        </button>
+                                        <button class="minute-step56" id="saveMinute56" data-color="blue" value="56">
+                                            <div id="blueMinute56"><p></p></div>
+                                        </button>
+                                        <button class="minute-step57" id="saveMinute57" data-color="blue" value="57">
+                                            <div id="blueMinute57"><p></p></div>
+                                        </button>
+                                        <button class="minute-step58" id="saveMinute58" data-color="blue" value="58">
+                                            <div id="blueMinute58"><p></p></div>
+                                        </button>
+                                        <button class="minute-step59" id="saveMinute59" data-color="blue" value="59">
+                                            <div id="blueMinute59"><p></p></div>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="time-picker-block-buttons">
-                                    <button class="time-picker-buttons" id="clearTime"> Clear </button>
-                                    <button class="time-picker-buttons" id="saveTime"> Save </button>
+
+                                <div class="child-container clock-showing" id="hour">
+                                    <span id="in-hour">In-hour</span>
+                                    <div class="hour-handle" id="hourHandle">
+                                        <div class="handle"></div>
+                                        <div class="blank"></div>
+                                    </div>
+                                    <div class="center-dot">•</div>
+                                    <button class="oclock-1" id="saveHour01" data-color="blue" value="01">
+                                        <div id="blueHour01"><p>1</p></div>
+                                    </button>
+                                    <button class="oclock-2" id="saveHour02" data-color="blue" value="02">
+                                        <div id="blueHour02"><p>2</p></div>
+                                    </button>
+                                    <button class="oclock-3" id="saveHour03" data-color="blue" value="03">
+                                        <div id="blueHour03"><p>3</p></div>
+                                    </button>
+                                    <button class="oclock-4" id="saveHour04" data-color="blue" value="04">
+                                        <div id="blueHour04"><p>4</p></div>
+                                    </button>
+                                    <button class="oclock-5" id="saveHour05" data-color="blue" value="05">
+                                        <div id="blueHour05"><p>5</p></div>
+                                    </button>
+                                    <button class="oclock-6" id="saveHour06" data-color="blue" value="06">
+                                        <div id="blueHour06"><p>6</p></div>
+                                    </button>
+                                    <button class="oclock-7" id="saveHour07" data-color="blue" value="07">
+                                        <div id="blueHour07"><p>7</p></div>
+                                    </button>
+                                    <button class="oclock-8" id="saveHour08" data-color="blue" value="08">
+                                        <div id="blueHour08"><p>8</p></div>
+                                    </button>
+                                    <button class="oclock-9" id="saveHour09" data-color="blue" value="09">
+                                        <div id="blueHour09"><p>9</p></div>
+                                    </button>
+                                    <button class="oclock-10" id="saveHour10" data-color="blue" value="10">
+                                        <div id="blueHour10"><p>10</p></div>
+                                    </button>
+                                    <button class="oclock-11" id="saveHour11" data-color="blue" value="11">
+                                        <div id="blueHour11"><p>11</p></div>
+                                    </button>
+                                    <button class="oclock-12" id="saveHour12" data-color="blue" value="12">
+                                        <div id="blueHour12"><p>12</p></div>
+                                    </button>
                                 </div>
+                            </div>
+                            <div class="time-picker-block-buttons">
+                                <button class="time-picker-buttons" id="clearTime"> Clear </button>
+                                <button class="time-picker-buttons" id="saveTime"> Save </button>
                             </div>
                         </div>
                         <button class="modal-close is-large" aria-label="close"></button>
