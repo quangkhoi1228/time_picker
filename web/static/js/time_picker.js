@@ -6,17 +6,12 @@ var time_picker = {
             modal.classList.add('is-active');
         }
     },
-    openDropdown: function () {
-        var dropdown = document.getElementById('launchDropdown');
-        dropdown.onclick = function () {
-            var openBox = document.getElementById("dropdown-menu");
-            if (openBox.style.display == "none") {
-                openBox.style.display = "block";
-            } else {
-                openBox.style.display = "none";
-            }
+    closeModal: function () {
+        var background = document.querySelector('.modal-background');
+        var modal = document.querySelector('.modal');
+        background.onclick = function () {
+            modal.classList.remove('is-active');
         }
-
     },
     switchHour: function () {
         var button = document.querySelector('.time-oclock .hourMode');
@@ -32,7 +27,6 @@ var time_picker = {
             switchMinute.style.display = "none";
         }
     },
-
     switchMinute: function () {
         var button = document.querySelector('.time-oclock .minuteMode');
         button.onclick = function () {

@@ -18,9 +18,9 @@ header {
 }
 
 .page-title {
-  white-space: nowrap;
+  white-space: nowrap; 
   overflow: hidden;
-  text-overflow: clip;
+  text-overflow: clip; 
 }
 
 header img {
