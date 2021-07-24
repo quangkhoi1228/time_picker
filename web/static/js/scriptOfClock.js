@@ -195,7 +195,7 @@ var time_picker = {
         time_picker.clearTimeButton();
         time_picker.clickOnClock();
     },
-    saveTimeButton: function() {
+    saveTimeButton: function () {
         var button = document.querySelector('.time-picker-buttons#saveTime');
         button.onclick = function () {
             var hour = document.getElementById("outputHour");
@@ -215,7 +215,7 @@ var time_picker = {
             document.getElementById("resultMinute").innerHTML = minute.innerText;
         }
     },
-    clearTimeButton: function() {
+    clearTimeButton: function () {
         var button = document.querySelector('.time-picker-buttons#clearTime');
         button.onclick = function () {
             var switchHour = document.getElementById("hour");
@@ -232,7 +232,7 @@ var time_picker = {
             document.getElementById("saveMinute60").click();
         }
     },
-    clickOnClock: function (){
+    clickOnClock: function () {
         var moveHourPointer = document.getElementById("hour");
         var moveMinutePointer = document.getElementById("minute");
 
@@ -249,5 +249,80 @@ var time_picker = {
         moveMinutePointer.onmouseup = function() {
             moveMinutePointer.style.cursor = "default";
         }
-    }
+    },
+    createDragEvent: function () {
+        time_picker.createHourDragEvent();
+        // time_picker.createMinuteDragEvent();
+    },
+    createHourDragEvent: function () {
+        var container = document.getElementById('dragTargetClock');
+        for (var number = 1; number <= 12; number++) {
+            var dropBox = document.createElement('p');
+            dropBox.setAttribute('class', 'drag-box');
+            dropBox.setAttribute('id', 'dragBox' + number);
+
+            var droptarget = document.createElement('p');
+            droptarget.setAttribute('class', 'drag');
+            droptarget.setAttribute('id', 'dragHour' + number);
+            dropBox.appendChild(droptarget);
+
+            container.appendChild(dropBox);
+            time_picker.addEventHourDrag(number);
+
+            var hourDrag = document.getElementById("dragBox"+number);
+            hourDrag.style.transform = `translate(-50%, -50%) rotate(${number * 30}deg)`;
+        }
+    },
+    addEventHourDrag: function (number) {
+        var addEvent = document.getElementById('dragHour'+number);
+        addEvent.ondragenter = function (eventData) {
+            var xCursor = 0;
+            var yCursor = 0;
+
+            var minDistance=100000;
+            var nearHour=12;
+
+            var dragClock = document.getElementById('dragTargetClock');
+            dragClock.onmousedown = function(e){
+                xCursor = e.pageX;
+                yCursor = e.pageY;
+            }
+
+            for (numberHour = 1; numberHour <= 11; numberHour++) {
+                xDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left;
+                yDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top;
+
+                xCompare = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour+1)).getBoundingClientRect().left;
+                yCompare = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour+1)).getBoundingClientRect().top;
+
+                var xDistanceDefault = Math.sqrt((xDefault - xCursor)**2);
+                var yDistanceDefault = Math.sqrt((yDefault - yCursor)**2);
+                var xDistanceCompare = Math.sqrt((xCompare - xCursor)**2);
+                var yDistanceCompare = Math.sqrt((yCompare - yCursor)**2);
+
+                var sumDefault = xDistanceDefault + yDistanceDefault;
+                var sumCompare = xDistanceCompare + yDistanceCompare;
+
+                if (sumDefault < sumCompare) {
+                    var minBackup = sumDefault;
+                    if (minBackup < minDistance) {
+                        minDistance = minBackup;
+                        nearHour = numberHour;
+                    }
+                } else {
+                    var minBackup = sumCompare;
+                    if (minBackup < minDistance) {
+                        minDistance = minBackup;
+                        nearHour = numberHour+1;
+                    }
+                }
+            }
+            console.log(nearHour);
+            document.getElementById("saveHour"+time_picker.normalizeNumber(nearHour)).click();
+        }
+
+        addEvent.ondragover = function (eventData) {
+            eventData.preventDefault();
+        }
+    },
 };

@@ -1325,6 +1325,9 @@ span[id="in-minute"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* -webkit-transition: -webkit-transform .8s ease-in-out;
+  -ms-transition: -ms-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out; */
 }
 
 .minute-handle {
@@ -1332,6 +1335,9 @@ span[id="in-minute"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* -webkit-transition: -webkit-transform .8s ease-in-out;
+  -ms-transition: -ms-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;   */
 }
 
 #hour .highlight p {
@@ -1358,4 +1364,34 @@ span[id="in-minute"] {
   border-radius: 50%;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
+}
+
+.clock-drag {
+  height: 19rem;
+  width: 19rem;
+  background: transparent;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.drag-box {
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.drag {
+  background: transparent;
+  width: 0.5rem;
+  height: 9.5rem;
+
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
