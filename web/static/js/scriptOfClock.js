@@ -1,3 +1,83 @@
+var stepsOfClockLocation = {
+    "locationForHours" : [
+        {"xHour" : 1, "yHour" : 1, "distanceCursor" : 1},
+        {"xHour" : 2, "yHour" : 2, "distanceCursor" : 2},
+        {"xHour" : 3, "yHour" : 3, "distanceCursor" : 3},
+        {"xHour" : 4, "yHour" : 4, "distanceCursor" : 4},
+        {"xHour" : 5, "yHour" : 5, "distanceCursor" : 5},
+        {"xHour" : 6, "yHour" : 6, "distanceCursor" : 6},
+        {"xHour" : 7, "yHour" : 7, "distanceCursor" : 7},
+        {"xHour" : 8, "yHour" : 8, "distanceCursor" : 8},
+        {"xHour" : 9, "yHour" : 9, "distanceCursor" : 9},
+        {"xHour" : 10, "yHour" : 10, "distanceCursor" : 10},
+        {"xHour" : 11, "yHour" : 11, "distanceCursor" : 11},
+        {"xHour" : 12, "yHour" : 12, "distanceCursor" : 12},
+    ],
+
+    "locationForMinutes" : [
+        {"xMinute" : 1, "yMinute" : 1, "distanceCursor" : 1},
+        {"xMinute" : 2, "yMinute" : 2, "distanceCursor" : 2},
+        {"xMinute" : 3, "yMinute" : 3, "distanceCursor" : 3},
+        {"xMinute" : 4, "yMinute" : 4, "distanceCursor" : 4},
+        {"xMinute" : 5, "yMinute" : 5, "distanceCursor" : 5},
+        {"xMinute" : 6, "yMinute" : 6, "distanceCursor" : 6},
+        {"xMinute" : 7, "yMinute" : 7, "distanceCursor" : 7},
+        {"xMinute" : 8, "yMinute" : 8, "distanceCursor" : 8},
+        {"xMinute" : 9, "yMinute" : 9, "distanceCursor" : 9},
+        {"xMinute" : 10, "yMinute" : 10, "distanceCursor" : 10},
+        {"xMinute" : 11, "yMinute" : 11, "distanceCursor" : 11},
+        {"xMinute" : 12, "yMinute" : 12, "distanceCursor" : 12},
+        {"xMinute" : 13, "yMinute" : 13, "distanceCursor" : 13},
+        {"xMinute" : 14, "yMinute" : 14, "distanceCursor" : 14},
+        {"xMinute" : 15, "yMinute" : 15, "distanceCursor" : 15},
+        {"xMinute" : 16, "yMinute" : 16, "distanceCursor" : 16},
+        {"xMinute" : 17, "yMinute" : 17, "distanceCursor" : 17},
+        {"xMinute" : 18, "yMinute" : 18, "distanceCursor" : 18},
+        {"xMinute" : 19, "yMinute" : 19, "distanceCursor" : 19},
+        {"xMinute" : 20, "yMinute" : 20, "distanceCursor" : 20},
+        {"xMinute" : 21, "yMinute" : 21, "distanceCursor" : 21},
+        {"xMinute" : 22, "yMinute" : 22, "distanceCursor" : 22},
+        {"xMinute" : 23, "yMinute" : 23, "distanceCursor" : 23},
+        {"xMinute" : 24, "yMinute" : 24, "distanceCursor" : 24},
+        {"xMinute" : 25, "yMinute" : 25, "distanceCursor" : 25},
+        {"xMinute" : 26, "yMinute" : 26, "distanceCursor" : 26},
+        {"xMinute" : 27, "yMinute" : 27, "distanceCursor" : 27},
+        {"xMinute" : 28, "yMinute" : 28, "distanceCursor" : 28},
+        {"xMinute" : 29, "yMinute" : 29, "distanceCursor" : 29},
+        {"xMinute" : 30, "yMinute" : 30, "distanceCursor" : 30},
+        {"xMinute" : 31, "yMinute" : 31, "distanceCursor" : 31},
+        {"xMinute" : 32, "yMinute" : 32, "distanceCursor" : 32},
+        {"xMinute" : 33, "yMinute" : 33, "distanceCursor" : 33},
+        {"xMinute" : 34, "yMinute" : 34, "distanceCursor" : 34},
+        {"xMinute" : 35, "yMinute" : 35, "distanceCursor" : 35},
+        {"xMinute" : 36, "yMinute" : 36, "distanceCursor" : 36},
+        {"xMinute" : 37, "yMinute" : 37, "distanceCursor" : 37},
+        {"xMinute" : 38, "yMinute" : 38, "distanceCursor" : 38},
+        {"xMinute" : 39, "yMinute" : 39, "distanceCursor" : 39},
+        {"xMinute" : 40, "yMinute" : 40, "distanceCursor" : 40},
+        {"xMinute" : 41, "yMinute" : 41, "distanceCursor" : 41},
+        {"xMinute" : 42, "yMinute" : 42, "distanceCursor" : 42},
+        {"xMinute" : 43, "yMinute" : 43, "distanceCursor" : 43},
+        {"xMinute" : 44, "yMinute" : 44, "distanceCursor" : 44},
+        {"xMinute" : 45, "yMinute" : 45, "distanceCursor" : 45},
+        {"xMinute" : 46, "yMinute" : 46, "distanceCursor" : 46},
+        {"xMinute" : 47, "yMinute" : 47, "distanceCursor" : 47},
+        {"xMinute" : 48, "yMinute" : 48, "distanceCursor" : 48},
+        {"xMinute" : 49, "yMinute" : 49, "distanceCursor" : 49},
+        {"xMinute" : 50, "yMinute" : 50, "distanceCursor" : 50},
+        {"xMinute" : 51, "yMinute" : 51, "distanceCursor" : 51},
+        {"xMinute" : 52, "yMinute" : 52, "distanceCursor" : 52},
+        {"xMinute" : 53, "yMinute" : 53, "distanceCursor" : 53},
+        {"xMinute" : 54, "yMinute" : 54, "distanceCursor" : 54},
+        {"xMinute" : 55, "yMinute" : 55, "distanceCursor" : 55},
+        {"xMinute" : 56, "yMinute" : 56, "distanceCursor" : 56},
+        {"xMinute" : 57, "yMinute" : 57, "distanceCursor" : 57},
+        {"xMinute" : 58, "yMinute" : 58, "distanceCursor" : 58},
+        {"xMinute" : 59, "yMinute" : 59, "distanceCursor" : 59},
+        {"xMinute" : 60, "yMinute" : 60, "distanceCursor" : 60},
+    ]
+}
+
 var time_picker = {
     createStructure: function () {
         time_picker.createHourStructure();
@@ -9,6 +89,8 @@ var time_picker = {
         var count = 0;
         button.onclick = function () {
             modal.classList.add('is-active');
+            time_picker.addHourLocation();
+            time_picker.addMinuteLocation();
             if (count == 0) {
                 document.getElementById("saveHour12").click();
                 document.getElementById("saveMinute60").click();
@@ -238,91 +320,112 @@ var time_picker = {
 
         moveHourPointer.onmousedown = function() {
             moveHourPointer.style.cursor = "move";
+            time_picker.beginControlHourMouseDown();
         }
         moveHourPointer.onmouseup = function() {
             moveHourPointer.style.cursor = "default";
+            time_picker.stopControlHourMouseDown();
         }
 
         moveMinutePointer.onmousedown = function() {
             moveMinutePointer.style.cursor = "move";
+            time_picker.beginControlMinuteMouseDown();
         }
         moveMinutePointer.onmouseup = function() {
             moveMinutePointer.style.cursor = "default";
+            time_picker.stopControlMinuteMouseDown();
         }
     },
-    createDragEvent: function () {
-        time_picker.createHourDragEvent();
-        // time_picker.createMinuteDragEvent();
-    },
-    createHourDragEvent: function () {
-        var container = document.getElementById('dragTargetClock');
-        for (var number = 1; number <= 12; number++) {
-            var dropBox = document.createElement('p');
-            dropBox.setAttribute('class', 'drag-box');
-            dropBox.setAttribute('id', 'dragBox' + number);
+    addHourLocation: function () {
+        for (var index = 0; index < 12; index++) {
+            var numberHour = index+1;
+            var xDefault = 1;
+            var yDefault = 1;
 
-            var droptarget = document.createElement('p');
-            droptarget.setAttribute('class', 'drag');
-            droptarget.setAttribute('id', 'dragHour' + number);
-            dropBox.appendChild(droptarget);
+            xDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
 
-            container.appendChild(dropBox);
-            time_picker.addEventHourDrag(number);
-
-            var hourDrag = document.getElementById("dragBox"+number);
-            hourDrag.style.transform = `translate(-50%, -50%) rotate(${number * 30}deg)`;
+            stepsOfClockLocation.locationForHours[index].xHour = xDefault;
+            stepsOfClockLocation.locationForHours[index].yHour = yDefault;
         }
     },
-    addEventHourDrag: function (number) {
-        var addEvent = document.getElementById('dragHour'+number);
-        addEvent.ondragenter = function (eventData) {
-            var xCursor = 0;
-            var yCursor = 0;
+    beginControlHourMouseDown: function () {
+        var moveHourPointer = document.getElementById("hour");
+        moveHourPointer.onmousemove = time_picker.locateHourCursorDown();
+    },
+    locateHourCursorDown: function () {    
+        document.onmousemove = function(eventData){
+            xCursor = eventData.pageX;
+            yCursor = eventData.pageY;
 
-            var minDistance=100000;
-            var nearHour=12;
+            var distanceFromHourToCursor = 1;
+            var minDistanceHour = 10000;
+            var hourChosen = 0;   
 
-            var dragClock = document.getElementById('dragTargetClock');
-            dragClock.onmousedown = function(e){
-                xCursor = e.pageX;
-                yCursor = e.pageY;
-            }
+            for (var index = 0; index < 12; index++) {
+                distanceFromHourToCursor = Math.sqrt((stepsOfClockLocation.locationForHours[index].xHour - xCursor)**2 
+                                                    + (stepsOfClockLocation.locationForHours[index].yHour - yCursor)**2);
+                stepsOfClockLocation.locationForHours[index].distanceCursor = distanceFromHourToCursor;
 
-            for (numberHour = 1; numberHour <= 11; numberHour++) {
-                xDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left;
-                yDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top;
-
-                xCompare = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour+1)).getBoundingClientRect().left;
-                yCompare = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour+1)).getBoundingClientRect().top;
-
-                var xDistanceDefault = Math.sqrt((xDefault - xCursor)**2);
-                var yDistanceDefault = Math.sqrt((yDefault - yCursor)**2);
-                var xDistanceCompare = Math.sqrt((xCompare - xCursor)**2);
-                var yDistanceCompare = Math.sqrt((yCompare - yCursor)**2);
-
-                var sumDefault = xDistanceDefault + yDistanceDefault;
-                var sumCompare = xDistanceCompare + yDistanceCompare;
-
-                if (sumDefault < sumCompare) {
-                    var minBackup = sumDefault;
-                    if (minBackup < minDistance) {
-                        minDistance = minBackup;
-                        nearHour = numberHour;
-                    }
-                } else {
-                    var minBackup = sumCompare;
-                    if (minBackup < minDistance) {
-                        minDistance = minBackup;
-                        nearHour = numberHour+1;
-                    }
+                if (stepsOfClockLocation.locationForHours[index].distanceCursor < minDistanceHour) {
+                    minDistanceHour = stepsOfClockLocation.locationForHours[index].distanceCursor;
+                    hourChosen = index + 1;
+                    document.getElementById("saveHour"+time_picker.normalizeNumber(hourChosen)).click();              
                 }
             }
-            console.log(nearHour);
-            document.getElementById("saveHour"+time_picker.normalizeNumber(nearHour)).click();
         }
+    },
+    stopControlHourMouseDown: function () {
+        var moveHourPointer = document.getElementById("hour");
+        moveHourPointer.onmousemove = time_picker.locateHourCursorUp();
+    },
+    locateHourCursorUp: function () {
+        document.onmousemove = null;
+    },
+    addMinuteLocation: function () {
+        for (var index = 0; index < 60; index++) {
+            var numberMinute = index+1;
+            var xDefault = 1;
+            var yDefault = 1;
 
-        addEvent.ondragover = function (eventData) {
-            eventData.preventDefault();
+            xDefault = document.querySelector('#blueMinute'+time_picker.normalizeNumber(numberMinute)).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('#blueMinute'+time_picker.normalizeNumber(numberMinute)).getBoundingClientRect().top + window.scrollY;
+
+            stepsOfClockLocation.locationForMinutes[index].xMinute = xDefault;
+            stepsOfClockLocation.locationForMinutes[index].yMinute = yDefault;
         }
+    },
+    beginControlMinuteMouseDown: function () {
+        var moveHourPointer = document.getElementById("minute");
+        moveHourPointer.onmousemove = time_picker.locateMinuteCursorDown();
+    },
+    locateMinuteCursorDown: function () {    
+        document.onmousemove = function(eventData){
+            xCursor = eventData.pageX;
+            yCursor = eventData.pageY;
+
+            var distanceFromMinuteToCursor = 1;
+            var minDistanceMinute = 10000;
+            var minuteChosen = 0;   
+
+            for (var index = 0; index < 60; index++) {
+                distanceFromMinuteToCursor = Math.sqrt((stepsOfClockLocation.locationForMinutes[index].xMinute - xCursor)**2 
+                                                    + (stepsOfClockLocation.locationForMinutes[index].yMinute - yCursor)**2);
+                stepsOfClockLocation.locationForMinutes[index].distanceCursor = distanceFromMinuteToCursor;
+
+                if (stepsOfClockLocation.locationForMinutes[index].distanceCursor < minDistanceMinute) {
+                    minDistanceMinute = stepsOfClockLocation.locationForMinutes[index].distanceCursor;
+                    minuteChosen = index + 1;
+                    document.getElementById("saveMinute"+time_picker.normalizeNumber(minuteChosen)).click();              
+                }
+            }
+        }
+    },
+    stopControlMinuteMouseDown: function () {
+        var moveHourPointer = document.getElementById("minute");
+        moveHourPointer.onmousemove = time_picker.locateMinuteCursorUp();
+    },
+    locateMinuteCursorUp: function () {
+        document.onmousemove = null;
     },
 };

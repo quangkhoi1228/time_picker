@@ -1365,33 +1365,3 @@ span[id="in-minute"] {
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
 }
-
-.clock-drag {
-  height: 19rem;
-  width: 19rem;
-  background: transparent;
-  border-radius: 50%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-}
-
-.drag-box {
-  background: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.drag {
-  background: transparent;
-  width: 0.5rem;
-  height: 9.5rem;
-
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
