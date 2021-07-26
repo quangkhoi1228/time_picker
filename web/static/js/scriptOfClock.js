@@ -342,11 +342,11 @@ var time_picker = {
             var xDefault = 1;
             var yDefault = 1;
 
-            xDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
-            yDefault = document.querySelector('#blueHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
+            xDefault = document.querySelector('#saveHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('#saveHour'+time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
 
-            stepsOfClockLocation.locationForHours[index].xHour = xDefault;
-            stepsOfClockLocation.locationForHours[index].yHour = yDefault;
+            stepsOfClockLocation.locationForHours[index].xHour = xDefault + 20;
+            stepsOfClockLocation.locationForHours[index].yHour = yDefault + 20;
         }
     },
     beginControlHourMouseDown: function () {
@@ -383,16 +383,39 @@ var time_picker = {
         document.onmousemove = null;
     },
     addMinuteLocation: function () {
-        for (var index = 0; index < 60; index++) {
-            var numberMinute = index+1;
+        // Big Steps
+        for (var index = 0; index < 12; index++) {
+            var numberMinuteBigSteps = (index+1)*5;
             var xDefault = 1;
             var yDefault = 1;
 
-            xDefault = document.querySelector('#blueMinute'+time_picker.normalizeNumber(numberMinute)).getBoundingClientRect().left + window.scrollX;
-            yDefault = document.querySelector('#blueMinute'+time_picker.normalizeNumber(numberMinute)).getBoundingClientRect().top + window.scrollY;
+            xDefault = document.querySelector('#saveMinute'+time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('#saveMinute'+time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().top + window.scrollY;
 
-            stepsOfClockLocation.locationForMinutes[index].xMinute = xDefault;
-            stepsOfClockLocation.locationForMinutes[index].yMinute = yDefault;
+            if (index == 0) {
+                var subIndex1 = index+4;
+                stepsOfClockLocation.locationForMinutes[subIndex1].xMinute = xDefault + 20;
+                stepsOfClockLocation.locationForMinutes[subIndex1].yMinute = yDefault + 20;
+            } else { 
+                var subIndex2 = index*5+4;
+                stepsOfClockLocation.locationForMinutes[subIndex2].xMinute = xDefault + 20;
+                stepsOfClockLocation.locationForMinutes[subIndex2].yMinute = yDefault + 20;
+            }
+        }
+
+        // Small Steps
+        for (var index = 0; index < 60; index++) {
+            var numberMinuteSmallSteps = index+1;
+            if (numberMinuteSmallSteps % 5 != 0) {
+                var xDefault = 1;
+                var yDefault = 1;
+
+                xDefault = document.querySelector('#saveMinute'+time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().left + window.scrollX;
+                yDefault = document.querySelector('#saveMinute'+time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().top + window.scrollY;
+
+                stepsOfClockLocation.locationForMinutes[index].xMinute = xDefault + 7.5;
+                stepsOfClockLocation.locationForMinutes[index].yMinute = yDefault + 7.5;
+            }
         }
     },
     beginControlMinuteMouseDown: function () {
@@ -416,7 +439,7 @@ var time_picker = {
                 if (stepsOfClockLocation.locationForMinutes[index].distanceCursor < minDistanceMinute) {
                     minDistanceMinute = stepsOfClockLocation.locationForMinutes[index].distanceCursor;
                     minuteChosen = index + 1;
-                    document.getElementById("saveMinute"+time_picker.normalizeNumber(minuteChosen)).click();              
+                    document.getElementById("saveMinute"+time_picker.normalizeNumber(minuteChosen)).click();
                 }
             }
         }
