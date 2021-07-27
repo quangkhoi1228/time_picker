@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title Page -->
+    <title>Clock</title>
+    <link rel="icon" href="../static/image/Clock Icon.png" type="icon">
+
+    <!-- Tool Library -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+        rel="stylesheet">
+    <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
+</head>
+
+<body class="hero">
+    <section class="hero-body">
+        <h1>Using Time Picker mode below to choose time:</h1>
+        <div id="id1" class="field has-addons">
+            <div class="control">
+                <input type="text" class="input">
+            </div>
+            <div class="control">
+                <a class="button is-link">Xem kết quả</a>
+            </div>
+        </div>
+        <div id="id2" class="field has-addons">
+            <div class="control">
+                <input type="text" class="input">
+            </div>
+            <div class="control">
+                <a class="button is-link">Xem kết quả</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+
+            var inputComponent = (function () {
+                var constructor = function (selector) {
+                    this.selector = selector;
+                    this.container;
+                    this.input;
+                    this.button;
+                    this.createStructure = function () {
+                        this.container = document.querySelector(this.selector);
+                        this.input = this.container.querySelector('.input');
+                        this.button = this.container.querySelector('.button');
+                    };
+
+                    this.addEventShowResult = function () {
+                        var object = this;
+                        object.button.onclick = function () {
+                            console.log(object.selector + ' ' + object.input.value);
+                        }
+                    };
+
+                    this.createStructure();
+                    this.addEventShowResult();
+                }
+                return constructor;
+            })();
+
+            var input1 = new inputComponent('#id1');
+
+            var input2 = new inputComponent('#id2');
+
+            console.log(input1);
+            console.log(input2);
+
+        });
+    </script>
+</body>
+
+</html>
