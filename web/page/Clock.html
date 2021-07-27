@@ -16,11 +16,17 @@
 
 <body>
     <section>
-        <h3>Using Time Picker mode below to choose time:</h3>
+        <h1>Using Time Picker mode below to choose time:</h1>
 
         <div class="field field-time-picker has-addons">
             <div class="control">
-                <input class="result choose-time" type="text" placeholder="Choose time &nbsp;&nbsp;&nbsp; 👉" disabled>
+                <div class="time-result">
+                    <div class="time-result-hour" id="resultHour">--</div>
+                    <div>&nbsp;:&nbsp;</div>
+                    <div class="time-result-minute" id="resultMinute">--</div>
+                    <div>&nbsp;&nbsp;</div>
+                    <div class="time-result-session" id="resultSession">--</div>
+                </div>
             </div>
 
             <div class="control">
@@ -36,26 +42,25 @@
                         <div class="child-container time-showing">
                             <div class="time-oclock">
                                 <button class="hourMode">
-                                    <div class="time-showing-detail" id="outputHour">00</div>
+                                    <div class="time-showing-detail" id="outputHour">12</div>
                                 </button>
 
-                                <span style="color: #fff;">&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                                <span>:</span>
 
                                 <button class="minuteMode">
                                     <div class="time-showing-detail" id="outputMinute">00</div>
                                 </button>
                             </div>
 
-                            <button class="time-showing-session">
-                                <div class="sessionAM" id="outputSessionAM">AM</div>
-                                <div class="sessionPM" id="outputSessionPM">PM</div>
-                            </button>
+                            <div class="time-showing-session">
+                                <button class="sessionAM" id="outputSessionAM">AM</button>
+                                <button class="sessionPM" id="outputSessionPM">PM</button>
+                            </div>
                         </div>
                     </div>
 
                     <div class="parent-container clock-showing-box">
                         <div class="child-container clock-showing" id="minute">
-                            <span id="in-minute">In-minute</span>
                             <div class="minute-handle" id="minuteHandle">
                                 <div class="dot-handle"></div>
                                 <div class="handle"></div>
@@ -68,7 +73,6 @@
                         </div>
 
                         <div class="child-container clock-showing" id="hour">
-                            <span id="in-hour">In-hour</span>
                             <div class="hour-handle" id="hourHandle">
                                 <div class="dot-handle"></div>
                                 <div class="handle"></div>
@@ -77,23 +81,17 @@
                         </div>
                     </div>
                     <div class="time-picker-block-buttons">
-                        <button class="time-picker-buttons" id="clearTime"> Clear </button>
-                        <button class="time-picker-buttons" id="saveTime"> Save </button>
+                        <div>
+                            <button class="time-picker-buttons" id="clearTime"> CLEAR </button>
+                        </div>
+                        <div>
+                            <button class="time-picker-buttons" id="closeTime"> CLOSE </button>
+                            <button class="time-picker-buttons" id="saveTime"> SAVE </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <h4>Your chosen time:</h4>
-
-        <div class="time-result">
-            <div class="time-result-hour" id="resultHour">--</div>
-            &nbsp;:&nbsp;
-            <div class="time-result-minute" id="resultMinute">--</div>
-            &nbsp;&nbsp;
-            <div class="time-result-session" id="resultSession">--</div>
-        </div>
-
     </section>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
