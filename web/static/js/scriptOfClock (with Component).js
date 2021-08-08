@@ -83,20 +83,19 @@ var time_picker = {
         time_picker.createHourStructure();
         time_picker.createMinuteStructure();
     },
-    openModal: function (selector) {
+    openModal: function () {
         // var button = document.querySelector('#launchModal');
-        // var launchModal = document.getElementsByClassName('button-time-picker');
-        // var button = launchModal[0];    // #launchModal
-        document.querySelector(`${selector} .button-time-picker`).click();
+        var launchModal = document.getElementsByClassName('button-time-picker');
+        var button = launchModal[0];    // #launchModal
         var modal = document.querySelector('.modal');
         var count = 0;
-        // button.onclick = function () {
+        button.onclick = function () {
             modal.classList.add('is-active');
             time_picker.addHourLocation();
             time_picker.addMinuteLocation();
             if (count == 0) {
                 // document.getElementById("saveHour12").click();
-                document.getElementsByClassName('oclock-12')[0].click();    // #saveHour12
+                document.getElementsByClassName('hour-step12')[0].click();    // #saveHour12
                 // document.getElementById("saveMinute60").click();
                 document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
                 // var switchHourOutput = document.getElementById("outputHour");
@@ -137,7 +136,7 @@ var time_picker = {
                 switchHour.style.display = "block";
                 switchMinute.style.display = "none";
             }
-        // }
+        }
     },
     closeModal: function () {
         var background = document.querySelector('.modal-background');
@@ -265,7 +264,7 @@ var time_picker = {
         var container = timeModal[1];     // #hour
         for (var number = 1; number <= 12; number++) {
             var button = document.createElement('button');
-            button.setAttribute('class', 'oclock-' + number);
+            button.setAttribute('class', 'hour-step' + number);
             // button.setAttribute('id', 'saveHour' + time_picker.normalizeNumber(number));
             button.setAttribute('value', time_picker.normalizeNumber(number));
             button.setAttribute('data-color', 'blue');
@@ -458,7 +457,7 @@ var time_picker = {
             modal.classList.remove('is-active');
 
             // document.getElementById("saveHour12").click();
-            document.getElementsByClassName('oclock-12')[0].click();    // #saveHour12
+            document.getElementsByClassName('hour-step12')[0].click();    // #saveHour12
             // document.getElementById("saveMinute60").click();
             document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
             document.getElementsByClassName('sessionSwitchButton')[0].click(); // #outputSessionAM
@@ -506,8 +505,8 @@ var time_picker = {
 
             // xDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
             // yDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
-            xDefault = document.querySelector('.oclock-' + numberHour).getBoundingClientRect().left + window.scrollX;
-            yDefault = document.querySelector('.oclock-' + numberHour).getBoundingClientRect().top + window.scrollY;
+            xDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().top + window.scrollY;
 
             stepsOfClockLocation.locationForHours[index].xHour = xDefault + 20;
             stepsOfClockLocation.locationForHours[index].yHour = yDefault + 20;
@@ -537,7 +536,7 @@ var time_picker = {
                     minDistanceHour = stepsOfClockLocation.locationForHours[index].distanceCursor;
                     hourChosen = index + 1;
                     // document.getElementById("saveHour" + time_picker.normalizeNumber(hourChosen)).click();
-                    document.getElementsByClassName("oclock-" + hourChosen)[0].click();
+                    document.getElementsByClassName("hour-step" + hourChosen)[0].click();
                 }
             }
         }
@@ -659,7 +658,7 @@ var time_picker = {
                 var numberHour = index + 1;
                 if (presentHour == numberHour) {
                     // document.getElementById("saveHour" + time_picker.normalizeNumber(presentHour)).click();
-                    document.getElementsByClassName("oclock-" + presentHour)[0].click();
+                    document.getElementsByClassName("hour-step" + presentHour)[0].click();
                 }
             }
         });

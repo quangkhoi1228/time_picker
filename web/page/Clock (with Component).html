@@ -11,7 +11,8 @@
     <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/styleOfClock (with Component).css">
     <script src="../static/js/all.min.js"></script>
-    <script src="../static/js/scriptOfClock (with Component).js"></script>
+    <!-- <script src="../static/js/scriptOfClock (with Component).js"></script> -->
+    <script src="../static/js/scriptOfClockComponent.js"></script>
 </head>
 
 <body>
@@ -116,36 +117,11 @@
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
             // time_picker.openModal();
-            time_picker.closeModal();
-            time_picker.createStructure();
-            time_picker.setupClockFeature();
+            // time_picker.closeModal();
+            // time_picker.createStructure();
+            // time_picker.setupClockFeature();
 
-
-            // NEW 
-            var inputComponent = (function () {
-                var constructor = function (selector) {
-                    this.selector = selector;
-                    this.container;
-                    this.button;
-                    this.createStructure = function () {
-                        this.container = document.querySelector(this.selector);
-                        this.button = this.container.querySelector('.button');
-                    };
-
-                    this.addEventShowResult = function () {
-                        var object = this;
-                        object.button.onclick = function () {
-                            time_picker.openModal(object.selector);
-                        }
-                    };
-
-                    this.createStructure();
-                    this.addEventShowResult();
-                }
-                return constructor;
-            })();
-            var clock1 = new inputComponent('#id1');
-
+            // var clock1 = new inputComponent('#id1');
             var clock2 = new inputComponent('#id2');
         });
     </script>

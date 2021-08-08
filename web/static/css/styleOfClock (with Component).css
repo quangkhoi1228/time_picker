@@ -217,7 +217,7 @@ button[class="time-picker-buttons"]:hover {
   border-radius: 50%;
 }
 
-.oclock-1 {
+.hour-step1 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -235,7 +235,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-2 {
+.hour-step2 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -253,7 +253,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-3 {
+.hour-step3 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -271,7 +271,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-4 {
+.hour-step4 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -289,7 +289,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-5 {
+.hour-step5 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -307,7 +307,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-6 {
+.hour-step6 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -325,7 +325,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-7 {
+.hour-step7 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -343,7 +343,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-8 {
+.hour-step8 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -361,7 +361,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-9 {
+.hour-step9 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -379,7 +379,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-10 {
+.hour-step10 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -397,7 +397,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-11 {
+.hour-step11 {
   color: #000000;
   background: transparent;
   height: 2.5rem;
@@ -415,7 +415,7 @@ button[class="time-picker-buttons"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.oclock-12 {
+.hour-step12 {
   color: #000000;
   background: transparent;
   height: 2.5rem;

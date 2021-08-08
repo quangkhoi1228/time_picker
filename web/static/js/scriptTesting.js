@@ -83,13 +83,14 @@ var time_picker = {
         time_picker.createHourStructure();
         time_picker.createMinuteStructure();
     },
-    openModal: function () {
+    openModal: function (selector) {
         // var button = document.querySelector('#launchModal');
-        var launchModal = document.getElementsByClassName('button-time-picker');
-        var button = launchModal[0];    // #launchModal
+        // var launchModal = document.getElementsByClassName('button-time-picker');
+        // var button = launchModal[0];    // #launchModal
+        document.querySelector(`${selector} .button-time-picker`).click();
         var modal = document.querySelector('.modal');
         var count = 0;
-        button.onclick = function () {
+        // button.onclick = function () {
             modal.classList.add('is-active');
             time_picker.addHourLocation();
             time_picker.addMinuteLocation();
@@ -136,7 +137,7 @@ var time_picker = {
                 switchHour.style.display = "block";
                 switchMinute.style.display = "none";
             }
-        }
+        // }
     },
     closeModal: function () {
         var background = document.querySelector('.modal-background');
