@@ -49,9 +49,9 @@
                     };
 
                     this.addEventShowResult = function () {
-                        var object = this;
+                        var object = this; // object = constructor
                         object.button.onclick = function () {
-                            console.log(object.selector + ' ' + object.input.value);
+                            alert(object.selector + ' ' + object.input.value);
                         }
                     };
 

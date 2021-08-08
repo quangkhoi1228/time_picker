@@ -1,0 +1,1573 @@
+body {
+  background: #7d7e82;
+  padding: 2rem 3rem 3rem 3rem;
+}
+
+.choose-time {
+  height: 1.75rem;
+  width: 10.438rem;
+  border: none;
+  border-radius: 0%;
+  background: #a2a3a7;
+}
+
+.button-time-picker {
+  font-size: 1rem;
+  height: 1.75rem;
+  width: 1.25rem;
+  border: none;
+  border-radius: 0%;
+  background: #a2a3a7;
+}
+
+.time-result {
+  font-size: 1.125rem;
+  height: 2rem;
+  width: 13rem;
+  border: 0.063rem solid #bfc0c4;
+  border-radius: 0%;
+  padding-left: 0.5rem;
+  background: #a2a3a7;
+  color: #000000;
+  display: flex;
+}
+
+.time-result div {
+  position: relative;
+  top: 0.1rem;
+}
+
+.control a {
+  position: relative;
+  top: 0.1rem;
+  right: 2rem;
+}
+
+input[class="result"] {
+  height: 1.75rem;
+  width: 10.75rem;
+  border: none;
+  border-radius: 0%;
+  background: #a2a3a7;
+  padding-left: 0.875rem;
+  font-size: 0.875rem;
+}
+
+/* About clock */
+.modal-content {
+  width: 20rem;
+  background: transparent;
+}
+
+.modal-background {
+  background: #0000004d;
+}
+
+.time-showing-box {
+  height: 5rem;
+  background: #4285f4;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  position: relative;
+}
+
+.time-showing {
+  background: transparent;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time-oclock {
+  display: flex;
+
+  position: relative;
+  top: 0.6rem;
+  right: 1rem;
+}
+
+.time-oclock span {
+  color: #b3cefb;
+  font-size: 3.5rem;
+
+  position: relative;
+  bottom: 0.7rem;
+  left: 1rem;
+}
+
+.time-showing-detail {
+  color: #b3cefb;
+  text-align: center;
+  font-size: 4rem;
+  height: 4rem;
+  width: 4.5rem;
+  background: transparent;
+  position: relative;
+  bottom: 0.5rem;
+  left: 1rem;
+}
+
+.time-showing-session {
+  background: transparent;
+
+  display: block;
+  position: relative;
+  top: 1rem;
+  right: 0.5rem;
+}
+
+.sessionSwitchButton {
+  width: 3rem;
+  height: 1.75rem;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: #b3cefb;
+}
+
+.hourMode {
+  border: none;
+  background: transparent;
+
+  position: relative;
+  bottom: 0.3rem;
+}
+
+.minuteMode {
+  border: none;
+  background: transparent;
+
+  position: relative;
+  bottom: 0.3rem;
+}
+
+.clock-showing-box {
+  height: 20rem;
+  background: #ffffff;
+  position: relative;
+}
+
+.clock-showing {
+  height: 19rem;
+  width: 19rem;
+  background: #f0f0f0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time-picker-block-buttons {
+  background: #ffffff;
+  border-top: 0.125rem solid #f0f0f0;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.time-picker-buttons {
+  height: 3rem;
+  width: 5rem;
+  border: none;
+  padding: 0;
+  background: #ffffff;
+  color: #4285f4;
+}
+
+.time-picker-block-buttons div:nth-child(1) .time-picker-buttons:nth-child(1) {       /* #clearTime */
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.time-picker-block-buttons div:nth-child(2) .time-picker-buttons:nth-child(1) {       /* #closeTime */
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.time-picker-block-buttons div:nth-child(2) .time-picker-buttons:nth-child(2) {       /* #saveTime */
+  width: 4.5rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+
+button[class="time-picker-buttons"]:focus,
+button[class="time-picker-buttons"]:hover {
+  background-color: #e7e7e7;
+  transition: all 1s;
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  justify-content: center;
+  background: #4285f4;
+  height: 0.4rem;
+  width: 0.4rem;
+  border-radius: 50%;
+}
+
+.oclock-1 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 18%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-2 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 32%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-3 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-4 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 68%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-5 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 82%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-6 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-7 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 82%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-8 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 68%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-9 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-10 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 32%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-11 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 18%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.oclock-12 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Big steps */
+.minute-step5 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 18%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step10 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 32%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step15 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step20 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 68%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step25 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 82%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step30 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step35 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 82%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step40 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 68%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step45 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step50 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 32%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step55 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 18%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step60 {
+  color: #000000;
+  background: transparent;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Small steps  */
+.minute-step1 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 11.6%;
+  left: 53.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step2 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 13.2%;
+  left: 57.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step3 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 14.8%;
+  left: 60.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step4 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 16.4%;
+  left: 64.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step6 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 20.8%;
+  left: 70.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step7 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 23.6%;
+  left: 73.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step8 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 26.4%;
+  left: 76.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step9 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 29.2%;
+  left: 79.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step11 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 35.6%;
+  left: 83.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step12 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 39.2%;
+  left: 85.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step13 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 42.8%;
+  left: 86.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step14 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 46.4%;
+  left: 87.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step16 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 53.6%;
+  left: 87.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step17 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 57.2%;
+  left: 86.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step18 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 60.8%;
+  left: 85.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step19 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 64.4%;
+  left: 83.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step21 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 70.8%;
+  left: 79.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step22 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 73.6%;
+  left: 76.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step23 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 76.4%;
+  left: 73.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step24 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 79.2%;
+  left: 70.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step26 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 83.6%;
+  left: 64.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step27 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 85.2%;
+  left: 60.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step28 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 86.8%;
+  left: 57.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step29 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 87.4%;
+  left: 53.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step31 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 87.4%;
+  left: 46.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step32 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 86.8%;
+  left: 42.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step33 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 85.2%;
+  left: 39.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step34 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 83.6%;
+  left: 35.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step36 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 79.2%;
+  left: 29.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step37 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 76.4%;
+  left: 26.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step38 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 73.6%;
+  left: 23.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step39 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 70.8%;
+  left: 20.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step41 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 64.4%;
+  left: 16.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step42 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 60.8%;
+  left: 14.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step43 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 57.2%;
+  left: 13.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step44 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 53.6%;
+  left: 12.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step46 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 46.4%;
+  left: 12.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step47 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 42.8%;
+  left: 13.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step48 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 39.2%;
+  left: 14.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step49 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 35.6%;
+  left: 16.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step51 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 29.2%;
+  left: 20.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step52 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 26.4%;
+  left: 23.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step53 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 23.6%;
+  left: 26.4%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step54 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 20.8%;
+  left: 29.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step56 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 16.4%;
+  left: 35.6%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step57 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 14.8%;
+  left: 39.2%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step58 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 13.2%;
+  left: 42.8%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-step59 {
+  color: transparent;
+  background: transparent;
+  height: 0.938rem;
+  width: 0.938rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 12.6%;
+  left: 46.4%;
+  transform: translate(-50%, -50%);
+}
+
+.handle {
+  width: 0.1rem;
+  height: 6.8rem;
+  background: #4285f4;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dot-handle {
+  background-color: #4285f4;
+  height: 0.6rem;
+  width: 0.6rem;
+  padding: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.handleBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* -webkit-transition: -webkit-transform .8s ease-in-out;
+  -ms-transition: -ms-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out; */
+}
+
+.clock-showing:last-child .highlight p {
+  background-color: #4285f4;
+  color: #ffffff;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.big-steps .highlight p {
+  background-color: #4285f4;
+  color: #ffffff;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}

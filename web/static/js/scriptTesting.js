@@ -84,7 +84,9 @@ var time_picker = {
         time_picker.createMinuteStructure();
     },
     openModal: function () {
-        var button = document.querySelector('#launchModal');
+        // var button = document.querySelector('#launchModal');
+        var launchModal = document.getElementsByClassName('button-time-picker');
+        var button = launchModal[0];    // #launchModal
         var modal = document.querySelector('.modal');
         var count = 0;
         button.onclick = function () {
@@ -92,16 +94,24 @@ var time_picker = {
             time_picker.addHourLocation();
             time_picker.addMinuteLocation();
             if (count == 0) {
-                document.getElementById("saveHour12").click();
-                document.getElementById("saveMinute60").click();
-                var switchHourOutput = document.getElementById("outputHour");
-                var switchMinuteOutput = document.getElementById("outputMinute");
+                // document.getElementById("saveHour12").click();
+                document.getElementsByClassName('oclock-12')[0].click();    // #saveHour12
+                // document.getElementById("saveMinute60").click();
+                document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
+                // var switchHourOutput = document.getElementById("outputHour");
+                // var switchMinuteOutput = document.getElementById("outputMinute");
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                switchHourOutput = getTimeShowing[0];       //#outputHour
+                switchMinuteOutput = getTimeShowing[1];     //#outputMinute
                 
                 switchHourOutput.style.color = "#ffffff";
                 switchMinuteOutput.style.color = "#b3cefb";
 
-                var switchAM = document.getElementById("outputSessionAM");
-                var switchPM = document.getElementById("outputSessionPM");
+                // var switchAM = document.getElementById("outputSessionAM");
+                // var switchPM = document.getElementById("outputSessionPM");
+                var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
+                switchAM = sessionSwitchButton[0];      // #outputSessionAM
+                switchPM = sessionSwitchButton[1];      // #outputSessionPM
 
                 switchAM.style.color = "#ffffff";
                 switchAM.style.transition = "all 0s";
@@ -110,10 +120,16 @@ var time_picker = {
 
                 count++;
             } else {
-                var switchHour = document.getElementById("hour");
-                var switchMinute = document.getElementById("minute");
-                var switchHourOutput = document.getElementById("outputHour");
-                var switchMinuteOutput = document.getElementById("outputMinute");
+                // var switchHour = document.getElementById("hour");
+                // var switchMinute = document.getElementById("minute");
+                var timeModal = document.getElementsByClassName('clock-showing');
+                var switchHour = timeModal[1];      // #hour
+                var switchMinute = timeModal[0];    // #minute
+                // var switchHourOutput = document.getElementById("outputHour");
+                // var switchMinuteOutput = document.getElementById("outputMinute");
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                var switchHourOutput = getTimeShowing[0];       // #outputHour
+                var switchMinuteOutput = getTimeShowing[1];     // #outputMinute
 
                 switchHourOutput.style.color = "#ffffff";
                 switchMinuteOutput.style.color = "#b3cefb";
@@ -128,19 +144,27 @@ var time_picker = {
         background.onclick = function () {
             modal.classList.remove('is-active');
 
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
 
             switchHour.style.display = "block";
             switchMinute.style.display = "block";
         }
 
-        var closeButton = document.querySelector('#closeTime');
+        // var closeButton = document.querySelector('#closeTime');
+        var button = document.getElementsByClassName('time-picker-buttons');
+        var closeButton = button[1];    // #closeTime
         closeButton.onclick = function () {
             modal.classList.remove('is-active');
 
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
 
             switchHour.style.display = "block";
             switchMinute.style.display = "block";
@@ -157,8 +181,11 @@ var time_picker = {
         time_picker.switchToPM();
     },
     switchToAM: function () {
-        var switchAM = document.getElementById("outputSessionAM");
-        var switchPM = document.getElementById("outputSessionPM");
+        // var switchAM = document.getElementById("outputSessionAM");
+        // var switchPM = document.getElementById("outputSessionPM");
+        var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
+        switchAM = sessionSwitchButton[0];      // #outputSessionAM
+        switchPM = sessionSwitchButton[1];      // #outputSessionPM
         switchAM.onclick = function () {
             switchAM.style.color = "#ffffff";
             switchAM.style.transition = "all 0.8s";
@@ -167,8 +194,11 @@ var time_picker = {
         }
     },
     switchToPM: function () {
-        var switchAM = document.getElementById("outputSessionAM");
-        var switchPM = document.getElementById("outputSessionPM");
+        // var switchAM = document.getElementById("outputSessionAM");
+        // var switchPM = document.getElementById("outputSessionPM");
+        var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
+        switchAM = sessionSwitchButton[0];      // #outputSessionAM
+        switchPM = sessionSwitchButton[1];      // #outputSessionPM
         switchPM.onclick = function () {
             switchPM.style.color = "#ffffff";
             switchPM.style.transition = "all 0.8s";
@@ -179,10 +209,16 @@ var time_picker = {
     switchHour: function () {
         var button = document.querySelector('.time-oclock .hourMode');
         button.onclick = function () {
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
-            var switchHourOutput = document.getElementById("outputHour");
-            var switchMinuteOutput = document.getElementById("outputMinute");
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
+            // var switchHourOutput = document.getElementById("outputHour");
+            // var switchMinuteOutput = document.getElementById("outputMinute");
+            var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+            var switchHourOutput = getTimeShowing[0];       // #outputHour
+            var switchMinuteOutput = getTimeShowing[1];     // #outputMinute
 
             switchHourOutput.style.color = "#ffffff";
             switchMinuteOutput.style.color = "#b3cefb";
@@ -190,15 +226,25 @@ var time_picker = {
             switchMinute.style.display = "none";
 
             time_picker.stopControlMinuteMouseDown();
+            // var moveMinutePointer = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveMinutePointer = timeModal[0];     // #minute
+            moveMinutePointer.style.cursor = "default";
         }
     },
     switchMinute: function () {
         var button = document.querySelector('.time-oclock .minuteMode');
         button.onclick = function () {
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
-            var switchHourOutput = document.getElementById("outputHour");
-            var switchMinuteOutput = document.getElementById("outputMinute");
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
+            // var switchHourOutput = document.getElementById("outputHour");
+            // var switchMinuteOutput = document.getElementById("outputMinute");
+            var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+            var switchHourOutput = getTimeShowing[0];       // #outputHour
+            var switchMinuteOutput = getTimeShowing[1];     // #outputMinute
 
             switchHourOutput.style.color = "#b3cefb";
             switchMinuteOutput.style.color = "#ffffff";
@@ -206,20 +252,28 @@ var time_picker = {
             switchMinute.style.display = "block";
 
             time_picker.stopControlHourMouseDown();
+            // var moveHourPointer = document.getElementById("hour");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveHourPointer = timeModal[1];     // #hour
+            moveHourPointer.style.cursor = "default";
         }
     },
     createHourStructure: function () {
-        var container = document.getElementById('hour');
+        // var container = document.getElementById('hour');
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var container = timeModal[1];     // #hour
         for (var number = 1; number <= 12; number++) {
             var button = document.createElement('button');
             button.setAttribute('class', 'oclock-' + number);
-            button.setAttribute('id', 'saveHour' + time_picker.normalizeNumber(number));
+            // button.setAttribute('id', 'saveHour' + time_picker.normalizeNumber(number));
             button.setAttribute('value', time_picker.normalizeNumber(number));
             button.setAttribute('data-color', 'blue');
 
 
             var div = document.createElement('div');
-            div.setAttribute('id', 'blueHour' + time_picker.normalizeNumber(number));
+            // div.setAttribute('id', 'blueHour' + time_picker.normalizeNumber(number));
+            div.setAttribute('class', 'blueHour' + time_picker.normalizeNumber(number));
+
             button.appendChild(div);
 
             var p = document.createElement('p');
@@ -235,18 +289,21 @@ var time_picker = {
         time_picker.createSmallStepMinuteStructure();
     },
     createBigStepMinuteStructure: function () {
-        var bigStepsContainer = document.querySelector('#minute .big-steps');
+        // var bigStepsContainer = document.querySelector('#minute .big-steps');
+        var bigStepsContainer = document.querySelector('.clock-showing .big-steps');
         for (var number = 1; number <= 12; number++) {
             var button = document.createElement('button');
-            button.setAttribute('class', 'oclock-' + number);
-            button.setAttribute('id', 'saveMinute' + time_picker.normalizeNumber(number * 5));
+            button.setAttribute('class', 'minute-step' + (number*5));
+            // button.setAttribute('id', 'saveMinute' + time_picker.normalizeNumber(number * 5));
             var value = (number * 5 == 60) ? 0 : (number * 5);
 
             button.setAttribute('value', value);
             button.setAttribute('data-color', 'blue');
 
             var div = document.createElement('div');
-            div.setAttribute('id', 'blueMinute' + time_picker.normalizeNumber(number * 5));
+            // div.setAttribute('id', 'blueMinute' + time_picker.normalizeNumber(number * 5));
+            div.setAttribute('class', 'blueMinute' + time_picker.normalizeNumber(number * 5));
+
             button.appendChild(div);
 
             var p = document.createElement('p');
@@ -258,17 +315,20 @@ var time_picker = {
         }
     },
     createSmallStepMinuteStructure: function () {
-        var smallStepsContainer = document.querySelector('#minute .small-steps');
+        // var smallStepsContainer = document.querySelector('#minute .small-steps');
+        var smallStepsContainer = document.querySelector('.clock-showing .small-steps');
         for (var number = 1; number < 60; number++) {
             if (number % 5 != 0) {
                 var button = document.createElement('button');
                 button.setAttribute('class', 'minute-step' + number);
-                button.setAttribute('id', 'saveMinute' + time_picker.normalizeNumber(number));
+                // button.setAttribute('id', 'saveMinute' + time_picker.normalizeNumber(number));
                 button.setAttribute('value', time_picker.normalizeNumber(number));
                 button.setAttribute('data-color', 'blue');
 
                 var div = document.createElement('div');
-                div.setAttribute('id', 'blueMinute' + time_picker.normalizeNumber(number));
+                // div.setAttribute('id', 'blueMinute' + time_picker.normalizeNumber(number));
+                div.setAttribute('class', 'blueMinute' + time_picker.normalizeNumber(number));
+
                 button.appendChild(div);
 
                 var p = document.createElement('p');
@@ -280,11 +340,14 @@ var time_picker = {
     },
     addEventHourButton: function (button, number) {
         button.addEventListener("click", function () {
-            var hourHandle = document.getElementById("hourHandle");
+            // var hourHandle = document.getElementById("hourHandle");
+            var handle = document.getElementsByClassName('handleBox');
+            var hourHandle = handle[1];     // #hourHandle
             hourHandle.style.transform = `translate(-50%, -50%) rotate(${number * 30}deg)`;
-            document.getElementById("outputHour").innerHTML = button.getAttribute('value');
+            // document.getElementById("outputHour").innerHTML = button.getAttribute('value');
+            document.getElementsByClassName('time-showing-detail')[0].innerHTML = button.getAttribute('value');     // #outputHour
             for (var numberHighlight = 1; numberHighlight <= 12; numberHighlight++) {
-                var highlightContainer = document.querySelector('#blueHour' + time_picker.normalizeNumber(numberHighlight));
+                var highlightContainer = document.querySelector('.blueHour' + time_picker.normalizeNumber(numberHighlight));
                 highlightContainer.classList.remove('highlight');
             }
             button.querySelector('div').classList.add('highlight');
@@ -292,11 +355,14 @@ var time_picker = {
     },
     addEventBigStepMinuteButton: function (button, number) {
         button.addEventListener("click", function () {
-            var minuteHandle = document.getElementById("minuteHandle");
+            // var minuteHandle = document.getElementById("minuteHandle");
+            var handle = document.getElementsByClassName('handleBox');
+            var minuteHandle = handle[0];       // #minuteHandle
             minuteHandle.style.transform = `translate(-50%, -50%) rotate(${number * 30}deg)`;
-            document.getElementById("outputMinute").innerHTML = time_picker.normalizeNumber(button.getAttribute('value'));
+            // document.getElementById("outputMinute").innerHTML = time_picker.normalizeNumber(button.getAttribute('value'));
+            document.getElementsByClassName('time-showing-detail')[1].innerHTML = time_picker.normalizeNumber(button.getAttribute('value'));     // #outputMinute
             for (var numberHighlight = 1; numberHighlight <= 12; numberHighlight++) {
-                var highlightContainer = document.querySelector('#blueMinute' + time_picker.normalizeNumber(numberHighlight * 5));
+                var highlightContainer = document.querySelector('.blueMinute' + time_picker.normalizeNumber(numberHighlight * 5));
                 highlightContainer.classList.remove('highlight');
             }
             button.querySelector('div').classList.add('highlight');
@@ -304,11 +370,14 @@ var time_picker = {
     },
     addEventSmallStepMinuteButton: function (button, number) {
         button.addEventListener("click", function () {
-            var minuteHandle = document.getElementById("minuteHandle");
+            // var minuteHandle = document.getElementById("minuteHandle");
+            var handle = document.getElementsByClassName('handleBox');
+            var minuteHandle = handle[0];       // #minuteHandle
             minuteHandle.style.transform = `translate(-50%, -50%) rotate(${number * 6}deg)`;
-            document.getElementById("outputMinute").innerHTML = button.getAttribute('value');
+            // document.getElementById("outputMinute").innerHTML = button.getAttribute('value');
+            document.getElementsByClassName('time-showing-detail')[1].innerHTML = button.getAttribute('value');     // #outputMinute
             for (var numberHighlight = 1; numberHighlight <= 60; numberHighlight++) {
-                var highlightContainer = document.querySelector('#blueMinute' + time_picker.normalizeNumber(numberHighlight));
+                var highlightContainer = document.querySelector('.blueMinute' + time_picker.normalizeNumber(numberHighlight));
                 highlightContainer.classList.remove('highlight');
             }
         });
@@ -324,15 +393,27 @@ var time_picker = {
         time_picker.scrollMinuteClock();
     },
     saveTimeButton: function () {
-        var button = document.querySelector('.time-picker-buttons#saveTime');
-        button.onclick = function () {
-            var hour = document.getElementById("outputHour");
-            var minute = document.getElementById("outputMinute");
-            var outputSessionAM = document.getElementById("outputSessionAM");
-            var outputSessionPM = document.getElementById("outputSessionPM");
+        // var button = document.querySelector('.time-picker-buttons#saveTime');
+        var button = document.getElementsByClassName('time-picker-buttons');
+        var saveTime = button[2];
 
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
+        saveTime.onclick = function () {
+            // var hour = document.getElementById("outputHour");
+            // var minute = document.getElementById("outputMinute");
+            var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+            var hour = getTimeShowing[0];       // #outputHour
+            var minute = getTimeShowing[1];     // #outputMinute
+            // var outputSessionAM = document.getElementById("outputSessionAM");
+            // var outputSessionPM = document.getElementById("outputSessionPM");
+            var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
+            var outputSessionAM = sessionSwitchButton[0];   //outputSessionAM
+            var outputSessionPM = sessionSwitchButton[1];   //outputSessionPM
+
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
 
             switchHour.style.display = "block";
             switchMinute.style.display = "block";
@@ -341,19 +422,33 @@ var time_picker = {
             modal.classList.remove('is-active');
 
             if (outputSessionAM.style.color != "rgb(255, 255, 255)") {
-                document.getElementById("resultSession").innerHTML = outputSessionPM.innerText;
+                // document.getElementById("resultSession").innerHTML = outputSessionPM.innerText;
+                var resultSession = document.getElementsByClassName('time-result-session');
+                resultSession[0].innerHTML = outputSessionPM.innerText;
             } else {
-                document.getElementById("resultSession").innerHTML = outputSessionAM.innerText;
+                // document.getElementById("resultSession").innerHTML = outputSessionAM.innerText;
+                var resultSession = document.getElementsByClassName('time-result-session');
+                resultSession[0].innerHTML = outputSessionAM.innerText;
             }
-            document.getElementById("resultHour").innerHTML = hour.innerText;
-            document.getElementById("resultMinute").innerHTML = minute.innerText;
+            // document.getElementById("resultHour").innerHTML = hour.innerText;
+            // document.getElementById("resultMinute").innerHTML = minute.innerText;
+            var resultHour = document.getElementsByClassName('time-result-hour');
+            resultHour[0].innerHTML = hour.innerText;
+            var resultMinute = document.getElementsByClassName('time-result-minute');
+            resultMinute[0].innerHTML = minute.innerText;
         }
     },
     clearTimeButton: function () {
-        var button = document.querySelector('.time-picker-buttons#clearTime');
-        button.onclick = function () {
-            var switchHour = document.getElementById("hour");
-            var switchMinute = document.getElementById("minute");
+        // var button = document.querySelector('.time-picker-buttons#clearTime');
+        var button = document.getElementsByClassName('time-picker-buttons');
+        var clearButton = button[0];
+
+        clearButton.onclick = function () {
+            // var switchHour = document.getElementById("hour");
+            // var switchMinute = document.getElementById("minute");
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
 
             switchHour.style.display = "block";
             switchMinute.style.display = "block";
@@ -361,17 +456,28 @@ var time_picker = {
             var modal = document.querySelector(".modal");
             modal.classList.remove('is-active');
 
-            document.getElementById("saveHour12").click();
-            document.getElementById("saveMinute60").click();
+            // document.getElementById("saveHour12").click();
+            document.getElementsByClassName('oclock-12')[0].click();    // #saveHour12
+            // document.getElementById("saveMinute60").click();
+            document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
+            document.getElementsByClassName('sessionSwitchButton')[0].click(); // #outputSessionAM
 
-            document.getElementById("resultSession").innerHTML = "--";
-            document.getElementById("resultHour").innerHTML = "--";
-            document.getElementById("resultMinute").innerHTML = "--";
+            // document.getElementById("resultSession").innerHTML = "--";
+            // document.getElementById("resultHour").innerHTML = "--";
+            // document.getElementById("resultMinute").innerHTML = "--";
+            var resultSession = document.getElementsByClassName('time-result-session');
+            resultSession[0].innerHTML = "--";
+            var resultHour = document.getElementsByClassName('time-result-hour');
+            resultHour[0].innerHTML = "--";
+            var resultMinute = document.getElementsByClassName('time-result-minute');
+            resultMinute[0].innerHTML = "--";
         }
     },
     clickOnClock: function () {
-        var moveHourPointer = document.getElementById("hour");
-        var moveMinutePointer = document.getElementById("minute");
+        // var moveMinutePointer = document.getElementById("minute");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var moveHourPointer = timeModal[1];     // #hour
+        var moveMinutePointer = timeModal[0];   // #minute
 
         moveHourPointer.onmousedown = function () {
             moveHourPointer.style.cursor = "move";
@@ -397,15 +503,19 @@ var time_picker = {
             var xDefault = 1;
             var yDefault = 1;
 
-            xDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
-            yDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
+            // xDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().left + window.scrollX;
+            // yDefault = document.querySelector('#saveHour' + time_picker.normalizeNumber(numberHour)).getBoundingClientRect().top + window.scrollY;
+            xDefault = document.querySelector('.oclock-' + numberHour).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('.oclock-' + numberHour).getBoundingClientRect().top + window.scrollY;
 
             stepsOfClockLocation.locationForHours[index].xHour = xDefault + 20;
             stepsOfClockLocation.locationForHours[index].yHour = yDefault + 20;
         }
     },
     beginControlHourMouseDown: function () {
-        var moveHourPointer = document.getElementById("hour");
+        // var moveHourPointer = document.getElementById("hour");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var moveHourPointer = timeModal[1];     // #hour
         moveHourPointer.onmousemove = time_picker.locateHourCursorDown();
     },
     locateHourCursorDown: function () {
@@ -425,13 +535,16 @@ var time_picker = {
                 if (stepsOfClockLocation.locationForHours[index].distanceCursor < minDistanceHour) {
                     minDistanceHour = stepsOfClockLocation.locationForHours[index].distanceCursor;
                     hourChosen = index + 1;
-                    document.getElementById("saveHour" + time_picker.normalizeNumber(hourChosen)).click();
+                    // document.getElementById("saveHour" + time_picker.normalizeNumber(hourChosen)).click();
+                    document.getElementsByClassName("oclock-" + hourChosen)[0].click();
                 }
             }
         }
     },
     stopControlHourMouseDown: function () {
-        var moveHourPointer = document.getElementById("hour");
+        // var moveHourPointer = document.getElementById("hour");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var moveHourPointer = timeModal[1];     // #hour
         moveHourPointer.onmousemove = time_picker.locateHourCursorUp();
     },
     locateHourCursorUp: function () {
@@ -444,8 +557,10 @@ var time_picker = {
             var xDefault = 1;
             var yDefault = 1;
 
-            xDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().left + window.scrollX;
-            yDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().top + window.scrollY;
+            // xDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().left + window.scrollX;
+            // yDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteBigSteps)).getBoundingClientRect().top + window.scrollY;
+            xDefault = document.querySelector('.minute-step' + numberMinuteBigSteps).getBoundingClientRect().left + window.scrollX;
+            yDefault = document.querySelector('.minute-step' + numberMinuteBigSteps).getBoundingClientRect().top + window.scrollY;
 
             if (index == 0) {
                 var subIndex1 = index + 4;
@@ -465,8 +580,10 @@ var time_picker = {
                 var xDefault = 1;
                 var yDefault = 1;
 
-                xDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().left + window.scrollX;
-                yDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().top + window.scrollY;
+                // xDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().left + window.scrollX;
+                // yDefault = document.querySelector('#saveMinute' + time_picker.normalizeNumber(numberMinuteSmallSteps)).getBoundingClientRect().top + window.scrollY;
+                xDefault = document.querySelector('.minute-step' + numberMinuteSmallSteps).getBoundingClientRect().left + window.scrollX;
+                yDefault = document.querySelector('.minute-step' + numberMinuteSmallSteps).getBoundingClientRect().top + window.scrollY;
 
                 stepsOfClockLocation.locationForMinutes[index].xMinute = xDefault + 7.5;
                 stepsOfClockLocation.locationForMinutes[index].yMinute = yDefault + 7.5;
@@ -474,7 +591,9 @@ var time_picker = {
         }
     },
     beginControlMinuteMouseDown: function () {
-        var moveHourPointer = document.getElementById("minute");
+        // var moveHourPointer = document.getElementById("minute");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var moveHourPointer = timeModal[0];    // #minute
         moveHourPointer.onmousemove = time_picker.locateMinuteCursorDown();
     },
     locateMinuteCursorDown: function () {
@@ -494,31 +613,40 @@ var time_picker = {
                 if (stepsOfClockLocation.locationForMinutes[index].distanceCursor < minDistanceMinute) {
                     minDistanceMinute = stepsOfClockLocation.locationForMinutes[index].distanceCursor;
                     minuteChosen = index + 1;
-                    document.getElementById("saveMinute" + time_picker.normalizeNumber(minuteChosen)).click();
+                    // document.getElementById("saveMinute" + time_picker.normalizeNumber(minuteChosen)).click();
+                    document.getElementsByClassName("minute-step" + minuteChosen)[0].click();
                 }
             }
         }
     },
     stopControlMinuteMouseDown: function () {
-        var moveHourPointer = document.getElementById("minute");
+        // var moveHourPointer = document.getElementById("minute");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var moveHourPointer = timeModal[0];    // #minute
         moveHourPointer.onmousemove = time_picker.locateMinuteCursorUp();
     },
     locateMinuteCursorUp: function () {
         document.onmousemove = null;
     },
     scrollHourClock: function () {
-        var scrollClock = document.getElementById("hour");
+        // var scrollClock = document.getElementById("hour");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var scrollClock = timeModal[1];    // #hour
 
         scrollClock.addEventListener('wheel', function (eventData) {
             if (eventData.deltaY <= 0) {
-                var chosenHour = document.getElementById("outputHour").innerHTML;
+                // var chosenHour = document.getElementById("outputHour").innerHTML;
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                var chosenHour = getTimeShowing[0].innerHTML;       // #outputHour
                 var presentHour = Number(chosenHour);
                 presentHour += 1;
                 if (presentHour == 13) {
                     presentHour = 1;
                 }
             } else {
-                var chosenHour = document.getElementById("outputHour").innerHTML;
+                // var chosenHour = document.getElementById("outputHour").innerHTML;
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                var chosenHour = getTimeShowing[0].innerHTML;       // #outputHour
                 var presentHour = Number(chosenHour);
                 presentHour -= 1;
                 if (presentHour == 0) {
@@ -529,24 +657,31 @@ var time_picker = {
             for (var index = 0; index < 12; index++) {
                 var numberHour = index + 1;
                 if (presentHour == numberHour) {
-                    document.getElementById("saveHour" + time_picker.normalizeNumber(presentHour)).click();
+                    // document.getElementById("saveHour" + time_picker.normalizeNumber(presentHour)).click();
+                    document.getElementsByClassName("oclock-" + presentHour)[0].click();
                 }
             }
         });
     },
     scrollMinuteClock: function () {
-        var scrollClock = document.getElementById("minute");
+        // var scrollClock = document.getElementById("minute");
+        var timeModal = document.getElementsByClassName('clock-showing');
+        var scrollClock = timeModal[0];    // #minute
 
         scrollClock.addEventListener('wheel', function (eventData) {
             if (eventData.deltaY <= 0) {
-                var chosenMinute = document.getElementById("outputMinute").innerHTML;
+                // var chosenMinute = document.getElementById("outputMinute").innerHTML;
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                var chosenMinute = getTimeShowing[1].innerHTML;       // #outputMinute
                 var presentMinute = Number(chosenMinute);
                 presentMinute += 1;
                 if (presentMinute == 61) {
                     presentMinute = 1;
                 }
             } else {
-                var chosenMinute = document.getElementById("outputMinute").innerHTML;
+                // var chosenMinute = document.getElementById("outputMinute").innerHTML;
+                var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+                var chosenMinute = getTimeShowing[1].innerHTML;       // #outputMinute
                 var presentMinute = Number(chosenMinute);
                 presentMinute -= 1;
                 if (presentMinute == 0) {
@@ -560,7 +695,8 @@ var time_picker = {
             for (var index = 0; index < 60; index++) {
                 var numberMinute = index + 1;
                 if (presentMinute == numberMinute) {
-                    document.getElementById("saveMinute" + time_picker.normalizeNumber(presentMinute)).click();
+                    // document.getElementById("saveMinute" + time_picker.normalizeNumber(presentMinute)).click();
+                    document.getElementsByClassName("minute-step" + presentMinute)[0].click();
                 }
             }
         });

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title Page -->
+    <title>Many Clocks</title>
+    <link rel="icon" href="../static/image/Clock Icon.png" type="icon">
+
+    <!-- Tool Library -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet">
+    <link href="../fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styleOfClock (with Component).css">
+    <script src="../static/js/all.min.js"></script>
+    <script src="../static/js/scriptOfClock (with Component).js"></script>
+</head>
+
+<body>
+    <section>
+        <h1>Using Time Picker mode below to choose time:</h1>
+
+        <!-- FIRST CLOCK  -->
+        <div class="field field-time-picker has-addons" id="id1">
+            <div class="control">
+                <div class="time-result">
+                    <div class="time-result-hour">--</div>
+                    <div>&nbsp;:&nbsp;</div>
+                    <div class="time-result-minute">--</div>
+                    <div>&nbsp;&nbsp;</div>
+                    <div class="time-result-session">--</div>
+                </div>
+            </div>
+
+            <div class="control">
+                <a class="button button-time-picker">
+                    <i class="fas fa-clock"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- SECOND CLOCK  -->
+        <div class="field field-time-picker has-addons" id="id2">
+            <div class="control">
+                <div class="time-result">
+                    <div class="time-result-hour">--</div>
+                    <div>&nbsp;:&nbsp;</div>
+                    <div class="time-result-minute">--</div>
+                    <div>&nbsp;&nbsp;</div>
+                    <div class="time-result-session">--</div>
+                </div>
+            </div>
+
+            <div class="control">
+                <a class="button button-time-picker">
+                    <i class="fas fa-clock"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="parent-container time-showing-box">
+                    <div class="child-container time-showing">
+                        <div class="time-oclock">
+                            <button class="hourMode">
+                                <div class="time-showing-detail">12</div>
+                            </button>
+
+                            <span>:</span>
+
+                            <button class="minuteMode">
+                                <div class="time-showing-detail">00</div>
+                            </button>
+                        </div>
+
+                        <div class="time-showing-session">
+                            <button class="sessionSwitchButton">AM</button>
+                            <button class="sessionSwitchButton">PM</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parent-container clock-showing-box">
+                    <div class="child-container clock-showing">
+                        <div class="handleBox">
+                            <div class="dot-handle"></div>
+                            <div class="handle"></div>
+                        </div>
+                        <div class="center-dot"></div>
+                        <!-- Big steps  -->
+                        <div class="big-steps"></div>
+                        <!-- Small steps -->
+                        <div class="small-steps"></div>
+                    </div>
+
+                    <div class="child-container clock-showing">
+                        <div class="handleBox">
+                            <div class="dot-handle"></div>
+                            <div class="handle"></div>
+                        </div>
+                        <div class="center-dot"></div>
+                    </div>
+                </div>
+                <div class="time-picker-block-buttons">
+                    <div>
+                        <button class="time-picker-buttons"> CLEAR </button>
+                    </div>
+                    <div>
+                        <button class="time-picker-buttons"> CLOSE </button>
+                        <button class="time-picker-buttons"> SAVE </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // time_picker.openModal();
+            time_picker.closeModal();
+            time_picker.createStructure();
+            time_picker.setupClockFeature();
+
+
+            // NEW 
+            var inputComponent = (function () {
+                var constructor = function (selector) {
+                    this.selector = selector;
+                    this.container;
+                    this.button;
+                    this.createStructure = function () {
+                        this.container = document.querySelector(this.selector);
+                        this.button = this.container.querySelector('.button');
+                    };
+
+                    this.addEventShowResult = function () {
+                        var object = this;
+                        object.button.onclick = function () {
+                            time_picker.openModal(object.selector);
+                        }
+                    };
+
+                    this.createStructure();
+                    this.addEventShowResult();
+                }
+                return constructor;
+            })();
+            var clock1 = new inputComponent('#id1');
+
+            var clock2 = new inputComponent('#id2');
+        });
+    </script>
+</body>
+
+</html>
