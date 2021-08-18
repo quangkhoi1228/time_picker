@@ -57,6 +57,25 @@
             </div>
         </div>
 
+        <!-- THIRD CLOCK  -->
+        <div class="field field-time-picker has-addons" id="id3">
+            <div class="control">
+                <div class="time-result">
+                    <div class="time-result-hour">--</div>
+                    <div>&nbsp;:&nbsp;</div>
+                    <div class="time-result-minute">--</div>
+                    <div>&nbsp;&nbsp;</div>
+                    <div class="time-result-session">--</div>
+                </div>
+            </div>
+
+            <div class="control">
+                <a class="button button-time-picker">
+                    <i class="fas fa-clock"></i>
+                </a>
+            </div>
+        </div>
+
         <div class="modal">
             <div class="modal-background"></div>
             <div class="modal-content">
@@ -116,6 +135,7 @@
     </section>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
+            // time_picker.addHourArray();
             // time_picker.openModal();
             // time_picker.closeModal();
             // time_picker.createStructure();
@@ -123,6 +143,7 @@
 
             var clock1 = new clockComponent('#id1');
             var clock2 = new clockComponent('#id2');
+            var clock3 = new clockComponent('#id3');
         });
     </script>
 </body>

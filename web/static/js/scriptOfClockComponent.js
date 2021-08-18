@@ -3,34 +3,19 @@ var clockComponent = (function () {
         this.selector = selector;
         this.container;
         this.button;
-        this.timeChosen;
-        this.timeResult;
-
-        // this.stepsOfClockLocation = {
-        //     "locationForHours": [
-        //         { xHour = "", yHour = "", distanceCursor = "" },
-        //     ],
-
-        //     "locationForMinutes": [
-        //         { xMinute = "", yMinute = "", distanceCursor = "" },
-        //     ],
-        // };
-        // this.addLocationForClock = function () {
-        //     for (var index = 0; index < 12; index ++) {
-
-        //     }
-        // }
-        
+        this.timeChosen = [         //STORE CHOSEN TIME
+            hour = null, minute = null, session = null
+        ];
         this.createDisplayStructure = function () {
             this.container = document.querySelector(this.selector);
             this.button = this.container.querySelector('.button');
         };
-
-        // CLOCK STRUCTURE 
-        this.createClockStructure = function () {
+        this.createClockStructure = function () {       // CLOCK STRUCTURE 
             var object = this;
+
             object.createHourStructure();
             object.createMinuteStructure();
+            object.addLocationForClock();
         };
         this.normalizeNumber = function (number) {
             if (number < 10) {
@@ -43,8 +28,17 @@ var clockComponent = (function () {
 
             var timeModal = document.getElementsByClassName('clock-showing');
             var container = timeModal[1];     // #hour
+
             for (var index = 0; index < 12; index++) {
+                //ERASE DUPLICATE HOURS
                 var number = index + 1;
+                var hourStep = document.getElementsByClassName(`hour-step${number}`);
+
+                for (var element of hourStep) {
+                    element.remove();
+                }
+
+                //CREATE STRUCTURE
                 var button = document.createElement('button');
                 button.setAttribute('class', 'hour-step' + number);
                 button.setAttribute('value', object.normalizeNumber(number));
@@ -63,14 +57,6 @@ var clockComponent = (function () {
                 container.appendChild(button);
                 object.addEventHourButton(button, number);
             }
-
-            //ERASE DUPLICATE HOURS
-            for (var index = 0; index < 12; index++) {
-                var number = index + 1;
-                if (document.getElementsByClassName(`hour-step${number}`)[1] != null) {
-                    document.getElementsByClassName(`hour-step${number}`)[1].remove();
-                }
-            }
         };
         this.addEventHourButton = function (button, number) {
             var object = this;
@@ -86,6 +72,7 @@ var clockComponent = (function () {
                     highlightContainer.classList.remove('highlight');
                 }
                 button.querySelector('div').classList.add('highlight');
+                object.timeChosen.hour = number;
             });
         };
         this.createMinuteStructure = function () {
@@ -99,7 +86,15 @@ var clockComponent = (function () {
 
             var bigStepsContainer = document.querySelector('.clock-showing .big-steps');
             for (var index = 0; index < 12; index++) {
+                //ERASE DUPLICATE HOURS
                 var number = index + 1;
+                var minuteStep = document.getElementsByClassName(`minute-step${number * 5}`);
+
+                for (var element of minuteStep) {
+                    element.remove();
+                }
+
+                //CREATE STRUCTURE
                 var button = document.createElement('button');
                 button.setAttribute('class', 'minute-step' + (number * 5));
                 var value = (number * 5 == 60) ? 0 : (number * 5);
@@ -119,14 +114,6 @@ var clockComponent = (function () {
                 bigStepsContainer.appendChild(button);
                 object.addEventBigStepMinuteButton(button, number);
             }
-
-            //ERASE DUPLICATE HOURS
-            for (var index = 0; index < 12; index++) {
-                var number = index + 1;
-                if (document.getElementsByClassName(`minute-step${number * 5}`)[1] != null) {
-                    document.getElementsByClassName(`minute-step${number * 5}`)[1].remove();
-                }
-            }
         };
         this.createSmallStepMinuteStructure = function () {
             var object = this;
@@ -135,6 +122,14 @@ var clockComponent = (function () {
             for (var index = 0; index < 59; index++) {
                 var number = index + 1;
                 if (number % 5 != 0) {
+                    //ERASE DUPLICATE HOURS
+                    var minuteStep = document.getElementsByClassName(`minute-step${number}`);
+
+                    for (var element of minuteStep) {
+                        element.remove();
+                    }
+
+                    //CREATE STRUCTURE
                     var button = document.createElement('button');
                     button.setAttribute('class', 'minute-step' + number);
                     button.setAttribute('value', object.normalizeNumber(number));
@@ -151,16 +146,6 @@ var clockComponent = (function () {
                     object.addEventSmallStepMinuteButton(button, number);
                 }
             }
-
-            //ERASE DUPLICATE HOURS
-            for (var index = 0; index < 59; index++) {
-                var number = index + 1;
-                if (number % 5 != 0) {
-                    if (document.getElementsByClassName(`minute-step${number}`)[1] != null) {
-                        document.getElementsByClassName(`minute-step${number}`)[1].remove();
-                    }
-                }
-            }
         };
         this.addEventBigStepMinuteButton = function (button, number) {
             var object = this;
@@ -175,6 +160,7 @@ var clockComponent = (function () {
                     highlightContainer.classList.remove('highlight');
                 }
                 button.querySelector('div').classList.add('highlight');
+                object.timeChosen.minute = number;
             });
         };
         this.addEventSmallStepMinuteButton = function (button, number) {
@@ -188,22 +174,39 @@ var clockComponent = (function () {
                 for (var numberHighlight = 1; numberHighlight <= 60; numberHighlight++) {
                     var highlightContainer = document.querySelector('.blueMinute' + object.normalizeNumber(numberHighlight));
                     highlightContainer.classList.remove('highlight');
+                    object.timeChosen.minute = number;
                 }
             });
+        };
+        this.stepsOfClockLocation = {
+            locationForHours: [],
+            locationForMinutes: [],
+        };
+        this.addLocationForClock = function () {
+            object = this;
+            //HOUR LOCATION
+            for (var index = 0; index < 12; index++) {
+                var number = index + 1;
+                object.stepsOfClockLocation.locationForHours[index] = { "xHour": number, "yHour": number, "distanceCursor": number }
+            }
+            //MINUTE LOCATION
+            for (var index = 0; index < 60; index++) {
+                var number = index + 1;
+                object.stepsOfClockLocation.locationForMinutes[index] = { "xMinute": number, "yMinute": number, "distanceCursor": number }
+            }
         };
 
         // MODAL STRUCTURE 
         this.createModalStructure = function () {
             var object = this;
 
-            object.openModal();
             object.closeModal();
             object.switchSession();
             object.switchUnitTime();
             object.saveTimeButton();
             object.clearTimeButton();
-            object.scrollHourClock();
-            object.scrollMinuteClock();
+            object.scrollTimeFunction();
+            object.turnTimeFunction();
         };
         this.openModal = function () {
             var object = this;
@@ -214,73 +217,97 @@ var clockComponent = (function () {
             object.button.onclick = function () {
                 modal.classList.add('is-active');
 
-                //     // object.addHourLocation();
-                //     // object.addMinuteLocation();
+                var modalContent = document.querySelector(".modal-content");
+                cloneModalContent = modalContent.cloneNode(true);
+                modalContent.replaceWith(cloneModalContent);
+                modalContent.remove();
+
+                object.createClockStructure();
+                object.createModalStructure();
+
+                object.addHourLocation();
+                object.addMinuteLocation();
                 if (document.querySelector(`${object.selector} .time-result-hour`).innerHTML === '--') {
-                    document.getElementsByClassName('hour-step12')[0].click();    // #saveHour12
-                    document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
+                    if (object.timeChosen.hour == null) {   //output == "--" && hour == null
+                        document.getElementsByClassName('hour-step12')[0].click();    // #saveHour12
+                        document.getElementsByClassName('minute-step60')[0].click();    // #saveMinute60
+                        document.getElementsByClassName('sessionSwitchButton')[0].click(); //AM
 
-                    var timeModal = document.getElementsByClassName('clock-showing');
-                    var switchHour = timeModal[1];      // #hour
-                    var switchMinute = timeModal[0];    // #minute
+                        document.querySelector('.hourMode').click();
+                    } else {                                //output == "--" && hour != null
+                        console.log(object.timeChosen.minute);
+                        document.getElementsByClassName(`hour-step${object.timeChosen.hour}`)[0].click();
+                        document.getElementsByClassName(`minute-step${object.timeChosen.minute}`)[0].click();
 
-                    var getTimeShowing = document.getElementsByClassName('time-showing-detail');
-                    var switchHourOutput = getTimeShowing[0];       //#outputHour
-                    var switchMinuteOutput = getTimeShowing[1];     //#outputMinute
+                        document.querySelector('.hourMode').click();
+                        if (object.timeChosen.session === "AM") {
+                            document.getElementsByClassName('sessionSwitchButton')[0].click(); //AM
+                        } else {
+                            document.getElementsByClassName('sessionSwitchButton')[1].click(); //PM
+                        }
+                    }
+                } else {                                    //output != "--"
+                    document.getElementsByClassName(`hour-step${object.timeChosen.hour}`)[0].click();
+                    document.getElementsByClassName(`minute-step${object.timeChosen.minute}`)[0].click();
 
-                    switchHourOutput.style.color = "#ffffff";
-                    switchMinuteOutput.style.color = "#b3cefb";
-
-                    var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
-                    var switchAM = sessionSwitchButton[0];      // #outputSessionAM
-                    var switchPM = sessionSwitchButton[1];      // #outputSessionPM
-
-                    switchAM.style.color = "#ffffff";
-                    switchAM.style.transition = "all 0s";
-                    switchPM.style.color = "#b3cefb";
-                    switchPM.style.transition = "all 0s";
-                } else {
-                    var timeModal = document.getElementsByClassName('clock-showing');
-                    var switchHour = timeModal[1];      // #hour
-                    var switchMinute = timeModal[0];    // #minute
-
-                    var getTimeShowing = document.getElementsByClassName('time-showing-detail');
-                    var switchHourOutput = getTimeShowing[0];       // #outputHour
-                    var switchMinuteOutput = getTimeShowing[1];     // #outputMinute
-
-                    switchHourOutput.style.color = "#ffffff";
-                    switchMinuteOutput.style.color = "#b3cefb";
-                    switchHour.style.display = "block";
-                    switchMinute.style.display = "none";
+                    document.querySelector('.hourMode').click();
+                    if (object.timeChosen.session === "AM") {
+                        document.getElementsByClassName('sessionSwitchButton')[0].click(); //AM
+                    } else {
+                        document.getElementsByClassName('sessionSwitchButton')[1].click(); //PM
+                    }
                 }
             }
         };
         this.closeModal = function () {
+            var object = this;
+
             var background = document.querySelector('.modal-background');
             var modal = document.querySelector('.modal');
             background.onclick = function () {
-                modal.classList.remove('is-active');
-
-                var timeModal = document.getElementsByClassName('clock-showing');
-                var switchHour = timeModal[1];      // #hour
-                var switchMinute = timeModal[0];    // #minute
-
-                switchHour.style.display = "block";
-                switchMinute.style.display = "block";
+                object.closeFunction(object, modal);
             }
 
             var button = document.getElementsByClassName('time-picker-buttons');
             var closeButton = button[1];    // #closeTime
             closeButton.onclick = function () {
-                modal.classList.remove('is-active');
-
-                var timeModal = document.getElementsByClassName('clock-showing');
-                var switchHour = timeModal[1];      // #hour
-                var switchMinute = timeModal[0];    // #minute
-
-                switchHour.style.display = "block";
-                switchMinute.style.display = "block";
+                object.closeFunction(object, modal);
             }
+        };
+        this.closeFunction = function (object, modal) {
+            var getTimeShowing = document.getElementsByClassName('time-showing-detail');
+            var hour = getTimeShowing[0];       // #outputHour
+            var minute = getTimeShowing[1];     // #outputMinute
+            var sessionSwitchButton = document.getElementsByClassName('sessionSwitchButton');
+            var outputSessionAM = sessionSwitchButton[0];   //outputSessionAM
+            var outputSessionPM = sessionSwitchButton[1];   //outputSessionPM
+
+            //SESSION AM/PM
+            if (outputSessionAM.style.color != "rgb(255, 255, 255)") {
+                object.timeChosen.session = outputSessionPM.innerText;
+            } else {
+                object.timeChosen.session = outputSessionAM.innerText;
+            }
+            object.timeChosen.hour = Number(hour.innerText);
+
+            //MINUTE
+            if (minute.innerText === "00") {
+                object.timeChosen.minute = 60;
+            } else {
+                object.timeChosen.minute = Number(minute.innerText);
+            }
+
+            modal.classList.remove('is-active');
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var switchHour = timeModal[1];      // #hour
+            var switchMinute = timeModal[0];    // #minute
+
+            switchHour.style.display = "block";
+            switchMinute.style.display = "block";
+
+            object.stopControlMinuteMouseDown();
+            object.stopControlHourMouseDown();
         };
         this.switchSession = function () {
             var object = this;
@@ -331,7 +358,7 @@ var clockComponent = (function () {
                 switchHour.style.display = "block";
                 switchMinute.style.display = "none";
 
-                // object.stopControlMinuteMouseDown();
+                object.stopControlMinuteMouseDown();
                 var timeModal = document.getElementsByClassName('clock-showing');
                 var moveMinutePointer = timeModal[0];     // #minute
                 moveMinutePointer.style.cursor = "default";
@@ -352,13 +379,14 @@ var clockComponent = (function () {
                 switchHour.style.display = "none";
                 switchMinute.style.display = "block";
 
-                // object.stopControlHourMouseDown();
+                object.stopControlHourMouseDown();
                 var timeModal = document.getElementsByClassName('clock-showing');
                 var moveHourPointer = timeModal[1];     // #hour
                 moveHourPointer.style.cursor = "default";
             }
         };
         this.saveTimeButton = function () {
+            var object = this;
             var button = document.getElementsByClassName('time-picker-buttons');
             var saveTime = button[2];
 
@@ -380,20 +408,30 @@ var clockComponent = (function () {
                 var modal = document.querySelector(".modal");
                 modal.classList.remove('is-active');
 
-                if (outputSessionAM.style.color != "rgb(255, 255, 255)") {
-                    var resultSession = document.getElementsByClassName('time-result-session');
-                    resultSession[0].innerHTML = outputSessionPM.innerText;
+                object.timeChosen.hour = Number(hour.innerText);
+                if (minute.innerText === "00") {
+                    object.timeChosen.minute = 60;
                 } else {
-                    var resultSession = document.getElementsByClassName('time-result-session');
-                    resultSession[0].innerHTML = outputSessionAM.innerText;
+                    object.timeChosen.minute = Number(minute.innerText);
                 }
-                var resultHour = document.getElementsByClassName('time-result-hour');
-                resultHour[0].innerHTML = hour.innerText;
-                var resultMinute = document.getElementsByClassName('time-result-minute');
-                resultMinute[0].innerHTML = minute.innerText;
+
+                if (outputSessionAM.style.color != "rgb(255, 255, 255)") {
+                    document.querySelector(`${object.selector} .time-result-session`).innerHTML = outputSessionPM.innerText;
+                    object.timeChosen.session = outputSessionPM.innerText;
+                } else {
+                    document.querySelector(`${object.selector} .time-result-session`).innerHTML = outputSessionAM.innerText;
+                    object.timeChosen.session = outputSessionAM.innerText;
+                }
+                document.querySelector(`${object.selector} .time-result-hour`).innerHTML = hour.innerText;
+                document.querySelector(`${object.selector} .time-result-minute`).innerHTML = minute.innerText;
+
+                object.stopControlMinuteMouseDown();
+                object.stopControlHourMouseDown();
             }
         };
         this.clearTimeButton = function () {
+            var object = this;
+
             var button = document.getElementsByClassName('time-picker-buttons');
             var clearButton = button[0];
 
@@ -408,65 +446,34 @@ var clockComponent = (function () {
                 var modal = document.querySelector(".modal");
                 modal.classList.remove('is-active');
 
-                var resultSession = document.getElementsByClassName('time-result-session');
-                resultSession[0].innerHTML = "--";
-                var resultHour = document.getElementsByClassName('time-result-hour');
-                resultHour[0].innerHTML = "--";
-                var resultMinute = document.getElementsByClassName('time-result-minute');
-                resultMinute[0].innerHTML = "--";
-            }
-        };
+                document.querySelector(`${object.selector} .time-result-session`).innerHTML = "--";
+                document.querySelector(`${object.selector} .time-result-hour`).innerHTML = "--";
+                document.querySelector(`${object.selector} .time-result-minute`).innerHTML = "--";
 
-        // NOT ADD YET
-        this.addHourLocation = function () {
-            for (var index = 0; index < 12; index++) {
-                var numberHour = index + 1;
-                var xDefault = 1;
-                var yDefault = 1;
+                object.timeChosen.hour = null;
+                object.timeChosen.minute = null;
+                object.timeChosen.session = null;
 
-                xDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().left + window.scrollX;
-                yDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().top + window.scrollY;
-
-                stepsOfClockLocation.locationForHours[index].xHour = xDefault + 20;
-                stepsOfClockLocation.locationForHours[index].yHour = yDefault + 20;
-            }
-        };
-        this.clickOnClock = function () {
-            var object = this;
-
-            var timeModal = document.getElementsByClassName('clock-showing');
-            var moveHourPointer = timeModal[1];     // #hour
-            var moveMinutePointer = timeModal[0];   // #minute
-
-            moveHourPointer.onmousedown = function () {
-                moveHourPointer.style.cursor = "move";
-                object.beginControlHourMouseDown();
-            }
-            moveHourPointer.onmouseup = function () {
-                moveHourPointer.style.cursor = "default";
+                object.stopControlMinuteMouseDown();
                 object.stopControlHourMouseDown();
             }
-
-            moveMinutePointer.onmousedown = function () {
-                moveMinutePointer.style.cursor = "move";
-                object.beginControlMinuteMouseDown();
-            }
-            moveMinutePointer.onmouseup = function () {
-                moveMinutePointer.style.cursor = "default";
-                object.stopControlMinuteMouseDown();
-            }
         };
+        this.scrollTimeFunction = function () {
+            var object = this;
+
+            object.scrollHourClock();
+            object.scrollMinuteClock();
+        }
         this.scrollHourClock = function () {
             var timeModal = document.getElementsByClassName('clock-showing');
             var scrollClock = timeModal[1];    // #hour
-    
+
             scrollClock.addEventListener('wheel', function (eventData) {
                 if (eventData.deltaY <= 0) {
                     var getTimeShowing = document.getElementsByClassName('time-showing-detail');
                     var chosenHour = getTimeShowing[0].innerHTML;       // #outputHour
                     var presentHour = Number(chosenHour);
                     presentHour += 1;
-                    console.log(presentHour);
                     if (presentHour == 13) {
                         presentHour = 1;
                     }
@@ -479,7 +486,7 @@ var clockComponent = (function () {
                         presentHour = 12;
                     }
                 }
-    
+
                 for (var index = 0; index < 12; index++) {
                     var numberHour = index + 1;
                     if (presentHour == numberHour) {
@@ -491,7 +498,7 @@ var clockComponent = (function () {
         this.scrollMinuteClock = function () {
             var timeModal = document.getElementsByClassName('clock-showing');
             var scrollClock = timeModal[0];    // #minute
-    
+
             scrollClock.addEventListener('wheel', function (eventData) {
                 if (eventData.deltaY <= 0) {
                     var getTimeShowing = document.getElementsByClassName('time-showing-detail');
@@ -513,7 +520,7 @@ var clockComponent = (function () {
                         presentMinute = 59;
                     }
                 }
-    
+
                 for (var index = 0; index < 60; index++) {
                     var numberMinute = index + 1;
                     if (presentMinute == numberMinute) {
@@ -522,12 +529,171 @@ var clockComponent = (function () {
                 }
             });
         };
-        
+
+        this.turnTimeFunction = function () {
+            var object = this;
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveHourPointer = timeModal[1];     // #hour
+            var moveMinutePointer = timeModal[0];   // #minute
+
+            moveHourPointer.onmousedown = function () {
+                object.beginControlHourMouseDown();
+            }
+            moveHourPointer.onmouseup = function () {
+                object.stopControlHourMouseDown();
+            }
+
+            moveMinutePointer.onmousedown = function () {
+                object.beginControlMinuteMouseDown();
+            }
+            moveMinutePointer.onmouseup = function () {
+                object.stopControlMinuteMouseDown();
+            }
+        };
+        this.addHourLocation = function () {
+            var object = this;
+
+            for (var index = 0; index < 12; index++) {
+                var numberHour = index + 1;
+                var xDefault = 1;
+                var yDefault = 1;
+
+                xDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().left + window.scrollX;
+                yDefault = document.querySelector('.hour-step' + numberHour).getBoundingClientRect().top + window.scrollY;
+
+                object.stepsOfClockLocation.locationForHours[index].xHour = xDefault + 20;
+                object.stepsOfClockLocation.locationForHours[index].yHour = yDefault + 20;
+            }
+        };
+        this.beginControlHourMouseDown = function () {
+            var object = this;
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveHourPointer = timeModal[1];     // #hour
+            moveHourPointer.style.cursor = "move";
+            moveHourPointer.onmousemove = object.locateHourCursorDown();
+        };
+        this.locateHourCursorDown = function () {
+            var object = this;
+
+            document.onmousemove = function (eventData) {
+                xCursor = eventData.pageX;
+                yCursor = eventData.pageY;
+
+                var distanceFromHourToCursor = 1;
+                var minDistanceHour = 10000;
+                var hourChosen = 0;
+
+                for (var index = 0; index < 12; index++) {
+                    distanceFromHourToCursor = Math.sqrt((object.stepsOfClockLocation.locationForHours[index].xHour - xCursor) ** 2
+                        + (object.stepsOfClockLocation.locationForHours[index].yHour - yCursor) ** 2);
+                    object.stepsOfClockLocation.locationForHours[index].distanceCursor = distanceFromHourToCursor;
+
+                    if (object.stepsOfClockLocation.locationForHours[index].distanceCursor < minDistanceHour) {
+                        minDistanceHour = object.stepsOfClockLocation.locationForHours[index].distanceCursor;
+                        hourChosen = index + 1;
+                        document.getElementsByClassName("hour-step" + hourChosen)[0].click();
+                    }
+                }
+            }
+        };
+        this.stopControlHourMouseDown = function () {
+            var object = this;
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveHourPointer = timeModal[1];     // #hour
+            moveHourPointer.style.cursor = "default";
+            moveHourPointer.onmousemove = object.locateHourCursorUp;
+        };
+        this.locateHourCursorUp = function () {
+            document.onmousemove = null;
+        };
+        this.addMinuteLocation = function () {
+            var object = this;
+
+            // Big Steps
+            for (var index = 0; index < 12; index++) {
+                var numberMinuteBigSteps = (index + 1) * 5;
+                var xDefault = 1;
+                var yDefault = 1;
+
+                xDefault = document.querySelector('.minute-step' + numberMinuteBigSteps).getBoundingClientRect().left + window.scrollX;
+                yDefault = document.querySelector('.minute-step' + numberMinuteBigSteps).getBoundingClientRect().top + window.scrollY;
+
+                if (index == 0) {
+                    var subIndex1 = index + 4;
+                    object.stepsOfClockLocation.locationForMinutes[subIndex1].xMinute = xDefault + 20;
+                    object.stepsOfClockLocation.locationForMinutes[subIndex1].yMinute = yDefault + 20;
+                } else {
+                    var subIndex2 = index * 5 + 4;
+                    object.stepsOfClockLocation.locationForMinutes[subIndex2].xMinute = xDefault + 20;
+                    object.stepsOfClockLocation.locationForMinutes[subIndex2].yMinute = yDefault + 20;
+                }
+            }
+
+            // Small Steps
+            for (var index = 0; index < 60; index++) {
+                var numberMinuteSmallSteps = index + 1;
+                if (numberMinuteSmallSteps % 5 != 0) {
+                    var xDefault = 1;
+                    var yDefault = 1;
+
+                    xDefault = document.querySelector('.minute-step' + numberMinuteSmallSteps).getBoundingClientRect().left + window.scrollX;
+                    yDefault = document.querySelector('.minute-step' + numberMinuteSmallSteps).getBoundingClientRect().top + window.scrollY;
+
+                    object.stepsOfClockLocation.locationForMinutes[index].xMinute = xDefault + 7.5;
+                    object.stepsOfClockLocation.locationForMinutes[index].yMinute = yDefault + 7.5;
+                }
+            }
+        };
+        this.beginControlMinuteMouseDown = function () {
+            var object = this;
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveMinutePointer = timeModal[0];    // #minute
+            moveMinutePointer.style.cursor = "move";
+            moveMinutePointer.onmousemove = object.locateMinuteCursorDown();
+        };
+        this.locateMinuteCursorDown = function () {
+            var object = this;
+
+            document.onmousemove = function (eventData) {
+                xCursor = eventData.pageX;
+                yCursor = eventData.pageY;
+
+                var distanceFromMinuteToCursor = 1;
+                var minDistanceMinute = 10000;
+                var minuteChosen = 0;
+
+                for (var index = 0; index < 60; index++) {
+                    distanceFromMinuteToCursor = Math.sqrt((object.stepsOfClockLocation.locationForMinutes[index].xMinute - xCursor) ** 2
+                        + (object.stepsOfClockLocation.locationForMinutes[index].yMinute - yCursor) ** 2);
+                    object.stepsOfClockLocation.locationForMinutes[index].distanceCursor = distanceFromMinuteToCursor;
+
+                    if (object.stepsOfClockLocation.locationForMinutes[index].distanceCursor < minDistanceMinute) {
+                        minDistanceMinute = object.stepsOfClockLocation.locationForMinutes[index].distanceCursor;
+                        minuteChosen = index + 1;
+                        document.getElementsByClassName("minute-step" + minuteChosen)[0].click();
+                    }
+                }
+            }
+        };
+        this.stopControlMinuteMouseDown = function () {
+            var object = this;
+
+            var timeModal = document.getElementsByClassName('clock-showing');
+            var moveMinutePointer = timeModal[0];    // #minute
+            moveMinutePointer.style.cursor = "default";
+            moveMinutePointer.onmousemove = object.locateMinuteCursorUp();
+        };
+        this.locateMinuteCursorUp = function () {
+            document.onmousemove = null;
+        };
         //RUN FUNCTION
         this.createDisplayStructure();
         this.normalizeNumber();
-        this.createClockStructure();
-        this.createModalStructure();
+        this.openModal();
     }
     return constructor;
 })();

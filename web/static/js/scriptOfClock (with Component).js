@@ -1,20 +1,7 @@
 var stepsOfClockLocation = {
-    "locationForHours": [
-        { "xHour": 1, "yHour": 1, "distanceCursor": 1 },
-        { "xHour": 2, "yHour": 2, "distanceCursor": 2 },
-        { "xHour": 3, "yHour": 3, "distanceCursor": 3 },
-        { "xHour": 4, "yHour": 4, "distanceCursor": 4 },
-        { "xHour": 5, "yHour": 5, "distanceCursor": 5 },
-        { "xHour": 6, "yHour": 6, "distanceCursor": 6 },
-        { "xHour": 7, "yHour": 7, "distanceCursor": 7 },
-        { "xHour": 8, "yHour": 8, "distanceCursor": 8 },
-        { "xHour": 9, "yHour": 9, "distanceCursor": 9 },
-        { "xHour": 10, "yHour": 10, "distanceCursor": 10 },
-        { "xHour": 11, "yHour": 11, "distanceCursor": 11 },
-        { "xHour": 12, "yHour": 12, "distanceCursor": 12 },
-    ],
+    locationForHours: [],
 
-    "locationForMinutes": [
+    locationForMinutes: [
         { "xMinute": 1, "yMinute": 1, "distanceCursor": 1 },
         { "xMinute": 2, "yMinute": 2, "distanceCursor": 2 },
         { "xMinute": 3, "yMinute": 3, "distanceCursor": 3 },
@@ -497,7 +484,18 @@ var time_picker = {
             time_picker.stopControlMinuteMouseDown();
         }
     },
+    addHourArray: function () {
+        for (var index = 0; index < 12; index++) {
+            var number = index + 1;
+            stepsOfClockLocation.locationForHours[index] = { "xHour": number, "yHour": number, "distanceCursor": number };
+        }
+        for (var index = 0; index < 12; index++) {
+            console.log(stepsOfClockLocation.locationForHours[index]);
+        }
+        console.log();
+    },
     addHourLocation: function () {
+        time_picker.addHourArray();
         for (var index = 0; index < 12; index++) {
             var numberHour = index + 1;
             var xDefault = 1;
